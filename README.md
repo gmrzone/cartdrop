@@ -16,7 +16,7 @@
 </div>
 
 ![Desktop - 1 (1)](https://user-images.githubusercontent.com/65633542/128006696-d9e0371a-b24d-4a3c-a821-51ad0336e5b2.png)
- 
+
 <hr>
 
 ![Desktop-Product-detail (1)](https://user-images.githubusercontent.com/65633542/128006621-d3f01ab3-9086-41ef-8a98-b042a1f8ab22.png)
@@ -36,5 +36,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
