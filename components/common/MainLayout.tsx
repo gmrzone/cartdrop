@@ -1,24 +1,18 @@
-import { NextPage } from 'next'
-import { ReactNode } from 'react'
+import { NextPage } from "next";
+import { ReactNode } from "react";
 
 type MainLayoutProps = {
-    children: ReactNode
-}
+    children: ReactNode;
+};
 
 const MainLayout: NextPage<MainLayoutProps> = ({ children }) => {
     return (
         <>
-            <header>
-
-            </header>
-            <main>
-                {children}
-            </main>
-            <footer>
-
-            </footer>
+            <header></header>
+            <main>{children}</main>
+            <footer></footer>
         </>
-    )
-}
+    );
+};
 
-export default MainLayout
+export default MainLayout;

@@ -1,8 +1,15 @@
-import { NextPage } from 'next';
+import { NextPage } from "next";
 
 import Head from "next/head";
 
-const HeadMeta: NextPage = () => {
+interface HeadProps {
+    title: string;
+    currentUrl: string;
+    keywords: string;
+    description: string;
+}
+
+const HeadMeta: NextPage<HeadProps> = ({ title, currentUrl, keywords, description }) => {
     return (
         <Head>
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -15,8 +22,25 @@ const HeadMeta: NextPage = () => {
             <meta name="msapplication-TileColor" content="#ffffff" />
             <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
             <meta name="theme-color" content="#ffffff"></meta>
-        </Head>
-    )
-}
 
-export default HeadMeta
+            <link rel="icon" href="/favicon.ico" />
+            <meta name="robots" content="all" />
+            <meta property="og:site_name" content="Cartdrop" />
+            <meta property="og:url" content={currentUrl} />
+            <link rel="canonical" href={currentUrl} />
+            <meta property="og:type" content="website" />
+            <meta name="author" content="AFzal Saiyed" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="keywords" content={keywords}></meta>
+            <meta name="description" content={description} />
+            <meta name="twitter:domain" content="corecare.in" />
+            <meta name="twitter:site" content="@afzalsaiyed" />
+            <meta name="twitter:creator" content="@afzalsaiyed" />
+            <meta name="twitter:title" property="og:title" itemProp="name" content={title} />
+            <meta name="twitter:description" property="og:description" itemProp="description" content={description} />
+            <title>{title}</title>
+        </Head>
+    );
+};
+
+export default HeadMeta;
