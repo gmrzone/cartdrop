@@ -7,8 +7,27 @@ import Password from "../components/common/inputs/Password";
 import MainButton from "../components/common/buttons/MainButton";
 import SecondaryButton from '../components/common/buttons/SecondaryButton';
 import ExtraButton from "../components/common/buttons/ExtraButton";
+import CustomSelect from '../components/common/inputs/CustomSelect'
 
 const Home: NextPage = () => {
+    const selectOptions = [
+        {
+            label: "Option one",
+            value: "option-one"
+        },
+        {
+            label: "Option two",
+            value: "option-two"
+        },
+        {
+            label: "Option Three",
+            value: "option-three"
+        },
+        {
+            label: "Option Four",
+            value: "option-four"
+        }
+    ]
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
     return (
@@ -21,7 +40,7 @@ const Home: NextPage = () => {
             />
             <MainLayout>
                 <div>
-                    <div className="text-main">
+                    <div className="text-main pl-5">
                         <h1>heading 1</h1>
                         <h2>heading 2</h2>
                         <h3>heading 3</h3>
@@ -29,7 +48,7 @@ const Home: NextPage = () => {
                         <h5>heading 5</h5>
                         <h6>heading 6</h6>
                     </div>
-                    <div>
+                    <div className="pl-5">
                         <p>Paragraph</p>
                         <a href="">Link</a>
                         <br />
@@ -43,9 +62,11 @@ const Home: NextPage = () => {
                             <Input type="email" label="EMAIL" />
                             <Password type="password" label="PASSWORD" />
                             <TextArea type="textarea" label="COMMENTS" />
+                            <CustomSelect options={selectOptions} initialLabel={{value: "select-options", label: "SELECT OPTIONS"}}/>
+
                         </div>
                     </div>
-                    <div className="pt-6 w-96 mb-11">
+                    <div className="pt-6 w-96 mb-11 pl-5">
                         <h1>Buttons</h1>
                         <div className="space-y-6">
                             <MainButton text="Main Button" /><br />

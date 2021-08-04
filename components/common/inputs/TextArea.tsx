@@ -7,11 +7,11 @@ interface InputProps {
 }
 
 const TextArea: NextPage<InputProps> = ({ type, label }) => {
-    const inputRef = useRef<HTMLInputElement | null>(null);
+    const inputRef = useRef<HTMLTextAreaElement | null>(null);
     const handleFocus: FocusEventHandler<HTMLTextAreaElement> = (e) => {
         e.target.classList.remove("border");
-        e.target.classList.remove("border-gray-600");
-        e.target.classList.add("border-main");
+        // e.target.classList.remove("border-gray-600");
+        // e.target.classList.add("border-main");
         e.target.classList.add("border-2");
         const span = e.target.nextSibling as HTMLSpanElement;
         span.classList.remove("scale-100");
@@ -25,10 +25,10 @@ const TextArea: NextPage<InputProps> = ({ type, label }) => {
     };
     const handleBlur: FocusEventHandler<HTMLTextAreaElement> = (e) => {
         if (!e.target.value) {
-            e.target.classList.remove("border-main");
+            // e.target.classList.remove("border-main");
             e.target.classList.remove("border-2");
             e.target.classList.add("border");
-            e.target.classList.add("border-gray-600");
+            // e.target.classList.add("border-gray-600");
             const span = e.target.nextSibling as HTMLSpanElement;
             span.classList.remove("scale-80");
             span.classList.remove("text-main");
@@ -43,7 +43,7 @@ const TextArea: NextPage<InputProps> = ({ type, label }) => {
     return (
         <div className="relative w-aute px-3 h-56">
             <textarea
-                className="absolute focus:outline-none top-0 left-0 text-xl w-full h-full py-3 px-3 border border-solid border-gray-600 font-poppins text-main rounded-normal"
+                className="absolute focus:outline-none top-0 left-0 text-xl w-full h-full py-3 px-3 border border-solid border-main font-poppins text-main rounded-normal"
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 ref={inputRef}

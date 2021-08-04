@@ -11,8 +11,8 @@ const Password: NextPage<InputProps> = ({ type, label }) => {
     const inputElement = useRef<HTMLInputElement | null>(null);
     const handleFocus: FocusEventHandler<HTMLInputElement> = (e) => {
         e.target.classList.remove("border");
-        e.target.classList.remove("border-gray-600");
-        e.target.classList.add("border-main");
+        // e.target.classList.remove("border-gray-600");
+        // e.target.classList.add("border-main");
         e.target.classList.add("border-2");
         const span = e.target.nextSibling as HTMLSpanElement;
         span.classList.remove("scale-100");
@@ -26,10 +26,10 @@ const Password: NextPage<InputProps> = ({ type, label }) => {
     };
     const handleBlur: FocusEventHandler<HTMLInputElement> = (e) => {
         if (!e.target.value) {
-            e.target.classList.remove("border-main");
+            // e.target.classList.remove("border-main");
             e.target.classList.remove("border-2");
             e.target.classList.add("border");
-            e.target.classList.add("border-gray-600");
+            // e.target.classList.add("border-gray-600");
             const span = e.target.nextSibling as HTMLSpanElement;
             span.classList.remove("scale-80");
             span.classList.remove("text-main");
@@ -56,7 +56,7 @@ const Password: NextPage<InputProps> = ({ type, label }) => {
         <div className="relative w-auto h-14 px-3">
             <input
                 type={type}
-                className="absolute focus:outline-none top-0 left-0 text-xl w-full h-full py-3 px-3 border border-solid border-gray-600 font-poppins text-main rounded-normal"
+                className="absolute focus:outline-none top-0 left-0 text-xl w-full h-full py-3 px-3 border border-solid border-main font-poppins text-main rounded-normal"
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 ref={inputElement}
