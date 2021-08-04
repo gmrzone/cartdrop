@@ -2,6 +2,7 @@ import MainLayout from "../components/common/MainLayout";
 import MetaHead from "../components/common/Head";
 import { NextPage } from 'next';
 import Input from '../components/inputs/Input';
+import TextArea from '../components/inputs/TextArea';
 
 const Home: NextPage = () => {
     const description:string =
@@ -33,9 +34,10 @@ const Home: NextPage = () => {
                     <br />
                     <div className="pl-5">
                         <h1>Inputs</h1>
-                        <div className="pt-6 space-y-6">
+                        <div className="pt-6 space-y-6 w-96">
                             <Input type="text" label="NAME"/>
                             <Input type="email" label="EMAIL"/>
+                            <TextArea type="textarea" label="COMMENTS" />
                         </div>
                     </div>
                 </div>

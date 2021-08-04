@@ -6,8 +6,8 @@ interface InputProps {
     label: string
 }
 
-const Input: NextPage<InputProps> = ({ type, label }) => {
-    const handleFocus: FocusEventHandler<HTMLInputElement> = (e) => {
+const TextArea: NextPage<InputProps> = ({ type, label }) => {
+    const handleFocus: FocusEventHandler<HTMLTextAreaElement> = (e) => {
         e.target.classList.remove('border')
         e.target.classList.remove('text-gray-500')
         e.target.classList.add('border-main')
@@ -26,7 +26,7 @@ const Input: NextPage<InputProps> = ({ type, label }) => {
         
 
     }
-    const handleBlur:FocusEventHandler<HTMLInputElement> = (e) => {
+    const handleBlur:FocusEventHandler<HTMLTextAreaElement> = (e) => {
         if (!e.target.value){
             e.target.classList.remove('border-main')
             e.target.classList.remove('border-2')
@@ -46,11 +46,11 @@ const Input: NextPage<InputProps> = ({ type, label }) => {
         }
     }
     return (
-        <div className="relative w-auto h-14 px-3">
-            <input type={type} className="absolute focus:outline-none top-0 left-0 text-xl w-full h-full py-3 px-3 border border-solid border-gray-600 font-poppins text-main rounded-normal" onFocus={handleFocus} onBlur={handleBlur}/>
+        <div className="relative w-aute px-3 h-56">
+            <textarea className="absolute focus:outline-none top-0 left-0 text-xl w-full h-full py-3 px-3 border border-solid border-gray-600 font-poppins text-main rounded-normal" onFocus={handleFocus} onBlur={handleBlur} />
             <span className="absolute bg-white text-gray-500 text-xl transition-all translate-x-0 duration-300 scale-100 translate-y-0 px-1 top-3">{label}</span>
         </div>
     )
 }
 
-export default Input
+export default TextArea
