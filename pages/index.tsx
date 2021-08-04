@@ -1,9 +1,10 @@
 import MainLayout from "../components/common/MainLayout";
 import MetaHead from "../components/common/Head";
 import { NextPage } from "next";
-import Input from "../components/inputs/Input";
-import TextArea from "../components/inputs/TextArea";
-import Password from "../components/inputs/Password";
+import Input from "../components/common/inputs/Input";
+import TextArea from "../components/common/inputs/TextArea";
+import Password from "../components/common/inputs/Password";
+import MainButton from "../components/common/buttons/MainButton";
 
 const Home: NextPage = () => {
     const description: string =
@@ -40,6 +41,15 @@ const Home: NextPage = () => {
                             <Input type="email" label="EMAIL" />
                             <Password type="password" label="PASSWORD" />
                             <TextArea type="textarea" label="COMMENTS" />
+                        </div>
+                    </div>
+                    <div className="pt-6 w-96 mb-11">
+                        <h1>Buttons</h1>
+                        <div className="space-y-6">
+                            <MainButton text="Main Button" /><br />
+                            <MainButton text="Disabled" disable={true} /><br />
+                            <MainButton text="With icon" icon="far fa-alarm-clock"/><br />
+                            <MainButton text="Loading" loading={true}/>
                         </div>
                     </div>
                 </div>

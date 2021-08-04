@@ -66,8 +66,8 @@ const Password: NextPage<InputProps> = ({ type, label }) => {
                 onClick={() => inputElement.current?.focus()}>
                 {label}
             </span>
-            <span className="absolute right-4 top-3 text-3xl cursor-pointer" onClick={togglePassword}>
-                *
+            <span className="absolute right-4 top-2 text-3xl cursor-pointer" onClick={togglePassword}>
+                <i className="fa fa-eye text-xl text-main" aria-hidden="true" />
             </span>
         </div>
     );

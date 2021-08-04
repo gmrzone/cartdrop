@@ -46,6 +46,9 @@ module.exports = {
             scale: {
                 80: ".80",
             },
+            animation : {
+                "spin-button": "spin 0.6s linear infinite",
+            }
         },
     },
     variants: {
