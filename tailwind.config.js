@@ -1,5 +1,5 @@
 module.exports = {
-    mode: 'jit',
+    mode: "jit",
     purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
     darkMode: false, // or 'media' or 'class'
     theme: {
@@ -38,14 +38,14 @@ module.exports = {
                     "Droid Sans",
                     "Helvetica Neue",
                     "sans-serif",
-                ]
+                ],
             },
             borderRadius: {
                 normal: "0.245rem",
             },
             scale: {
                 80: ".80",
-            }
+            },
         },
     },
     variants: {

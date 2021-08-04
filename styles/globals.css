@@ -1,15 +1,14 @@
 /* ./styles/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap");
 
 * {
     box-sizing: border-box;
 }
 html,
 body {
-
     @apply p-0;
     @apply m-0;
     @apply font-poppins;
@@ -17,36 +16,34 @@ body {
 }
 
 h1 {
-  @apply text-5xl;
-  @apply font-bold;
-  
+    @apply text-5xl;
+    @apply font-bold;
 }
 
 h2 {
-  @apply text-4xl;
-  @apply font-bold;
+    @apply text-4xl;
+    @apply font-bold;
 }
 
 h3 {
-  @apply text-3xl;
-  @apply font-semibold;
+    @apply text-3xl;
+    @apply font-semibold;
 }
 
 h4 {
-  @apply text-2xl;
-  @apply font-semibold;
+    @apply text-2xl;
+    @apply font-semibold;
 }
 
 h5 {
-  @apply text-2xl;
-  @apply font-medium;
+    @apply text-2xl;
+    @apply font-medium;
 }
 
 h6 {
-  @apply text-xl;
-  @apply font-medium;
+    @apply text-xl;
+    @apply font-medium;
 }
-
 
 a {
     @apply text-blue-700;
@@ -54,6 +51,5 @@ a {
 }
 
 span {
-  @apply text-gray-600;
-  
+    @apply text-gray-600;
 }

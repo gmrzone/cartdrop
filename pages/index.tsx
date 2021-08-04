@@ -1,12 +1,12 @@
 import MainLayout from "../components/common/MainLayout";
 import MetaHead from "../components/common/Head";
-import { NextPage } from 'next';
-import Input from '../components/inputs/Input';
-import TextArea from '../components/inputs/TextArea';
+import { NextPage } from "next";
+import Input from "../components/inputs/Input";
+import TextArea from "../components/inputs/TextArea";
 import Password from "../components/inputs/Password";
 
 const Home: NextPage = () => {
-    const description:string =
+    const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
     return (
         <>
@@ -36,9 +36,9 @@ const Home: NextPage = () => {
                     <div className="pl-5">
                         <h1>Inputs</h1>
                         <div className="pt-6 space-y-6 w-96">
-                            <Input type="text" label="NAME"/>
-                            <Input type="email" label="EMAIL"/>
-                            <Password type="password" label="PASSWORD"/>
+                            <Input type="text" label="NAME" />
+                            <Input type="email" label="EMAIL" />
+                            <Password type="password" label="PASSWORD" />
                             <TextArea type="textarea" label="COMMENTS" />
                         </div>
                     </div>
@@ -46,6 +46,6 @@ const Home: NextPage = () => {
             </MainLayout>
         </>
     );
-}
+};
 
-export default Home
+export default Home;
