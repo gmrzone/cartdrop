@@ -39,6 +39,12 @@ module.exports = {
                     "Helvetica Neue",
                     "sans-serif",
                 ]
+            },
+            borderRadius: {
+                normal: "0.245rem",
+            },
+            scale: {
+                80: ".80",
             }
         },
     },
