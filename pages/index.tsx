@@ -5,6 +5,8 @@ import Input from "../components/common/inputs/Input";
 import TextArea from "../components/common/inputs/TextArea";
 import Password from "../components/common/inputs/Password";
 import MainButton from "../components/common/buttons/MainButton";
+import SecondaryButton from '../components/common/buttons/SecondaryButton';
+import ExtraButton from "../components/common/buttons/ExtraButton";
 
 const Home: NextPage = () => {
     const description: string =
@@ -49,7 +51,15 @@ const Home: NextPage = () => {
                             <MainButton text="Main Button" /><br />
                             <MainButton text="Disabled" disable={true} /><br />
                             <MainButton text="With icon" icon="far fa-alarm-clock"/><br />
-                            <MainButton text="Loading" loading={true}/>
+                            <MainButton text="Loading" loading={true}/><br />
+                            <SecondaryButton text="Secondary Button"/><br />
+                            <SecondaryButton text="Disabled" disable={true} /><br />
+                            <SecondaryButton text="With Icon" icon="far fa-alien"/><br />
+                            <SecondaryButton text="Loading" loading={true}/><br />
+                            <ExtraButton text="Extra Button" /> <br />
+                            <ExtraButton text="Disabled" disable={true} /> <br />
+                            <ExtraButton text="With Icon" icon="far fa-atom" /> <br />
+                            <ExtraButton text="Loading" loading={true} /> <br />
                         </div>
                     </div>
                 </div>
