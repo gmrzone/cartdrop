@@ -1,20 +1,23 @@
-import { NextPage } from 'next'
+import { NextPage } from "next";
 
 type MainProps = {
-    text: string,
-    icon?: string,
-    disable?: boolean,
-    loading?: boolean
-}
+    text: string;
+    icon?: string;
+    disable?: boolean;
+    loading?: boolean;
+};
 
 const MainButton: NextPage<MainProps> = ({ text, icon, loading, disable }) => {
     return (
-        <button className={`w-auto py-3 px-6 font-semibold rounded-full transition-colors duration-300 ${disable ? "bg-gray-600 cursor-not-allowed bg-opacity-75" : "bg-main hover:bg-blue-800"}`}>
+        <button
+            className={`w-auto py-3 px-6 font-semibold rounded-full transition-colors duration-300 ${
+                disable ? "bg-gray-600 cursor-not-allowed bg-opacity-75" : "bg-main hover:bg-blue-800"
+            }`}>
             {icon && <i className={`${icon} mr-2 text-white`} />}
             {loading && !disable && <i className="fad fa-spinner-third mr-2 text-white animate-spin-button" />}
             <span className="text-white">{text}</span>
         </button>
-    )
-}
+    );
+};
 
-export default MainButton
+export default MainButton;

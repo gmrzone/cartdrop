@@ -5,29 +5,29 @@ import Input from "../components/common/inputs/Input";
 import TextArea from "../components/common/inputs/TextArea";
 import Password from "../components/common/inputs/Password";
 import MainButton from "../components/common/buttons/MainButton";
-import SecondaryButton from '../components/common/buttons/SecondaryButton';
+import SecondaryButton from "../components/common/buttons/SecondaryButton";
 import ExtraButton from "../components/common/buttons/ExtraButton";
-import CustomSelect from '../components/common/inputs/CustomSelect'
+import CustomSelect from "../components/common/inputs/CustomSelect";
 
 const Home: NextPage = () => {
     const selectOptions = [
         {
             label: "Option one",
-            value: "option-one"
+            value: "option-one",
         },
         {
             label: "Option two",
-            value: "option-two"
+            value: "option-two",
         },
         {
             label: "Option Three",
-            value: "option-three"
+            value: "option-three",
         },
         {
             label: "Option Four",
-            value: "option-four"
-        }
-    ]
+            value: "option-four",
+        },
+    ];
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
     return (
@@ -62,20 +62,28 @@ const Home: NextPage = () => {
                             <Input type="email" label="EMAIL" />
                             <Password type="password" label="PASSWORD" />
                             <TextArea type="textarea" label="COMMENTS" />
-                            <CustomSelect options={selectOptions} initialLabel={{value: "select-options", label: "SELECT OPTIONS"}}/>
+                            <CustomSelect options={selectOptions} initialLabel={{ value: "select-options", label: "SELECT OPTIONS" }} />
                         </div>
                     </div>
                     <div className="pt-6 w-96 mb-11 pl-5">
                         <h1>Buttons</h1>
                         <div className="space-y-6">
-                            <MainButton text="Main Button" /><br />
-                            <MainButton text="Disabled" disable={true} /><br />
-                            <MainButton text="With icon" icon="far fa-alarm-clock"/><br />
-                            <MainButton text="Loading" loading={true}/><br />
-                            <SecondaryButton text="Secondary Button"/><br />
-                            <SecondaryButton text="Disabled" disable={true} /><br />
-                            <SecondaryButton text="With Icon" icon="far fa-alien"/><br />
-                            <SecondaryButton text="Loading" loading={true}/><br />
+                            <MainButton text="Main Button" />
+                            <br />
+                            <MainButton text="Disabled" disable={true} />
+                            <br />
+                            <MainButton text="With icon" icon="far fa-alarm-clock" />
+                            <br />
+                            <MainButton text="Loading" loading={true} />
+                            <br />
+                            <SecondaryButton text="Secondary Button" />
+                            <br />
+                            <SecondaryButton text="Disabled" disable={true} />
+                            <br />
+                            <SecondaryButton text="With Icon" icon="far fa-alien" />
+                            <br />
+                            <SecondaryButton text="Loading" loading={true} />
+                            <br />
                             <ExtraButton text="Extra Button" /> <br />
                             <ExtraButton text="Disabled" disable={true} /> <br />
                             <ExtraButton text="With Icon" icon="far fa-atom" /> <br />
