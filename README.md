@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <h2>A high-performance Ecommerce created using Nextjs, Typescript, and tailwindcss on frontend and Django, DRF, PostgreSQL, and Redis on Backend</h2>
+  <h2>A high-performance e-commerce build using Nextjs, Typescript, and tailwindcss for frontend and Django, DRF, PostgreSQL, and Redis for Backend</h2>
 </div>
 <br/>
 
