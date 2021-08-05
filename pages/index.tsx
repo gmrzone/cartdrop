@@ -63,7 +63,6 @@ const Home: NextPage = () => {
                             <Password type="password" label="PASSWORD" />
                             <TextArea type="textarea" label="COMMENTS" />
                             <CustomSelect options={selectOptions} initialLabel={{value: "select-options", label: "SELECT OPTIONS"}}/>
-
                         </div>
                     </div>
                     <div className="pt-6 w-96 mb-11 pl-5">
