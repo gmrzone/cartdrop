@@ -8,10 +8,12 @@ type MainLayoutProps = {
 const MainLayout: NextPage<MainLayoutProps> = ({ children }) => {
     return (
         <>
-            <header className="py-3">
+            <header className="py-3 bg-white">
                 <Header />
             </header>
-            <main>{children}</main>
+            <main>
+                {children}
+            </main>
             <footer></footer>
         </>
     );

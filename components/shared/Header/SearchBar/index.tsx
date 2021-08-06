@@ -8,11 +8,11 @@ const SearchBar: NextPage = () => {
         if (mainSearch.current && inputRef.current){
             if (searchExpended){
                 mainSearch.current.classList.remove('w-12')
-                mainSearch.current.classList.add('w-72')
+                mainSearch.current.classList.add('w-96')
                 inputRef.current.focus()
             }
             else{
-                mainSearch.current.classList.remove('w-72')
+                mainSearch.current.classList.remove('w-96')
                 mainSearch.current.classList.add('w-12')
                 inputRef.current.blur()
             }

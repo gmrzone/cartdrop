@@ -1,13 +1,7 @@
 import MainLayout from "../components/common/MainLayout";
 import MetaHead from "../components/common/Head";
 import { NextPage } from "next";
-import Input from "../components/common/inputs/Input";
-import TextArea from "../components/common/inputs/TextArea";
-import Password from "../components/common/inputs/Password";
-import MainButton from "../components/common/buttons/MainButton";
-import SecondaryButton from "../components/common/buttons/SecondaryButton";
-import ExtraButton from "../components/common/buttons/ExtraButton";
-import CustomSelect from "../components/common/inputs/CustomSelect";
+import Hero from '../components/Home/Hero'
 
 const Home: NextPage = () => {
     const selectOptions = [
@@ -39,7 +33,7 @@ const Home: NextPage = () => {
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
-               
+               <Hero />
             </MainLayout>
         </>
     );

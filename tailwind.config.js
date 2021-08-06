@@ -52,6 +52,15 @@ module.exports = {
             boxShadow: {
                 "drop-down": "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
             },
+            backgroundImage: theme => ({
+                'hero-image': "url('https://res.cloudinary.com/corecare/image/upload/c_scale,w_1920/v1628273300/cartdrop/pexels-andrea-piacquadio-3769747_karaf4.jpg')"
+            }),
+            height: {
+                'hero': '600px  '
+            },
+            screens: {
+                "ipad": "992px",
+            }
         },
     },
     variants: {
