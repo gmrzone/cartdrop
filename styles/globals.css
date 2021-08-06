@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-    @apply text-5xl;
+    @apply text-3xl;
     @apply font-bold;
 }
 
@@ -55,6 +55,7 @@ span {
     @apply text-gray-600;
 }
 
+
 .container {
     @apply w-auto;
     @apply max-w-full;
@@ -66,12 +67,18 @@ span {
         width: 723px;
         @apply mx-auto;
     }
+    h1 {
+        @apply text-4xl;
+    }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .container {
         width: 933px;
         @apply mx-auto;
+    }
+    h1 {
+        @apply text-4.3xl;
     }
 }
 
@@ -81,6 +88,9 @@ span {
         @apply ml-auto;
         @apply mr-auto;
     }
+    h1 {
+        @apply text-4.6xl;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -89,6 +99,9 @@ span {
         @apply ml-auto;
         @apply mr-auto;
     }
+    h1 {
+        @apply text-4.8xl;
+    }
 }
 
 @media only screen and (min-width: 1600px) {
@@ -96,5 +109,8 @@ span {
         width: 1327px;
         @apply ml-auto;
         @apply mr-auto;
+    }
+    h1 {
+        @apply text-5xl;
     }
 }

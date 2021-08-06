@@ -43,7 +43,7 @@ const SearchBar: NextPage = () => {
                 <i className="fa fa-search text-main text-xl" aria-hidden="true"/>
             </div>
             <div className="w-auto mr-1">
-                <input type="text" className="top-0 h-full w-full left-0 text-main focus:outline-none font-poppins font-semibold pl-3" ref={inputRef} placeholder="Searchs"/>
+                <input type="text" className="top-0 h-full w-full left-0 text-main focus:outline-none font-poppins font-semibold pl-3" ref={inputRef} placeholder="Search"/>
             </div>
         </div>
     
