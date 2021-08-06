@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { navLeftData } from "./data";
+
 const NavLeft: NextPage = () => {
     const renderData = navLeftData.map((x) => {
         return (
@@ -10,7 +11,7 @@ const NavLeft: NextPage = () => {
     });
     return (
         <nav className="flex items-center ml-20">
-            <ul className="flex space-x-6">{renderData}</ul>
+            <ul className="flex space-x-8">{renderData}</ul>
         </nav>
     );
 };

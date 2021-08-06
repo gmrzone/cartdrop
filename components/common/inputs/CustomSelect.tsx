@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useState, MouseEventHandler, useEffect, useRef, FocusEventHandler } from "react";
+import { useState, MouseEventHandler, useEffect, useRef } from "react";
 type options = {
     label: string;
     value: string;
