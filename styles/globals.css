@@ -53,3 +53,47 @@ a {
 span {
     @apply text-gray-600;
 }
+
+.container {
+    @apply w-auto;
+    @apply max-w-full;
+    @apply mx-3;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 723px;
+        @apply mx-auto;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        width: 933px;
+        @apply mx-auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 1127px;
+        @apply ml-auto;
+        @apply mr-auto;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        width: 1227px;
+        @apply ml-auto;
+        @apply mr-auto;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .container {
+        width: 1327px;
+        @apply ml-auto;
+        @apply mr-auto;
+    }
+}

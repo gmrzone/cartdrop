@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { ReactNode } from "react";
-
+import Header from "../shared/Header";
 type MainLayoutProps = {
     children: ReactNode;
 };
@@ -8,7 +8,9 @@ type MainLayoutProps = {
 const MainLayout: NextPage<MainLayoutProps> = ({ children }) => {
     return (
         <>
-            <header></header>
+            <header className="py-3">
+                <Header />
+            </header>
             <main>{children}</main>
             <footer></footer>
         </>
