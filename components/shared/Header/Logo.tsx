@@ -1,6 +1,6 @@
 const Logo = () => {
     return (
-        <div className="w-60">
+        <div className="w-56 ipad:w-60">
             <svg
                 version="1.1"
                 id="Layer_1"

@@ -16,7 +16,9 @@ const Header: NextPage = () => {
             <BurgerIcon toggleLeftNav={toggleLeftNav}/>
             <Logo />
             <NavLeft toggleLeftNav={toggleLeftNav} leftNavActive={leftNavActive}/>
-            <SearchBar />
+            <div className="ml-auto hidden md:block">
+                <SearchBar />
+            </div>
             <NavRight />
         </div>
     );

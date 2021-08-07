@@ -7,13 +7,15 @@ const SearchBar: NextPage = () => {
     useEffect(() => {
         if (mainSearch.current && inputRef.current){
             if (searchExpended){
-                mainSearch.current.classList.remove('w-12')
-                mainSearch.current.classList.add('w-96')
+                mainSearch.current.classList.remove('md:w-12')
+                mainSearch.current.classList.add('md:w-80')
+                mainSearch.current.classList.add('desktop-big:w-96')
                 inputRef.current.focus()
             }
             else{
-                mainSearch.current.classList.remove('w-96')
-                mainSearch.current.classList.add('w-12')
+                mainSearch.current.classList.remove('md:w-80')
+                mainSearch.current.classList.remove('desktop-big:w-96')
+                mainSearch.current.classList.add('md:w-12')
                 inputRef.current.blur()
             }
         }
@@ -38,7 +40,7 @@ const SearchBar: NextPage = () => {
 
     }
     return (
-        <div className="flex flex-nowrap items-center overflow-hidden border-2 relative border-solid border-main rounded-full w-12 h-11 cursor-pointer ml-auto self-center mr-8 transition-all duration-500" onClick={expandSearch} ref={mainSearch}>
+        <div className="flex flex-nowrap rounded-md mt-3 w-full items-center overflow-hidden border-2 relative border-solid border-main md:rounded-full md:w-12 h-11 cursor-pointer self-center md:mt-0 md:mr-8 transition-all duration-500" onClick={expandSearch} ref={mainSearch}>
             <div className="ml-3">
                 <i className="fa fa-search text-main text-xl" aria-hidden="true"/>
             </div>

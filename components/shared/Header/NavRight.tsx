@@ -12,7 +12,7 @@ const NavBar = () => {
     // })
 
     return (
-        <nav className="flex items-center">
+        <nav className="flex items-center ml-auto md:ml-0">
             <ul className="flex space-x-8">
                 <li>
                     <ProfileIcon />
