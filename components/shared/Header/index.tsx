@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Logo from "./Logo";
+import LogoSmall from "./LogoSmall";
 import NavLeft from "./NavLeft";
 import NavRight from './NavRight'
 import SearchBar from "./SearchBar";
@@ -15,6 +16,7 @@ const Header: NextPage = () => {
         <div className="container flex">
             <BurgerIcon toggleLeftNav={toggleLeftNav}/>
             <Logo />
+            <LogoSmall />
             <NavLeft toggleLeftNav={toggleLeftNav} leftNavActive={leftNavActive}/>
             <div className="ml-auto hidden md:block">
                 <SearchBar />

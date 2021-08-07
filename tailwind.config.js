@@ -72,7 +72,8 @@ module.exports = {
 
             },
             screens: {
-                "mobile-bg": "360px",
+                "mobile-bg": "361px",
+                "mobile-lg": "550px",
                 "ipad": "992px",
                 "desktop": "1199px",
                 "desktop-big": "1400px",

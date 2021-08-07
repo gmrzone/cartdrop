@@ -8,12 +8,14 @@ const SearchBar: NextPage = () => {
         if (mainSearch.current && inputRef.current && window.innerWidth >= 768){
             if (searchExpended){
                 mainSearch.current.classList.remove('md:w-12')
-                mainSearch.current.classList.add('md:w-80')
+                mainSearch.current.classList.add('md:w-72')
+                mainSearch.current.classList.add('ipad:w-80')
                 mainSearch.current.classList.add('desktop-big:w-96')
                 inputRef.current.focus()
             }
             else{
-                mainSearch.current.classList.remove('md:w-80')
+                mainSearch.current.classList.remove('md:w-72')
+                mainSearch.current.classList.remove('ipad:w-80')
                 mainSearch.current.classList.remove('desktop-big:w-96')
                 mainSearch.current.classList.add('md:w-12')
                 inputRef.current.blur()
