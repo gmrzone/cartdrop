@@ -55,19 +55,18 @@ span {
     @apply text-gray-600;
 }
 
-
 .container {
     @apply w-auto;
     @apply max-w-full;
     @apply mx-3;
 }
 
-@media (min-width: 400px){
+@media (min-width: 400px) {
     h1 {
         @apply text-2xl;
     }
 }
-@media (min-width: 550px){
+@media (min-width: 550px) {
     h1 {
         @apply text-3xl;
     }

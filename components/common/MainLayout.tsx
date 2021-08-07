@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { ReactNode } from "react";
 import Header from "../shared/Header";
-import SearchBar from '../shared/Header/SearchBar'
+import SearchBar from "../shared/Header/SearchBar";
 type MainLayoutProps = {
     children: ReactNode;
 };
@@ -15,9 +15,7 @@ const MainLayout: NextPage<MainLayoutProps> = ({ children }) => {
                     <SearchBar />
                 </div>
             </header>
-            <main>
-                {children}
-            </main>
+            <main>{children}</main>
             <footer></footer>
         </>
     );

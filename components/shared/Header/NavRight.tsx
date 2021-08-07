@@ -1,6 +1,6 @@
-import ProfileIcon from './Icons/Profile';
-import CartIcon from './Icons/Cart';
-import SearchBar from './SearchBar'
+import ProfileIcon from "./Icons/Profile";
+import CartIcon from "./Icons/Cart";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
     // const renderData = navRightData.map(x => {
@@ -22,7 +22,7 @@ const NavBar = () => {
                 </li>
             </ul>
         </nav>
-    )
+    );
 };
 
 export default NavBar;

@@ -1,23 +1,23 @@
 import MainLayout from "../components/common/MainLayout";
 import MetaHead from "../components/common/Head";
 import { NextPage } from "next";
-import Hero from '../components/Home/Hero'
-import { BACKEND_URL } from '../utils'
+import Hero from "../components/Home/Hero";
+import { BACKEND_URL } from "../utils";
 import axios from "axios";
 import { Category } from "../shared/types";
 export const getStaticProps = async () => {
-    const categories = await axios.get(BACKEND_URL + "/core/categories/")
+    const categories = await axios.get(BACKEND_URL + "/core/categories/");
 
     return {
         props: {
-            categories: categories.data
-        }
-    }
-}
+            categories: categories.data,
+        },
+    };
+};
 
 type HomeProps = {
-    categories: Category[]
-}
+    categories: Category[];
+};
 
 const Home: NextPage<HomeProps> = ({ categories }) => {
     const description: string =
@@ -31,7 +31,7 @@ const Home: NextPage<HomeProps> = ({ categories }) => {
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
-               <Hero categories={categories}/>
+                <Hero categories={categories} />
             </MainLayout>
         </>
     );
