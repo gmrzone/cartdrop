@@ -63,16 +63,26 @@ module.exports = {
 
             }),
             height: {
-                'hero': '700px  '
+                'hero-mobile-sm': '450px',
+                'hero-mobile-bg': '500px',
+                "hero-ipad": "580px",
+                'hero-desktop': '600px',
+                'hero-desktop-lg': '700px',
+
+
             },
             screens: {
+                "mobile-bg": "360px",
                 "ipad": "992px",
                 "desktop": "1199px",
                 "desktop-big": "1400px",
+                
             },
             skew: {
                 'hero-outer': "35deg",
-                'hero-inner': "-35deg"
+                'hero-inner': "-35deg",
+                "hero-outer-sm": "25deg",
+                "hero-inner-sm": "-25deg",
             }
         },
     },

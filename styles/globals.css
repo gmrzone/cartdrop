@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-    @apply text-3xl;
+    @apply text-xl;
     @apply font-bold;
 }
 
@@ -62,6 +62,16 @@ span {
     @apply mx-3;
 }
 
+@media (min-width: 400px){
+    h1 {
+        @apply text-2xl;
+    }
+}
+@media (min-width: 550px){
+    h1 {
+        @apply text-3xl;
+    }
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .container {
         width: 723px;
