@@ -20,7 +20,6 @@ type HomeProps = {
 }
 
 const Home: NextPage<HomeProps> = ({ categories }) => {
-    console.log(categories)
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
     return (
