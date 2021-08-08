@@ -1,12 +1,10 @@
 import { NextPage } from "next";
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from "react";
 
 interface CartProps {
     classes: string;
     toggleCartSidebar?: MouseEventHandler<HTMLDivElement>;
 }
-
-
 
 const Cart: NextPage<CartProps> = ({ classes, toggleCartSidebar }) => {
     return (

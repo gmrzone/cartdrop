@@ -16,10 +16,11 @@ const Hero: NextPage<HeroProps> = ({ categories }) => {
                 </h1>
             </div>
             <style>{`
+            @media (min-width:1199px){
                 .main-hero {
                     z-index: -1;
                 }
-            
+            }            
             `}</style>
         </div>
     );

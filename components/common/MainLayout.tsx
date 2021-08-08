@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { ReactNode } from "react";
 import Header from "../shared/Header";
 import SearchBar from "../shared/Header/SearchBar";
-import CartSidebar from '../shared/Header/CartSidebar'
+import CartSidebar from "../shared/Header/CartSidebar";
 type MainLayoutProps = {
     children: ReactNode;
 };
