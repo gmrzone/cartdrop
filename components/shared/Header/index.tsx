@@ -42,11 +42,20 @@ const Header: NextPage = () => {
             else{
                 backdropRef.current.classList.remove('opacity-100')
                 backdropRef.current.classList.add('opacity-0')
-                setTimeout(hideBackdrop, 500)
+                setTimeout(hideBackdrop, 300)
             }
         }
 
     }, [leftNavActive, cartSideBarActive])
+
+    const backdropClick = () => {
+        if (leftNavActive){
+            setLeftNavActive(false)
+        }
+        if (cartSideBarActive){
+            setCartSideBarActive(false)
+        }
+    }
     return (
         <div className="container flex">
             <BurgerIcon toggleLeftNav={toggleLeftNav} />
@@ -58,7 +67,7 @@ const Header: NextPage = () => {
             </div>
             <NavRight toggleCartSidebar={toggleCartSidebar}/>
             <CartSidebar toggleCartSidebar={toggleCartSidebar} cartSidebarActive={cartSideBarActive}/>
-            <Backdrop backdropRef={backdropRef} />
+            <Backdrop backdropRef={backdropRef} onClick={backdropClick}/>
         </div>
     );
 };
