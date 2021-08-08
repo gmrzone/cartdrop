@@ -28,10 +28,6 @@ export const navLeftData: NavLeft[] = [
 
 export const NavLeftData2: NavLeft[] = [
     {
-        name: "Blog",
-        value: "blog",
-    },
-    {
         name: "About",
         value: "about",
     },

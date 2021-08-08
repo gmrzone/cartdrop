@@ -10,7 +10,7 @@ type MainLayoutProps = {
 const MainLayout: NextPage<MainLayoutProps> = ({ children }) => {
     return (
         <>
-            <header className="py-3 bg-white">
+            <header className="py-3 bg-white relative z-50">
                 <Header />
                 <div className="block md:hidden container">
                     <SearchBar />

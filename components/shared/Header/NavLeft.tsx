@@ -19,7 +19,7 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
 
     const renderData2 = NavLeftData2.map((x) => {
         return (
-            <li key={x.value} className="text-main px-6 py-2 font-bold text-lg desktop:text-base desktop:bg-white desktop:hover:bg-gray-200 desktop:px-6     desktop:py-3">
+            <li key={x.value} className="text-main px-6 py-2 font-bold text-lg desktop:text-base desktop:bg-white desktop:hover:bg-gray-200 desktop:px-6 desktop:py-3">
                 {x.name}
             </li>
         );
