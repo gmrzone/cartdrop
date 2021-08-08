@@ -9,6 +9,12 @@ import BurgerIcon from "./BurgerIcon";
 import CartSidebar from "./CartSidebar";
 const Header: NextPage = () => {
     const [leftNavActive, setLeftNavActive] = useState<boolean>(false);
+    const [cartSideBarActive, setCartSideBarActive] = useState<boolean>(false)
+
+    const toggleCartSidebar: MouseEventHandler = (e) => {
+        console.log("Afzal")
+        setCartSideBarActive(!cartSideBarActive)
+    }
     const toggleLeftNav: MouseEventHandler = (e) => {
         setLeftNavActive((s) => !s);
     };
@@ -21,8 +27,8 @@ const Header: NextPage = () => {
             <div className="ml-auto hidden md:block">
                 <SearchBar />
             </div>
-            <NavRight />
-            <CartSidebar />
+            <NavRight toggleCartSidebar={toggleCartSidebar}/>
+            <CartSidebar toggleCartSidebar={toggleCartSidebar} cartSidebarActive={cartSideBarActive}/>
         </div>
     );
 };
