@@ -57,6 +57,7 @@ module.exports = {
             boxShadow: {
                 "drop-down": "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
                 right: "rgba(0,0,0,0.66) 2px 1px 2px 2px",
+                "g-in": "inset 0 -1px 0 0 rgb(1 1 1 / 12%)"
             },
             backgroundImage: (theme) => ({
                 "hero-image":

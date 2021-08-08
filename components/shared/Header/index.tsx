@@ -6,6 +6,7 @@ import NavRight from "./NavRight";
 import SearchBar from "./SearchBar";
 import { useState, MouseEventHandler } from "react";
 import BurgerIcon from "./BurgerIcon";
+import CartSidebar from "./CartSidebar";
 const Header: NextPage = () => {
     const [leftNavActive, setLeftNavActive] = useState<boolean>(false);
     const toggleLeftNav: MouseEventHandler = (e) => {
@@ -21,6 +22,7 @@ const Header: NextPage = () => {
                 <SearchBar />
             </div>
             <NavRight />
+            <CartSidebar />
         </div>
     );
 };

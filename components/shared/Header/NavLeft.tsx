@@ -18,9 +18,9 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
     });
     return (
         <nav
-            className={`left-0 w-80 ml-auto md:ml-0 z-50 shadow-drop-down transition-transform duration-300 ${
+            className={`left-0 w-full max-w-xs ml-auto md:ml-0 z-50 shadow-drop-down transition-transform duration-300 ${
                 leftNavActive ? "translate-x-0" : "-translate-x-full"
-            } bg-white h-screen top-0 absolute desktop:self-center desktop:items-center desktop:translate-x-0 desktop:ml-20 desktop:static desktop:h-auto desktop:w-auto desktop:shadow-none`}>
+            } bg-white h-screen top-0 absolute desktop:self-center desktop:items-center desktop:translate-x-0 desktop:ml-20 desktop:static desktop:max-w-max desktop:h-auto desktop:w-auto desktop:shadow-none`}>
             <div className="bg-secondary p-4 relative flex items-center space-x-4 desktop:hidden">
                 <Image src={DefaultProfile} width={40} height={40} alt="default-profile" className="rounded-full px-4" />
                 <p className="text-white font-bold text-lg">Login & Signup</p>

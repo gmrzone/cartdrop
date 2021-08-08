@@ -1,11 +1,15 @@
 import { NextPage } from "next";
 
-const Cart: NextPage = () => {
+interface CartProps {
+    classes: string
+}
+
+const Cart: NextPage<CartProps> = ({ classes }) => {
     return (
         <div className="">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-7 h-7 mobile-bg:w-8 mobile-bg:h-8"
+                className={classes}
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlnsXlink="http://www.w3.org/1999/xlink">

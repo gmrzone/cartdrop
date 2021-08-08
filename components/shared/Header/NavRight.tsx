@@ -3,13 +3,6 @@ import CartIcon from "./Icons/Cart";
 import SearchBar from "./SearchBar";
 
 const NavBar = () => {
-    // const renderData = navRightData.map(x => {
-    //     return (
-    //         <li key={x.value}>
-    //             {x.Icon}
-    //         </li>
-    //     )
-    // })
 
     return (
         <nav className="flex items-center ml-auto md:ml-0">
@@ -18,7 +11,7 @@ const NavBar = () => {
                     <ProfileIcon />
                 </li>
                 <li>
-                    <CartIcon />
+                    <CartIcon classes="w-7 h-7 mobile-bg:w-8 mobile-bg:h-8" />
                 </li>
             </ul>
         </nav>

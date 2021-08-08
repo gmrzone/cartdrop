@@ -5,6 +5,7 @@ import Hero from "../components/Home/Hero";
 import { BACKEND_URL } from "../utils";
 import axios from "axios";
 import { Category } from "../shared/types";
+import CategoryPanelNew from '../components/Home/CategortPanerNew'
 export const getStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
 
