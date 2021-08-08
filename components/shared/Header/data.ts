@@ -17,6 +17,18 @@ export const navLeftData: NavLeft[] = [
         value: "become-a-seller",
     },
     {
+        name: "Offers",
+        value: "offers",
+    },
+    {
+        name: "Blog",
+        value: "blog",
+    }
+    
+];
+
+export const NavLeftData2: NavLeft[] = [
+    {
         name: "About",
         value: "about",
     },
@@ -24,7 +36,15 @@ export const navLeftData: NavLeft[] = [
         name: "Contact",
         value: "contact",
     },
-];
+    {
+        name: "Blog",
+        value: "blog",
+    },
+    {
+        name: "Terms & Conditions",
+        value: "terms-and-conditions",
+    }
+]
 
 export const navRightData: NavRight[] = [
     {
