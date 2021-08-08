@@ -11,16 +11,26 @@ type LeftNavProps = {
 const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
     const renderData = navLeftData.map((x, i) => {
         return (
-            <li key={x.value} className="text-text px-6 py-3 font-semibold desktop:text-main desktop:font-bold text-lg desktop:text-base desktop:px-0 desktop:py-0">
-                <div><i className={`${x.icon} desktop:hidden mr-4`}/>{x.name}</div>
+            <li
+                key={x.value}
+                className="text-text px-6 py-3 font-semibold desktop:text-main desktop:font-bold text-lg desktop:text-base desktop:px-0 desktop:py-0">
+                <div>
+                    <i className={`${x.icon} desktop:hidden mr-4`} />
+                    {x.name}
+                </div>
             </li>
         );
     });
 
     const renderData2 = NavLeftData2.map((x) => {
         return (
-            <li key={x.value} className="text-text px-6 py-3 font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base desktop:bg-white desktop:hover:bg-gray-200">
-                <div><i className={`${x.icon} desktop:hidden mr-4`}/>{x.name}</div>
+            <li
+                key={x.value}
+                className="text-text px-6 py-3 font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base desktop:bg-white desktop:hover:bg-gray-200">
+                <div>
+                    <i className={`${x.icon} desktop:hidden mr-4`} />
+                    {x.name}
+                </div>
             </li>
         );
     });

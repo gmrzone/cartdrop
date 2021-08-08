@@ -42,12 +42,12 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
         <div
             className="absolute top-0 right-0 h-screen bg-white w-full max-w-sm z-50 hidden shadow-drop-down translate-x-full transition-transform duration-300"
             ref={sidebarRef}>
-            <div className="p-3 flex items-center shadow-g-in">
-                <div>
+            <div className="p-3 flex items-center justify-between shadow-g-in">
+                <div className="pl-2    ">
                     <CartIcon classes="w-8 h-8" />
                 </div>
-                <div className="text-xl text-main font-bold ml-12">My Cart</div>
-                <div className="ml-auto pr-2">
+                <div className="text-xl text-main font-bold">MY CART</div>
+                <div className="pr-2">
                     <i className="fal fa-times text-3xl text-main cursor-pointer" onClick={CloseSlider} />
                 </div>
             </div>

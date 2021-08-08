@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 type NavLeft = {
     name: string;
     value: string;
-    icon: string
+    icon: string;
 };
 type NavRight = {
     Icon: ReactNode;
@@ -21,12 +21,12 @@ export const navLeftData: NavLeft[] = [
     {
         name: "Offers",
         value: "offers",
-        icon: "far fa-tag"
+        icon: "far fa-tag",
     },
     {
         name: "Blog",
         value: "blog",
-        icon: "far fa-blog"
+        icon: "far fa-blog",
     },
 ];
 
@@ -34,18 +34,18 @@ export const NavLeftData2: NavLeft[] = [
     {
         name: "About",
         value: "about",
-        icon: "far fa-info-square"
+        icon: "far fa-info-square",
     },
     {
         name: "Contact",
         value: "contact",
-        icon: "far fa-address-book"
+        icon: "far fa-address-book",
     },
     {
         name: "Terms & Conditions",
         value: "terms-and-conditions",
-        icon: "far fa-copy"
-    }
+        icon: "far fa-copy",
+    },
 ];
 
 export const navRightData: NavRight[] = [
