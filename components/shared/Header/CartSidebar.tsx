@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import CartIcon from "./Icons/Cart";
 import { MouseEventHandler, useEffect, useRef } from 'react'
-
+import MainButton, {} from '../../common/buttons/MainButton'
 type CartSidebarProps = {
     toggleCartSidebar: MouseEventHandler<HTMLDivElement>;
     cartSidebarActive: boolean
@@ -53,14 +53,17 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
                     <i className="fal fa-times text-3xl text-main cursor-pointer" onClick={CloseSlider}/>
                 </div>
             </div>
-            <div className="p-4">
+            <div className="p-4 mt-10 ipad:mt-14">
                 <div className="flex justify-center relative">
                     <CartIcon classes="w-20 h-20" />
-                    <i className="fal fa-times text-3xl absolute top-1/2 text-main cursor-pointer" />
+                    <i className="fal fa-times text-5xl absolute top-1/3 text-main cursor-pointer" />
                 </div>
-                <div className="text-center">
+                <div className="text-center mt-5">
                     <h4 className="text-text font-semibold">Your cart is empty.</h4>
                     <p className="text-lg text-gray-500">Your cart is emply. Please add some items in your cart.</p>
+                </div>
+                <div className="text-center mt-5">
+                    <MainButton text="Continue Shopping" icon="far fa-shopping-cart"/>
                 </div>
             </div>
         </div>

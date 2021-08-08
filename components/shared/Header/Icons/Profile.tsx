@@ -2,7 +2,7 @@ import { NextPage } from "next";
 
 const Profile: NextPage = () => {
     return (
-        <div className="">
+        <div className="cursor-pointer">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-7 h-7 mobile-bg:w-8 mobile-bg:h-8"
