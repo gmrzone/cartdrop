@@ -11,7 +11,7 @@ type LeftNavProps = {
 const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
     const renderData = navLeftData.map((x, i) => {
         return (
-            <li key={x.value} className="text-main px-6 py-2 font-bold text-lg desktop:text-base desktop:px-0 desktop:py-0">
+            <li key={x.value} className="text-text px-6 py-2 font-semibold desktop:text-main desktop:font-bold text-lg desktop:text-base desktop:px-0 desktop:py-0">
                 {x.name}
             </li>
         );
@@ -19,7 +19,7 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
 
     const renderData2 = NavLeftData2.map((x) => {
         return (
-            <li key={x.value} className="text-main px-6 py-2 font-bold text-lg desktop:text-base desktop:bg-white desktop:hover:bg-gray-200 desktop:px-6 desktop:py-3">
+            <li key={x.value} className="text-text px-6 py-2 font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base desktop:bg-white desktop:hover:bg-gray-200 desktop:px-6 desktop:py-3">
                 {x.name}
             </li>
         );
@@ -35,14 +35,14 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
                     <p className="text-white font-bold text-lg">Login & Signup</p>
                     <i className="fas fa-times absolute right-5 text-lg text-white cursor-pointer" onClick={toggleLeftNav} />
                 </div>
-                <ul className="flex flex-col desktop:space-x-7 desktop:flex-row desktop:p-0 mt-1 desktop:mt-0">
+                <ul className="flex flex-col desktop:space-x-7 desktop-big:space-x-11 desktop:flex-row desktop:p-0 mt-1 desktop:mt-0">
                     {renderData}
                     <li className="text-main font-bold text-md ipad:px-0 ipad:py-0 group">
                         <div className="hidden desktop:block">
                             More
                             <i className="fas fa-caret-down text-xs ml-1" />
                         </div>
-                        <ul className="static flex flex-col desktop:hidden desktop:group-hover:block desktop:absolute desktop:right-0 desktop:z-50 desktop:top-6 desktop:bg-white desktop:rounded-sm desktop:shadow-drop-down">
+                        <ul className="static flex flex-col desktop:hidden desktop:group-hover:block desktop:absolute desktop:right-0 desktop:z-50 desktop:top-6 desktop:bg-white desktop:rounded-md desktop:shadow-drop-down overflow-hidden">
                             {renderData2}
                         </ul>
                     </li>
