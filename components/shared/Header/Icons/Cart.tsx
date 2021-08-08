@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 interface CartProps {
-    classes: string
+    classes: string;
 }
 
 const Cart: NextPage<CartProps> = ({ classes }) => {

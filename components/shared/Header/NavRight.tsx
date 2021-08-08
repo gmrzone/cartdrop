@@ -3,7 +3,6 @@ import CartIcon from "./Icons/Cart";
 import SearchBar from "./SearchBar";
 
 const NavBar = () => {
-
     return (
         <nav className="flex items-center ml-auto md:ml-0">
             <ul className="flex space-x-4 mobile-bg:space-x-8">
