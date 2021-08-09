@@ -35,10 +35,14 @@ const Header: NextPage = () => {
     useEffect(() => {
         if (backdropRef.current) {
             if (leftNavActive || cartSideBarActive) {
+                document.body.classList.remove("overflow-auto");
                 backdropRef.current.classList.remove("hidden");
+                document.body.classList.add("overflow-hidden");
                 setTimeout(showBackDrop, 20);
             } else {
+                document.body.classList.remove("overflow-hidden");
                 backdropRef.current.classList.remove("opacity-100");
+                document.body.classList.add("overflow-auto");
                 backdropRef.current.classList.add("opacity-0");
                 setTimeout(hideBackdrop, 300);
             }

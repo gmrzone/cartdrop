@@ -22,15 +22,11 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
     useEffect(() => {
         if (sidebarRef.current) {
             if (cartSidebarActive) {
-                document.body.classList.add("overflow-hidden");
-                document.body.classList.remove("overflow-auto");
                 sidebarRef.current.classList.remove("hidden");
                 setTimeout(showSlider, 25);
             } else {
                 
-                document.body.classList.remove("overflow-hidden");
                 sidebarRef.current.classList.remove("translate-x-0");
-                document.body.classList.add("overflow-auto");
                 sidebarRef.current.classList.add("translate-x-full");
                 setTimeout(hideSlider, 300);
             }
@@ -43,7 +39,7 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
     console.log(cartSidebarActive);
     return (
         <div
-            className="absolute top-0 right-0 h-screen bg-white w-full max-w-sm z-50 hidden shadow-drop-down translate-x-full transition-transform duration-300"
+            className="fixed top-0 right-0 h-screen bg-white w-full max-w-sm z-50 hidden shadow-drop-down translate-x-full transition-transform duration-300"
             ref={sidebarRef}>
             <div className="p-3 flex items-center justify-between shadow-g-in">
                 <div className="pl-2 ">
