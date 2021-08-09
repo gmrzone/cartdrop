@@ -23,11 +23,14 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
         if (sidebarRef.current) {
             if (cartSidebarActive) {
                 document.body.classList.add("overflow-hidden");
+                document.body.classList.remove("overflow-auto");
                 sidebarRef.current.classList.remove("hidden");
                 setTimeout(showSlider, 25);
             } else {
-                document.body.classList.add("overflow-auto");
+                
+                document.body.classList.remove("overflow-hidden");
                 sidebarRef.current.classList.remove("translate-x-0");
+                document.body.classList.add("overflow-auto");
                 sidebarRef.current.classList.add("translate-x-full");
                 setTimeout(hideSlider, 300);
             }
