@@ -7,8 +7,8 @@ interface SectionProps {
 
 const Section: NextPage<SectionProps> = ({ title, children }) => {
     return (
-        <div className="container my-10">
-            <h2 className="text-text mb-6">{title}</h2>
+        <div className="container my-8 ipad:my-10 desktop:my-12">
+            <h2 className="text-text mb-4 ipad:mb-6 desktop:mb-8">{title}</h2>
             {children}
         </div>
     );

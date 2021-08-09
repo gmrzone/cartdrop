@@ -11,18 +11,18 @@ const TodaysDeal: NextPage = () => {
                         src={todaysDeal.image}
                         alt="todays_deal"
                         placeholder="blur"
-                        width={800}
-                        height={506}
+                        width={750}
+                        height={474}
                         layout="responsive"
-                        sizes="(min-width: 1199px) 33vw, (min-width: 992px) 33vw"
+                        sizes="(min-width: 1199px) 40vw, (min-width: 992px) 50vw, 90vw"
                     />
                 </div>
                 <div>
-                    <p className="text-text text-xl sm:text-2xl desktop:text-3xl">{todaysDeal.name}</p>
-                    <div>
-                        <span>&#8377;{todaysDeal.price}</span>
-                        <span>&#8377;{todaysDeal.mrp}</span>
-                        <span>&#8377;{todaysDeal.off}</span>
+                    <p className="text-text text-xl font-semibold sm:text-2xl desktop:text-3xl desktop-big:text-4xl">{todaysDeal.name}</p>
+                    <div className="space-x-3 font-roboto mt-4">
+                        <span className="text-3xl">&#8377;{todaysDeal.price}</span>
+                        <span className="text-xl line-through">&#8377;{todaysDeal.mrp}</span>
+                        <span className="text-green-600 text-xl">&#8377;{todaysDeal.off}</span>
                     </div>
                 </div>
             </div>

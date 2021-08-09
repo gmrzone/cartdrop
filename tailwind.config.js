@@ -41,6 +41,7 @@ module.exports = {
                 ],
             },
             fontSize: {
+                "xll": ["1.5rem", { lineHeight: "1.75rem" }],
                 "4.8xl": ["2.75rem", "1.75rem"],
                 "4.6xl": ["2.50rem", "2rem"],
                 "4.3xl": ["2.20rem", "2.4rem"],

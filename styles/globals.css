@@ -17,12 +17,12 @@ body {
 }
 
 h1 {
-    @apply text-xl;
+    @apply text-xll;
     @apply font-bold;
 }
 
 h2 {
-    @apply text-4xl;
+    @apply text-xl;
     @apply font-bold;
 }
 
@@ -65,9 +65,15 @@ span {
     h1 {
         @apply text-2xl;
     }
+    h2 {
+        @apply text-2xl;
+    }
 }
 @media (min-width: 550px) {
     h1 {
+        @apply text-3xl;
+    }
+    h2 {
         @apply text-3xl;
     }
 }
@@ -89,6 +95,10 @@ span {
     h1 {
         @apply text-4.3xl;
     }
+    h2 {
+        @apply text-4xl;
+    }
+    
 }
 
 @media only screen and (min-width: 1200px) {
@@ -100,6 +110,10 @@ span {
     h1 {
         @apply text-4.6xl;
     }
+    h2 {
+        @apply text-4.3xl;
+    }
+
 }
 
 @media only screen and (min-width: 1400px) {
@@ -111,6 +125,7 @@ span {
     h1 {
         @apply text-4.8xl;
     }
+    
 }
 
 @media only screen and (min-width: 1600px) {
