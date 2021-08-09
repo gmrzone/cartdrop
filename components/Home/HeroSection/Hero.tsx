@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { Category } from "../../shared/types";
+import { Category } from "../../../shared/types";
 import CategoryPanel from "./CategortPanerNew";
 
 type HeroProps = {

@@ -1,11 +1,11 @@
 import MainLayout from "../components/common/MainLayout";
 import MetaHead from "../components/common/Head";
 import { NextPage } from "next";
-import Hero from "../components/Home/Hero";
+import Hero from "../components/Home/HeroSection/Hero";
 import { BACKEND_URL } from "../utils";
 import axios from "axios";
 import { Category } from "../shared/types";
-import CategoryPanelNew from "../components/Home/CategortPanerNew";
+import TodaysDeal from "../components/Home/TodeysDeal";
 export const getStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
 
@@ -33,6 +33,7 @@ const Home: NextPage<HomeProps> = ({ categories }) => {
             />
             <MainLayout>
                 <Hero categories={categories} />
+                <TodaysDeal />
             </MainLayout>
         </>
     );

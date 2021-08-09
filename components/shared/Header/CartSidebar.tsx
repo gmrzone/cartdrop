@@ -43,7 +43,7 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
             className="absolute top-0 right-0 h-screen bg-white w-full max-w-sm z-50 hidden shadow-drop-down translate-x-full transition-transform duration-300"
             ref={sidebarRef}>
             <div className="p-3 flex items-center justify-between shadow-g-in">
-                <div className="pl-2    ">
+                <div className="pl-2 ">
                     <CartIcon classes="w-8 h-8" />
                 </div>
                 <div className="text-xl text-main font-bold">MY CART</div>

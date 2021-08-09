@@ -1,13 +1,13 @@
 import { NextPage } from "next";
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from "react";
 
 interface ProfileProps {
-    setProfileDropdown: Dispatch<SetStateAction<boolean>>
+    setProfileDropdown: Dispatch<SetStateAction<boolean>>;
 }
 
 const Profile: NextPage<ProfileProps> = ({ setProfileDropdown }) => {
     return (
-        <div className="cursor-pointer" onClick={() => setProfileDropdown(s => !s)}>
+        <div className="cursor-pointer" onClick={() => setProfileDropdown((s) => !s)}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-7 h-7 mobile-bg:w-8 mobile-bg:h-8"

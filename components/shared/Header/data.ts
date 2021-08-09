@@ -17,7 +17,7 @@ type ProfileOptions = {
     name: string;
     value: string;
     icon: string;
-}
+};
 export const navLeftData: NavLeft[] = [
     {
         name: "Become a seller",
@@ -69,16 +69,15 @@ export const navRightData: NavRight[] = [
     },
 ];
 
-
 export const ProfileLogoutOptions: ProfileOptions[] = [
     {
         name: "Login",
         value: "login",
-        icon: "fa fa-sign-in"
+        icon: "fa fa-sign-in",
     },
     {
         name: "Signup",
         value: "signup",
         icon: "far fa-user-plus",
-    }
-]
+    },
+];
