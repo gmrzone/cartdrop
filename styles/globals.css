@@ -98,7 +98,6 @@ span {
     h2 {
         @apply text-4xl;
     }
-    
 }
 
 @media only screen and (min-width: 1200px) {
@@ -113,7 +112,6 @@ span {
     h2 {
         @apply text-4.3xl;
     }
-
 }
 
 @media only screen and (min-width: 1400px) {
@@ -125,7 +123,6 @@ span {
     h1 {
         @apply text-4.8xl;
     }
-    
 }
 
 @media only screen and (min-width: 1600px) {

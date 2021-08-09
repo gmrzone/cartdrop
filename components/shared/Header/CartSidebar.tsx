@@ -25,7 +25,6 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
                 sidebarRef.current.classList.remove("hidden");
                 setTimeout(showSlider, 25);
             } else {
-                
                 sidebarRef.current.classList.remove("translate-x-0");
                 sidebarRef.current.classList.add("translate-x-full");
                 setTimeout(hideSlider, 300);

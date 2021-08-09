@@ -2,6 +2,8 @@ import { NextPage } from "next";
 import { todaysDeal } from "./data";
 import Image from "next/image";
 import Section from "../../common/Section";
+import OfferCounter from "./OfferCounter";
+import ExtraButton from "../../common/buttons/ExtraButton";
 const TodaysDeal: NextPage = () => {
     return (
         <Section title="TODAY'S DEAL">
@@ -23,6 +25,13 @@ const TodaysDeal: NextPage = () => {
                         <span className="text-3xl">&#8377;{todaysDeal.price}</span>
                         <span className="text-xl line-through">&#8377;{todaysDeal.mrp}</span>
                         <span className="text-green-600 text-xl">&#8377;{todaysDeal.off}</span>
+                    </div>
+                    <div className="mt-4">
+                        <p className="text-red-500 text-sm font-semibold">Offer Ends in</p>
+                        <OfferCounter offerEndDate={todaysDeal.offer_ends} />
+                    </div>
+                    <div className="mt-4">
+                        <ExtraButton text="Buy now" />
                     </div>
                 </div>
             </div>

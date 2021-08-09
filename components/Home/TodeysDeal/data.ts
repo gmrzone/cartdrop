@@ -14,6 +14,6 @@ export const todaysDeal: TodaysDealT = {
     mrp: "55,999",
     off: "28% off",
     price: "45,999",
-    offer_ends: new Date(2022, 0, 1),
+    offer_ends: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1),
     image: TVImage,
 };
