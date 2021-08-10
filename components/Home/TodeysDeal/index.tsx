@@ -19,19 +19,21 @@ const TodaysDeal: NextPage = () => {
                         sizes="(min-width: 1199px) 40vw, (min-width: 992px) 50vw, 90vw"
                     />
                 </div>
-                <div>
+                <div className="">
                     <p className="text-text text-xl font-semibold sm:text-2xl desktop:text-3xl desktop-big:text-4xl">{todaysDeal.name}</p>
-                    <div className="space-x-3 font-roboto mt-4">
-                        <span className="text-3xl">&#8377;{todaysDeal.price}</span>
-                        <span className="text-xl line-through">&#8377;{todaysDeal.mrp}</span>
-                        <span className="text-green-600 text-xl">&#8377;{todaysDeal.off}</span>
+                    <div className="space-x-3 font-roboto mt-2 ipad:mt-4">
+                        <span className="text-xl desktop:2xl: desktop-big:text-3xl">&#8377;{todaysDeal.price}</span>
+                        <span className="text-md desktop-big:text-xl line-through">&#8377;{todaysDeal.mrp}</span>
+                        <span className="text-green-600 text-md desktop-big:text-xl">&#8377;{todaysDeal.off}</span>
                     </div>
-                    <div className="mt-4">
-                        <p className="text-red-500 text-sm font-semibold">Offer Ends in</p>
-                        <OfferCounter offerEndDate={todaysDeal.offer_ends} />
-                    </div>
-                    <div className="mt-4">
-                        <ExtraButton text="Buy now" />
+                    <p className="text-red-500 text-xs desktop:text-sm font-semibold mt-2 ipad:mt-4">Offer Ends in</p>
+                    <div className="flex flex-row items-center space-x-3 ipad:space-x-0 ipad:items-start ipad:flex-col">
+                        <div className="">
+                            <OfferCounter offerEndDate={todaysDeal.offer_ends} />
+                        </div>
+                        <div className="ipad:mt-10">
+                            <ExtraButton text="Buy now" />
+                        </div>
                     </div>
                 </div>
             </div>
