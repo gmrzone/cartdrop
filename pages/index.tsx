@@ -4,23 +4,28 @@ import { NextPage } from "next";
 import Hero from "../components/Home/HeroSection/Hero";
 import { BACKEND_URL } from "../utils";
 import axios from "axios";
-import { Category } from "../shared/types";
+import { CategoryType } from "../shared/types";
 import TodaysDeal from "../components/Home/TodeysDeal";
+import FeaturedProducts from "../components/Home/FeaturedProducts";
+
 export const getStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
+    const featured = await axios.get(BACKEND_URL + "/products/featured/");
 
     return {
         props: {
             categories: categories.data,
+            featuredProducts: featured.data
         },
     };
 };
 
 type HomeProps = {
-    categories: Category[];
+    categories: CategoryType[];
+    featured: ""
 };
 
-const Home: NextPage<HomeProps> = ({ categories }) => {
+const Home: NextPage<HomeProps> = ({ categories, featured }) => {
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
     return (
@@ -34,6 +39,7 @@ const Home: NextPage<HomeProps> = ({ categories }) => {
             <MainLayout>
                 <Hero categories={categories} />
                 <TodaysDeal />
+                <FeaturedProducts featured={featured}/>
             </MainLayout>
         </>
     );

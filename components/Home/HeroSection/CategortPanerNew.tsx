@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { Category } from "../../../shared/types";
+import { CategoryType } from "../../../shared/types";
 import Image from "next/image";
 import style from "../../../styles/category.module.scss";
 
 type CategoryPanelProps = {
-    categories: Category[];
+    categories: CategoryType[];
 };
 const CategoryPanel: NextPage<CategoryPanelProps> = ({ categories }) => {
     const renderCategory = categories.map((x) => {
