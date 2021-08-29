@@ -3,16 +3,17 @@ import { FeaturedProductType } from "../../../shared/types";
 import Image from "next/image";
 interface IProps {
     item: FeaturedProductType;
+    index: number
 }
-const ProductItem: NextPage<IProps> = ({ item }) => {
+const ProductItem: NextPage<IProps> = ({ item, index }) => {
     return (
-        <div className="border border-solid border-gray-200 rounded-md cursor-pointer relative overflow-hidden" style={{ width: "300px" }}>
-            <div className="absolute -right-10 top-8 z-10 rotate-45 text-xs font-black bg-main text-white px-10 py-1">
+        <div className={`item-main inline-block ipad:block border border-solid border-gray-200 rounded-md cursor-pointer relative overflow-hidden ${index > 3 && "hidden ipad:block"}`}>
+            <div className="absolute -right-11 top-4 z-10 rotate-45 text-very-small ipad:text-xs font-black bg-main text-white px-10 py-1">
                 {item.discount}% OFF
             </div>
             <div className="p-2">
-                <div className="w-full p-2">
-                    <div className="relative w-64 h-48">
+                <div className="ipad:w-full p-2">
+                    <div className="relative w-24 h-24 ipad:w-64 ipad:h-48 mx-auto">
                         <Image
                             src={item.images.filter((x) => x.primary === true)[0]?.image}
                             alt={item.pid}
@@ -21,12 +22,30 @@ const ProductItem: NextPage<IProps> = ({ item }) => {
                         />
                     </div>
                 </div>
-                <div className="text-center h-12">
-                    <p className="min-h-full">
+                <div className="text-center h-12 flex flex-col justify-center items-center">
+                    <p className="text-xs sm:text-sm desktop:text-lg">
                         {item.product.name === item.product.name.slice(0, 45) ? item.product.name : item.product.name.slice(0, 45) + "..."}
                     </p>
                 </div>
+                <div className="text-center">
+                    <p className="text-secondary font-semibold text-xs sm:text-sm desktop:text-lg">
+                    <span className="font-roboto text-secondary">&#x20b9; </span>{parseInt(item.price).toLocaleString('en-IN')}
+                    </p>
+                </div>
             </div>
+            <style>{`
+            
+                .item-main {
+                    width: 50%
+                }
+
+                @media (min-width: 992px){
+                    .item-main {
+                        width: 300px
+                    }
+    
+                }
+            `}</style>
         </div>
     );
 };

@@ -6,12 +6,25 @@ interface IProps {
     featuredProducts: FeaturedProductType[];
 }
 const ProductList: NextPage<IProps> = ({ featuredProducts }) => {
-    const renderProductList = featuredProducts?.map((x) => {
-        return <ProductItem key={x.uuid} item={x} />;
+    const renderProductList = featuredProducts?.map((x, i) => {
+        return <ProductItem key={x.uuid} item={x} index={i}/>;
     });
     return (
-        <div className="flex flex-shrink-0 space-x-4" style={{ width: "1560px" }}>
+        <div className="ipad:flex ipad:flex-nowrap ipad:space-x-4 inner-container">
             {renderProductList}
+            <style>{`
+            
+                .inner-container {
+                    width: 100%;
+                }
+
+                @media (min-width: 992px){
+                    .inner-container {
+                        width: 1560px;
+                    }
+                }
+            
+            `}</style>
         </div>
     );
 };
