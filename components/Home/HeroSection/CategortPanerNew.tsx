@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { Category } from "../../../shared/types";
 import Image from "next/image";
 import style from "../../../styles/category.module.scss";
+
 type CategoryPanelProps = {
     categories: Category[];
 };
@@ -10,12 +11,14 @@ const CategoryPanel: NextPage<CategoryPanelProps> = ({ categories }) => {
         return (
             <li key={x.uuid} className={style["category-item"]}>
                 <div className={style["image-container"]}>
-                    <Image src={x.category_images[0]?.image} layout="fill" alt="category_image" objectFit="cover" />
+                    {/* <Image src={x.category_images[0]?.image} layout="fill" alt="category_image" objectFit="cover" /> */}
+                    <img src={x.category_images[0]?.image} alt="testing"/>
                 </div>
                 <div className={style["category-text"]}>{x.name}</div>
             </li>
         );
     });
+    console.log(categories)
     return (
         <div className={style["outer-container"]}>
             <div className={style["inner-container"]}>
