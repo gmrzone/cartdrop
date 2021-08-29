@@ -11,7 +11,7 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
     return (
         <Section title="FEATURED">
             <div className="">
-                <div>
+                <div className="overflow-x-auto">
                     <ProductList featuredProducts={featuredProducts}/>
                 </div>
             </div>
