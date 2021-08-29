@@ -1,11 +1,20 @@
 import {NextPage} from 'next'
 import Section from '../../common/Section'
-import ProductContainer from './ProductContainer'
+import ProductList from './ProductList'
+import { FeaturedProductType } from '../../../shared/types'
 
-const FeaturedProducts: NextPage = () => {
+interface IProps {
+    featuredProducts: FeaturedProductType[]
+}
+
+const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
     return (
         <Section title="FEATURED">
-            <ProductContainer />
+            <div className="">
+                <div>
+                    <ProductList featuredProducts={featuredProducts}/>
+                </div>
+            </div>
         </Section>
     )
 }

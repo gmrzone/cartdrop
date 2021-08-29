@@ -1,9 +1,9 @@
 import { NextPage } from "next";
-import { Category } from "../../../shared/types";
+import { CategoryType } from "../../../shared/types";
 import CategoryPanel from "./CategortPanerNew";
 
 type HeroProps = {
-    categories: Category[];
+    categories: CategoryType[];
 };
 const Hero: NextPage<HeroProps> = ({ categories }) => {
     return (
