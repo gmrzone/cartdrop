@@ -6,7 +6,7 @@ import OfferCounter from "./OfferCounter";
 import ExtraButton from "../../common/buttons/ExtraButton";
 const TodaysDeal: NextPage = () => {
     return (
-        <Section title="TODAY'S DEAL">
+        <Section title="TODAY'S DEAL" first={true}>
             <div className="flex flex-col space-y-0 sm:space-y-4 ipad:flex-row ipad:space-y-0 ipad:space-x-6">
                 <div className="w-full h-full">
                     <Image

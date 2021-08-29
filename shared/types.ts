@@ -12,51 +12,49 @@ export type CategoryType = {
 export type ProductColorType = {
     name: string;
     slug: string;
-}
+};
 
 export type MobileVariantType = {
     name: string;
-}
+};
 export type LaptopVariantType = {
     name: string;
-}
+};
 export type TVVariantType = {
     display_size: string;
-}
+};
 export type ACCapacityVariantType = {
     capacity: string;
-}
+};
 
 export type ACStarVariantType = {
     star: string;
-}
+};
 
 export type BookVariantType = {
-    name: string
-}
+    name: string;
+};
 
 export type FashionSizeVariantType = {
     name: string;
     code: string;
-}
+};
 export type SubcategoryBaseType = {
     name: string;
     slug: string;
-}
+};
 export type ProductBaseType = {
     uuid: string;
     subcategory: SubcategoryBaseType;
     name: string;
     slug: string;
     overall_rating: string;
-}
-
+};
 
 export type ProductVariationImageType = {
     image: string;
     primary: boolean;
-
-}
+};
 export type FeaturedProductType = {
     uuid: string;
     pid: string;
@@ -75,6 +73,5 @@ export type FeaturedProductType = {
     book_variation: BookVariantType | null;
     juices_quantity: string;
     size: FashionSizeVariantType | null;
-    images: ProductVariationImageType[]
-    
-}
+    images: ProductVariationImageType[];
+};

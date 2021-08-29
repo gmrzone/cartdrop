@@ -13,7 +13,7 @@ class MyDocument extends Document {
                         key="fontawesome"
                     />
                 </Head>
-                <body>
+                <body className="bg-gray-100">
                     <div id="modal"></div>
                     <Main />
                     <NextScript />

@@ -3,13 +3,21 @@ import { NextPage } from "next";
 interface SectionProps {
     title: string;
     children: ReactNode;
+    first?: boolean;
 }
 
-const Section: NextPage<SectionProps> = ({ title, children }) => {
+const Section: NextPage<SectionProps> = ({ title, children, first = false }) => {
     return (
-        <div className="container my-8 ipad:my-10 desktop:my-12">
-            <h2 className="text-text mb-4 ipad:mb-6 desktop:mb-8">{title}</h2>
-            {children}
+        <div
+            className={`bg-white ${
+                first
+                    ? "mb-5 ipad:mb-7 desktop:mb-8 pt-4 pb-2 ipad:pt-6 ipad:pb-3 desktop:pt-8 desktop:pb-4"
+                    : "my-5 ipad:my-7 desktop:my-8 py-2 ipad:py-3 desktop:py-4"
+            }`}>
+            <div className="container">
+                <h2 className="text-text mb-4 ipad:mb-6 desktop:mb-8">{title}</h2>
+                {children}
+            </div>
         </div>
     );
 };

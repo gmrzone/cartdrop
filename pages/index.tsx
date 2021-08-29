@@ -15,18 +15,18 @@ export const getStaticProps = async () => {
     return {
         props: {
             categories: categories.data,
-            featuredProducts: featuredProducts.data
+            featuredProducts: featuredProducts.data,
         },
     };
 };
 
 type HomeProps = {
     categories: CategoryType[];
-    featuredProducts: FeaturedProductType[]
+    featuredProducts: FeaturedProductType[];
 };
 
 const Home: NextPage<HomeProps> = ({ categories, featuredProducts }) => {
-    console.log(featuredProducts)
+    console.log(featuredProducts);
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
     return (
@@ -40,7 +40,7 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts }) => {
             <MainLayout>
                 <Hero categories={categories} />
                 <TodaysDeal />
-                <FeaturedProducts featuredProducts={featuredProducts}/>
+                <FeaturedProducts featuredProducts={featuredProducts} />
             </MainLayout>
         </>
     );

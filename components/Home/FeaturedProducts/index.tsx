@@ -1,10 +1,10 @@
-import {NextPage} from 'next'
-import Section from '../../common/Section'
-import ProductList from './ProductList'
-import { FeaturedProductType } from '../../../shared/types'
+import { NextPage } from "next";
+import Section from "../../common/Section";
+import ProductList from "./ProductList";
+import { FeaturedProductType } from "../../../shared/types";
 
 interface IProps {
-    featuredProducts: FeaturedProductType[]
+    featuredProducts: FeaturedProductType[];
 }
 
 const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
@@ -12,11 +12,11 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
         <Section title="FEATURED">
             <div className="">
                 <div className="overflow-x-auto">
-                    <ProductList featuredProducts={featuredProducts}/>
+                    <ProductList featuredProducts={featuredProducts} />
                 </div>
             </div>
         </Section>
-    )
-}
+    );
+};
 
-export default FeaturedProducts
+export default FeaturedProducts;

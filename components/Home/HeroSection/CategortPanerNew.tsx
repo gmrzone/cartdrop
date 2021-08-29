@@ -11,7 +11,7 @@ const CategoryPanel: NextPage<CategoryPanelProps> = ({ categories }) => {
         return (
             <li key={x.uuid} className={style["category-item"]}>
                 <div className={style["image-container"]}>
-                    <Image src={x.category_images[0]?.image} alt={x.slug} layout="fill" objectFit="cover"/>
+                    <Image src={x.category_images[0]?.image} alt={x.slug} layout="fill" objectFit="cover" />
                     {/* <img src={x.category_images[0]?.image} alt="testing"/> */}
                 </div>
                 <div className={style["category-text"]}>{x.name}</div>
