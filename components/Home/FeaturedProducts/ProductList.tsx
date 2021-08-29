@@ -11,7 +11,7 @@ const ProductList: NextPage<IProps> = ({ featuredProducts }) => {
         return <ProductItem key={x.uuid} item={x}/>
     })
     return (
-        <div>
+        <div className="flex space-x-4">
             {renderProductList}
         </div>
     )
