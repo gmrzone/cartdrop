@@ -29,6 +29,7 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                     sliderItemRef.current?.clientWidth * (featuredProducts.length - 4) + 15);
                 }
                 if (currentSliderPosition.current > stopPosition) {
+                    console.log(currentSliderPosition.current, stopPosition + (sliderItemRef.current.clientWidth - 30))
                     sliderLeftControlRef.current.classList.remove("bg-gray-400");
                     sliderLeftControlRef.current.classList.remove("text-gray-200");
                     sliderLeftControlRef.current.classList.remove("cursor-not-allowed");
@@ -39,7 +40,9 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
 
                     currentSliderPosition.current = currentSliderPosition.current - sliderItemRef.current.clientWidth - 15;
                     slideableContainerRef.current.style.transform = `translate3d(${currentSliderPosition.current}px, 0px, 0px)`;
-                } else {
+                } 
+                
+                if(currentSliderPosition.current <= stopPosition) {
                     sliderRightControlRef.current.classList.remove("bg-secondary");
                     sliderRightControlRef.current.classList.remove("hover:bg-main");
                     sliderRightControlRef.current.classList.remove("text-white");
@@ -65,7 +68,9 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
 
                     currentSliderPosition.current = currentSliderPosition.current + sliderItemRef.current.clientWidth + 15;
                     slideableContainerRef.current.style.transform = `translate3d(${currentSliderPosition.current}px, 0px, 0px)`;
-                } else {
+                } 
+                
+                if (currentSliderPosition.current >= (0 - sliderItemRef.current.clientWidth + 15)) {
                     sliderLeftControlRef.current.classList.remove("bg-secondary");
                     sliderLeftControlRef.current.classList.remove("hover:bg-main");
                     sliderLeftControlRef.current.classList.remove("text-white");
