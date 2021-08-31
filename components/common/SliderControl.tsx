@@ -8,13 +8,13 @@ const SliderControl: NextPage<SliderControlProps> = ({ goLeft, goRight }) => {
     return (
         <div className="flex space-x-2">
             <div
-                className="bg-main px-3 py-1 text-white rounded-md text-lg cursor-pointer hover:bg-secondary transition-colors duration-100"
-                onClick={goLeft}>
+                className="bg-secondary px-3 py-1 text-white rounded-md text-lg cursor-pointer hover:bg-main transition-colors duration-100"
+                onClick={goRight}>
                 <i className="fas fa-chevron-left" />
             </div>
             <div
-                className="bg-main px-3 py-1 text-white rounded-md text-lg cursor-pointer hover:bg-secondary transition-colors duration-100"
-                onClick={goRight}>
+                className="bg-secondary px-3 py-1 text-white rounded-md text-lg cursor-pointer hover:bg-main transition-colors duration-100"
+                onClick={goLeft}>
                 <i className="fas fa-chevron-right" />
             </div>
         </div>
