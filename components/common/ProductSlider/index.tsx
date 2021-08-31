@@ -3,7 +3,6 @@ import { FeaturedProductType } from "../../../shared/types";
 import ProductItem from "./ProductItem";
 import { MutableRefObject } from "react";
 
-
 interface IProps {
     featuredProducts: FeaturedProductType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
