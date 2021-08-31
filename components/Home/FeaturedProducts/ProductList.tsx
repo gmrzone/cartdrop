@@ -10,7 +10,7 @@ const ProductList: NextPage<IProps> = ({ featuredProducts }) => {
         return <ProductItem key={x.uuid} item={x} index={i} />;
     });
     return (
-        <div className="flex justify-center flex-wrap gap-1 sm:gap-2 md:gap-3 ipad:flex-nowrap ipad:space-x-4 inner-container">
+        <div className="flex justify-center flex-wrap gap-1 sm:gap-2 md:gap-3 ipad:flex-nowrap ipad:gap-0 ipad:space-x-4 inner-container transform-gpu duration-500">
             {renderProductList}
             <style>{`
             

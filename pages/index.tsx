@@ -40,6 +40,7 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts }) => {
                 <Hero categories={categories} />
                 <TodaysDeal />
                 <FeaturedProducts featuredProducts={featuredProducts} />
+                <TodaysDeal />
             </MainLayout>
         </>
     );

@@ -22,7 +22,22 @@
 }
 @media (min-width: 992px) {
     :root {
-        --product-item-width: 300px;
+        --product-item-width: 312px;
+    }
+}
+@media (min-width: 1200px) {
+    :root {
+        --product-item-width: 378px;
+    }
+}
+@media (min-width: 1400px) {
+    :root {
+        --product-item-width: 410px;
+    }
+}
+@media (min-width: 1600px) {
+    :root {
+        --product-item-width: 332px;
     }
 }
 * {
