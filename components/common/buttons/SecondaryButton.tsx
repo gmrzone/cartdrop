@@ -15,7 +15,7 @@ const SecondaryButton: NextPage<SecondaryProps> = ({ text, icon, loading, disabl
             }`}>
             {icon && <i className={`${icon} mr-2 text-main`} />}
             {loading && !disable && <i className="fad fa-spinner-third mr-2 text-main animate-spin-button" />}
-            <span className={`${disable ? "text-gray-700" : "text-main"}`}>{text}</span>
+            <span className={`${disable ? "text-gray-700" : "text-main"} whitespace-nowrap`}>{text}</span>
         </button>
     );
 };

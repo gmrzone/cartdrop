@@ -1,16 +1,15 @@
 import { ReactNode } from "react";
 import { NextPage } from "next";
 import SmallButtonLink from "../common/buttons/SmallButtonLink";
-import SliderControl from '../common/SliderControl'
+import SliderControl from "../common/SliderControl";
 
 interface SectionProps {
     title: string;
     children: ReactNode;
-    viewAll?: string | null;
     first?: boolean;
 }
 
-const Section: NextPage<SectionProps> = ({ title, children, viewAll = null, first = false }) => {
+const Section: NextPage<SectionProps> = ({ title, children, first = false }) => {
     return (
         <div
             className={`bg-white ${

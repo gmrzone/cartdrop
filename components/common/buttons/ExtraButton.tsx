@@ -15,7 +15,7 @@ const ExtraButton: NextPage<ExtraProps> = ({ text, icon, loading, disable }) => 
             }`}>
             {icon && <i className={`${icon} mr-2 text-white`} />}
             {loading && !disable && <i className="fad fa-spinner-third mr-2 text-white animate-spin-button" />}
-            <span className="text-white text-sm ipad:text-base desktop:text-lg">{text}</span>
+            <span className="text-white text-sm ipad:text-base desktop:text-lg whitespace-nowrap">{text}</span>
         </button>
     );
 };

@@ -35,7 +35,7 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
     const CloseSlider: MouseEventHandler<HTMLDivElement> = (e) => {
         toggleCartSidebar(e);
     };
-    console.log(cartSidebarActive);
+
     return (
         <div
             className="fixed top-0 right-0 h-screen bg-white w-full max-w-sm z-50 hidden shadow-drop-down translate-x-full transition-transform duration-300"

@@ -1,12 +1,13 @@
 import { NextPage } from "next";
 import { FeaturedProductType } from "../../../shared/types";
 import Image from "next/image";
+import { MutableRefObject } from "react";
 interface IProps {
     item: FeaturedProductType;
     index: number;
+    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
 }
-const ProductItem: NextPage<IProps> = ({ item, index }) => {
-    console.log(item);
+const ProductItem: NextPage<IProps> = ({ item, index, sliderItemRef }) => {
     const generateName =
         item.product.name +
         " (" +
@@ -26,7 +27,8 @@ const ProductItem: NextPage<IProps> = ({ item, index }) => {
         <div
             className={`item-main block border border-solid border-gray-200 rounded-md cursor-pointer relative overflow-hidden ${
                 index > 3 && "hidden ipad:block"
-            }`}>
+            }`}
+            ref={sliderItemRef}>
             <div className="absolute -right-11 top-4 z-10 rotate-45 text-very-small ipad:text-xs font-black bg-main text-white px-10 py-1">
                 {item.discount}% OFF
             </div>
