@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Product item width for slider */
+:root {
+    --product-item-width: calc(50% - 0.25rem);
+}
+
+@media (min-width: 640px) {
+    :root {
+        --product-item-width: calc(50% - 0.5rem);
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --product-item-width: calc(50% - 0.75rem);
+    }
+}
+@media (min-width: 992px) {
+    :root {
+        --product-item-width: 300px;
+    }
+}
 * {
     box-sizing: border-box;
 }

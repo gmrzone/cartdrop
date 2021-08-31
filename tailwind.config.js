@@ -45,7 +45,7 @@ module.exports = {
                 "4.8xl": ["2.75rem", "1.75rem"],
                 "4.6xl": ["2.50rem", "2rem"],
                 "4.3xl": ["2.20rem", "2.4rem"],
-                "very-small": ["0.55rem", "0.60rem"]
+                "very-small": ["0.55rem", "0.60rem"],
             },
             borderRadius: {
                 normal: "0.245rem",

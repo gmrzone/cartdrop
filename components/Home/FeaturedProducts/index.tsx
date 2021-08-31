@@ -3,7 +3,6 @@ import Section from "../../common/Section";
 import ProductList from "./ProductList";
 import { FeaturedProductType } from "../../../shared/types";
 
-
 interface IProps {
     featuredProducts: FeaturedProductType[];
 }

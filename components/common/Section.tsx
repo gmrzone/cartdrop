@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { NextPage } from "next";
-import SmallButtonLink from '../common/buttons/SmallButtonLink'
+import SmallButtonLink from "../common/buttons/SmallButtonLink";
 
 interface SectionProps {
     title: string;
@@ -9,7 +9,7 @@ interface SectionProps {
     first?: boolean;
 }
 
-const Section: NextPage<SectionProps> = ({ title, children, viewAll=null , first = false }) => {
+const Section: NextPage<SectionProps> = ({ title, children, viewAll = null, first = false }) => {
     return (
         <div
             className={`bg-white ${
@@ -18,12 +18,12 @@ const Section: NextPage<SectionProps> = ({ title, children, viewAll=null , first
                     : "my-5 ipad:my-7 desktop:my-8 py-2 ipad:py-3 desktop:py-4"
             }`}>
             <div className="container">
-                <div className="flex justify-between">   
+                <div className="flex justify-between">
                     <h2 className="text-text mb-4 ipad:mb-6 desktop:mb-8">{title}</h2>
                     {viewAll && (
-                        <div className="mt-1">
-                            <SmallButtonLink to={viewAll} text="View all" /> 
-                        </div> 
+                        <div className="mt-1 block ipad:hidden">
+                            <SmallButtonLink to={viewAll} text="View all" />
+                        </div>
                     )}
                 </div>
                 {children}
