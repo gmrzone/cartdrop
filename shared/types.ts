@@ -75,3 +75,21 @@ export type FeaturedProductType = {
     size: FashionSizeVariantType | null;
     images: ProductVariationImageType[];
 };
+
+
+type SubcategoryImage = {
+    image: string
+}
+type CouponsBaseType = {
+    code: string;
+    discount: number;
+}
+export type SubcategoryOfferType = {
+    name: string;
+    slug: string;
+    uuid: string;
+    subcategory_images: SubcategoryImage[];
+    coupons: CouponsBaseType[]
+
+
+}
