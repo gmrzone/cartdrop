@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
-import { navLeftData } from '../Header/data'
 import Link from 'next/link';
+import FooterBottom from './FooterBottom';
 const Footer: NextPage = () => {
     const footerData = [
         {
@@ -57,13 +57,14 @@ const Footer: NextPage = () => {
 
     const renderFooterData = footerData.map(x => {
         return (
-            <li key={x.id} className="inline-block">
+            <li key={x.id} className="">
                 <Link href={x.link}>
-                    <a className="text-white hover:text-blue-200 font-semibold">{x.name}</a>
+                    <a className="text-white hover:text-blue-200 font-semibold whitespace-nowrap">{x.name}</a>
                 </Link>
             </li>
         )
     })
+
     return (
         <footer className="bg-main">
             <div className="container">
@@ -71,10 +72,11 @@ const Footer: NextPage = () => {
                     <h1 className="text-center"><span className="text-black">CART</span><span className="text-white">DROP</span></h1>
                 </div>
                 <div>
-                    <ul className="text-center space-x-10">
+                    <ul className="text-center flex flex-wrap justify-center space-x-6 sm:space-x-10 md:space-x-12">
                         {renderFooterData}
                     </ul>
                 </div>
+                <FooterBottom />
             </div>
         </footer>
     )
