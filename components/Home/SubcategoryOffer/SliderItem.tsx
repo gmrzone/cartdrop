@@ -19,8 +19,8 @@ const SliderItem: NextPage<Props> = ({ subcategoryOfferItem }) => {
             <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-items-center">
                 {renderImages}
             </div>
-            <div className="mt-auto">
-                <p className="text-center text-white font-semibold">Upto {maxDiscount}% OFF ON {subcategoryOfferItem.name}</p>
+            <div className="mt-auto ipad:pt-4">
+                <p className="text-center text-white font-semibold">Upto {maxDiscount}% Off ON {subcategoryOfferItem.name}</p>
             </div>
             <style>{`
                 .slider-item {

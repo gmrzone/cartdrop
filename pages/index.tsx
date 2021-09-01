@@ -45,7 +45,7 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts, subcategoryOf
                 <TodaysDeal />
                 <FeaturedProducts featuredProducts={featuredProducts} />
                 <SubcategoryOffer subcategoryOffers={subcategoryOffers}/>
-                <TodaysDeal />
+                <FeaturedProducts featuredProducts={featuredProducts} />
             </MainLayout>
         </>
     );

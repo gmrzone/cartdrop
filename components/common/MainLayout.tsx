@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { ReactNode } from "react";
 import Header from "../shared/Header";
 import SearchBar from "../shared/Header/SearchBar";
+import Footer from '../shared/Footer';
 type MainLayoutProps = {
     children: ReactNode;
 };
@@ -16,7 +17,7 @@ const MainLayout: NextPage<MainLayoutProps> = ({ children }) => {
                 </div>
             </header>
             <main>{children}</main>
-            <footer></footer>
+            <Footer />
         </>
     );
 };
