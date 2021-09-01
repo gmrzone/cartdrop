@@ -10,8 +10,8 @@ interface SliderControlProps {
 
 }
 const SliderControl: NextPage<SliderControlProps> = ({ slideableContainerRef, sliderItemRef, currentSliderPosition, productsLength }) => {
-    const rightControlRef = useRef<HTMLDivElement | null>()
-    const leftControlRef = useRef<HTMLDivElement | null>()
+    const rightControlRef = useRef<HTMLDivElement | null>(null)
+    const leftControlRef = useRef<HTMLDivElement | null>(null)
     const goLeft = () => {
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             let stopPosition;
