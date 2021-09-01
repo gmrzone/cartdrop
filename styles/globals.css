@@ -7,6 +7,7 @@
 /* Product item width for slider */
 :root {
     --product-item-width: calc(50% - 0.25rem);
+    --subcategory-item-width: 340px
 }
 
 @media (min-width: 640px) {
