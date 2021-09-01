@@ -11,8 +11,8 @@ const Slider: NextPage<Props> = ({ subcategoryOffers }) => {
         return <SliderItem key={x.uuid} subcategoryOfferItem={x}/>
     })
     return (
-        <div>
-            <div className="flex flex-shrink-0 space-x-4 slider-inner-container">
+        <div className="overflow-x-auto">
+            <div className="flex space-x-4 slider-inner-container">
                 {renderSliderItems}
             </div>
             <style>{`

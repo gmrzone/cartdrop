@@ -78,6 +78,7 @@ module.exports = {
                 ipad: "992px",
                 desktop: "1199px",
                 "desktop-big": "1399px",
+                "desktop-large": "1599px",
             },
             skew: {
                 "hero-outer": "35deg",
