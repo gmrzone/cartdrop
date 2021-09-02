@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 import Link from 'next/link';
 import FooterBottom from './FooterBottom';
+import Social from './Social';
 const Footer: NextPage = () => {
     const footerData = [
         {
@@ -76,6 +77,7 @@ const Footer: NextPage = () => {
                         {renderFooterData}
                     </ul>
                 </div>
+                <Social />
                 <FooterBottom />
             </div>
         </footer>
