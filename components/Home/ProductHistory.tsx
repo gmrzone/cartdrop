@@ -7,10 +7,10 @@ import SliderControl from "../common/SliderControl";
 import { useRef, useEffect } from "react";
 
 interface IProps {
-    featuredProducts: FeaturedProductType[];
+    historyProducts: FeaturedProductType[];
 }
 
-const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
+const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
     const slideableContainerRef = useRef<HTMLDivElement | null>(null);
     const sliderItemRef = useRef<HTMLDivElement | null>(null);
     const currentSliderPosition = useRef<number>(0);
@@ -32,16 +32,16 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
     
 
     return (
-        <Section title="FEATURED">
+        <Section title="BASED ON YOUR HISTORY">
             <div className="absolute z-10 right-0 top-2 block ipad:hidden">
                 <SmallButtonLink to="/products/featured" text="View All" />
             </div>
             <div className="absolute z-10 right-0 top-2 hidden ipad:block">
-                <SliderControl slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} currentSliderPosition={currentSliderPosition} productsLength={featuredProducts.length}/>
+                <SliderControl slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} currentSliderPosition={currentSliderPosition} productsLength={historyProducts.length}/>
             </div>
-            <ProductList ProductList={featuredProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
+            <ProductList ProductList={historyProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
         </Section>
     );
 };
 
-export default FeaturedProducts;
+export default ProductHistory;

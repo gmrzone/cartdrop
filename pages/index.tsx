@@ -8,6 +8,7 @@ import { CategoryType, FeaturedProductType, SubcategoryOfferType } from "../shar
 import TodaysDeal from "../components/Home/TodeysDeal";
 import FeaturedProducts from "../components/Home/FeaturedProducts";
 import SubcategoryOffer from "../components/Home/SubcategoryOffer";
+import ProductHistory from "../components/Home/ProductHistory";
 
 export const getStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
@@ -45,7 +46,7 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts, subcategoryOf
                 <TodaysDeal />
                 <FeaturedProducts featuredProducts={featuredProducts} />
                 <SubcategoryOffer subcategoryOffers={subcategoryOffers}/>
-                <FeaturedProducts featuredProducts={featuredProducts} />
+                <ProductHistory historyProducts={featuredProducts}/>
             </MainLayout>
         </>
     );

@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import { MouseEventHandler } from 'react'
 
 const Social: NextPage = () => {
     const socialData = [
@@ -23,12 +24,23 @@ const Social: NextPage = () => {
             href: "#"
         }
     ]
-    
+    const onMouseOver: MouseEventHandler<HTMLLIElement> = (e) => {
+        const target = e.target as HTMLLIElement
+        target.classList.remove("scale-100")
+        target.classList.add("scale-125")
+    }
+
+    const onMouseOut: MouseEventHandler<HTMLLIElement> = (e) => {
+        const target = e.target as HTMLLIElement
+        target.classList.remove("scale-125")
+        target.classList.add("scale-100")
+
+    }
     const renderIcon = socialData.map(x => {
         return (
             <li key={x.icon}>
                 <a href={x.href} className="text-2xl md:text-3xl text-white">
-                    <i className={x.icon}/>
+                    <i className={x.icon + " transition-all scale-100 duration-150"} onMouseOver={onMouseOver} onMouseOut={onMouseOut} />
                 </a>
             </li>
         )

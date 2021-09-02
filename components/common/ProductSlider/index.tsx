@@ -4,12 +4,12 @@ import ProductItem from "./ProductItem";
 import { MutableRefObject } from "react";
 
 interface IProps {
-    featuredProducts: FeaturedProductType[];
+    ProductList: FeaturedProductType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
     sliderItemRef: MutableRefObject<HTMLDivElement | null>;
 }
-const ProductList: NextPage<IProps> = ({ featuredProducts, slideableContainerRef, sliderItemRef }) => {
-    const renderProductList = featuredProducts?.map((x, i) => {
+const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sliderItemRef }) => {
+    const renderProductList = ProductList?.map((x, i) => {
         return <ProductItem key={x.uuid} item={x} index={i} sliderItemRef={sliderItemRef} />;
     });
     return (
@@ -26,7 +26,7 @@ const ProductList: NextPage<IProps> = ({ featuredProducts, slideableContainerRef
 
                     @media (min-width: 992px){
                         .inner-container {
-                            width: calc(var(--product-item-width) * ${featuredProducts.length})
+                            width: calc(var(--product-item-width) * ${ProductList.length})
                         }
                     }
                 
