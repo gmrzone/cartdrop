@@ -1,4 +1,4 @@
-/* ./styles/globals.css */
+    /* ./styles/globals.css */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap");
 @tailwind base;
 @tailwind components;
@@ -152,9 +152,9 @@ span {
     h1 {
         @apply text-4.6xl;
     }
-    h2 {
+    /* h2 {
         @apply text-4.3xl;
-    }
+    } */
 }
 
 @media only screen and (min-width: 1400px) {

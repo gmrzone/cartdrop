@@ -44,7 +44,7 @@ const ProductItem: NextPage<IProps> = ({ item, index, sliderItemRef }) => {
                     </div>
                 </div>
                 <div className="text-center h-12 flex flex-col justify-center items-center">
-                    <p className="text-xs sm:text-sm desktop:text-lg">
+                    <p className="text-xs sm:text-sm md:text-base desktop:text-lg">
                         {generateName === generateName.slice(0, 35) ? generateName : generateName.slice(0, 35) + "..."}
                     </p>
                 </div>
