@@ -76,20 +76,17 @@ export type FeaturedProductType = {
     images: ProductVariationImageType[];
 };
 
-
 type SubcategoryImage = {
-    image: string
-}
+    image: string;
+};
 type CouponsBaseType = {
     code: string;
     discount: number;
-}
+};
 export type SubcategoryOfferType = {
     name: string;
     slug: string;
     uuid: string;
     subcategory_images: SubcategoryImage[];
-    coupons: CouponsBaseType[]
-
-
-}
+    coupons: CouponsBaseType[];
+};

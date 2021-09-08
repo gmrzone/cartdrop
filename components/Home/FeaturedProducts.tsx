@@ -17,19 +17,18 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 992){
-                if (slideableContainerRef.current){
-                    currentSliderPosition.current = 0
-                    slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)"
+            if (window.innerWidth >= 992) {
+                if (slideableContainerRef.current) {
+                    currentSliderPosition.current = 0;
+                    slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
                 }
             }
-        }
-        window.addEventListener('resize', handleResize)
+        };
+        window.addEventListener("resize", handleResize);
         return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
-    
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
         <Section title="FEATURED">
@@ -37,7 +36,12 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                 <SmallButtonLink to="/products/featured" text="View All" />
             </div>
             <div className="absolute z-10 right-0 top-2 hidden ipad:block">
-                <SliderControl slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} currentSliderPosition={currentSliderPosition} productsLength={featuredProducts.length}/>
+                <SliderControl
+                    slideableContainerRef={slideableContainerRef}
+                    sliderItemRef={sliderItemRef}
+                    currentSliderPosition={currentSliderPosition}
+                    productsLength={featuredProducts.length}
+                />
             </div>
             <ProductList ProductList={featuredProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
         </Section>

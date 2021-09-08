@@ -17,19 +17,18 @@ const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 992){
-                if (slideableContainerRef.current){
-                    currentSliderPosition.current = 0
-                    slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)"
+            if (window.innerWidth >= 992) {
+                if (slideableContainerRef.current) {
+                    currentSliderPosition.current = 0;
+                    slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
                 }
             }
-        }
-        window.addEventListener('resize', handleResize)
+        };
+        window.addEventListener("resize", handleResize);
         return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
-    
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
         <Section title="BASED ON YOUR HISTORY">
@@ -37,7 +36,12 @@ const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
                 <SmallButtonLink to="/products/featured" text="View All" />
             </div>
             <div className="absolute z-10 right-0 top-2 hidden ipad:block">
-                <SliderControl slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} currentSliderPosition={currentSliderPosition} productsLength={historyProducts.length}/>
+                <SliderControl
+                    slideableContainerRef={slideableContainerRef}
+                    sliderItemRef={sliderItemRef}
+                    currentSliderPosition={currentSliderPosition}
+                    productsLength={historyProducts.length}
+                />
             </div>
             <ProductList ProductList={historyProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
         </Section>

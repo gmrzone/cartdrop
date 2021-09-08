@@ -1,4 +1,4 @@
-    /* ./styles/globals.css */
+/* ./styles/globals.css */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap");
 @tailwind base;
 @tailwind components;
@@ -7,44 +7,44 @@
 /* Product item width for slider */
 :root {
     --product-item-width: calc(50% - 0.25rem);
-    --subcategory-item-width: 280px
+    --subcategory-item-width: 280px;
 }
 
 @media (min-width: 640px) {
     :root {
         --product-item-width: calc(50% - 0.5rem);
-        --subcategory-item-width: 300px
+        --subcategory-item-width: 300px;
     }
 }
 
 @media (min-width: 768px) {
     :root {
         --product-item-width: calc(50% - 0.75rem);
-        --subcategory-item-width: 300px
+        --subcategory-item-width: 300px;
     }
 }
 @media (min-width: 992px) {
     :root {
         --product-item-width: 312px;
-        --subcategory-item-width: 315px
+        --subcategory-item-width: 315px;
     }
 }
 @media (min-width: 1199px) {
     :root {
         --product-item-width: 378px;
-        --subcategory-item-width: 380px
+        --subcategory-item-width: 380px;
     }
 }
 @media (min-width: 1399px) {
     :root {
         --product-item-width: 410px;
-        --subcategory-item-width: 308px
+        --subcategory-item-width: 308px;
     }
 }
 @media (min-width: 1600px) {
     :root {
         --product-item-width: 332px;
-        --subcategory-item-width: 334px
+        --subcategory-item-width: 334px;
     }
 }
 * {

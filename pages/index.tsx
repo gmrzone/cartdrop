@@ -19,7 +19,7 @@ export const getStaticProps = async () => {
         props: {
             categories: categories.data,
             featuredProducts: featuredProducts.data,
-            subcategoryOffers: subcategoryOffers.data
+            subcategoryOffers: subcategoryOffers.data,
         },
     };
 };
@@ -45,8 +45,8 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts, subcategoryOf
                 <Hero categories={categories} />
                 <TodaysDeal />
                 <FeaturedProducts featuredProducts={featuredProducts} />
-                <SubcategoryOffer subcategoryOffers={subcategoryOffers}/>
-                <ProductHistory historyProducts={featuredProducts}/>
+                <SubcategoryOffer subcategoryOffers={subcategoryOffers} />
+                <ProductHistory historyProducts={featuredProducts} />
             </MainLayout>
         </>
     );
