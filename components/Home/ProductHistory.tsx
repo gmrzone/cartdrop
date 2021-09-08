@@ -41,6 +41,7 @@ const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
                     sliderItemRef={sliderItemRef}
                     currentSliderPosition={currentSliderPosition}
                     productsLength={historyProducts.length}
+                    alignmentPattern={[3, 3, 3, 4]}
                 />
             </div>
             <ProductList ProductList={historyProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />

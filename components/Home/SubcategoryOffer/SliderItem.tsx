@@ -1,10 +1,12 @@
 import { NextPage } from "next";
 import { SubcategoryOfferType } from "../../../shared/types";
 import Image from "next/image";
+import { MutableRefObject } from "react";
 interface Props {
     subcategoryOfferItem: SubcategoryOfferType;
+    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
 }
-const SliderItem: NextPage<Props> = ({ subcategoryOfferItem }) => {
+const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) => {
     const maxDiscount: number = Math.max(...subcategoryOfferItem.coupons.map((x) => x.discount));
     const renderImages = subcategoryOfferItem.subcategory_images.map((x, i) => {
         return (
@@ -17,7 +19,7 @@ const SliderItem: NextPage<Props> = ({ subcategoryOfferItem }) => {
     });
 
     return (
-        <div className="slider-item flex flex-col bg-main rounded-lg p-3 cursor-pointer">
+        <div className="slider-item flex flex-col bg-main rounded-lg p-3 cursor-pointer" ref={sliderItemRef}>
             <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-items-center">{renderImages}</div>
             <div className="mt-auto ipad:pt-4">
                 <p className="text-center text-white font-semibold">

@@ -1,19 +1,23 @@
 import { NextPage } from "next";
 import { SubcategoryOfferType } from "../../../shared/types";
 import SliderItem from "./SliderItem";
-
+import { MutableRefObject } from "react";
 interface Props {
     subcategoryOffers: SubcategoryOfferType[];
+    slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
 }
 
-const Slider: NextPage<Props> = ({ subcategoryOffers }) => {
+const Slider: NextPage<Props> = ({ subcategoryOffers, slideableContainerRef, sliderItemRef }) => {
     const renderSliderItems = subcategoryOffers.map((x) => {
-        return <SliderItem key={x.uuid} subcategoryOfferItem={x} />;
+        return <SliderItem key={x.uuid} subcategoryOfferItem={x} sliderItemRef={sliderItemRef} />;
     });
     return (
         <div className="overflow-hidden slider-main-container">
             <div className="overflow-x-auto overflow-y-hidden slider-outer-container">
-                <div className="flex space-x-4 slider-inner-container">{renderSliderItems}</div>
+                <div className="flex space-x-4 slider-inner-container" ref={slideableContainerRef}>
+                    {renderSliderItems}
+                </div>
                 <style>{`
                     .slider-inner-container {
                         width: calc(var(--subcategory-item-width) * ${subcategoryOffers.length});

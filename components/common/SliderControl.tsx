@@ -7,19 +7,39 @@ interface SliderControlProps {
     sliderItemRef: MutableRefObject<HTMLDivElement | null>;
     currentSliderPosition: MutableRefObject<number>;
     productsLength: number;
+    alignmentPattern: [number, number, number, number];
 }
-const SliderControl: NextPage<SliderControlProps> = ({ slideableContainerRef, sliderItemRef, currentSliderPosition, productsLength }) => {
+const SliderControl: NextPage<SliderControlProps> = ({
+    slideableContainerRef,
+    sliderItemRef,
+    currentSliderPosition,
+    productsLength,
+    alignmentPattern,
+}) => {
     const rightControlRef = useRef<HTMLDivElement | null>(null);
     const leftControlRef = useRef<HTMLDivElement | null>(null);
     const goLeft = () => {
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             let stopPosition;
             if (window.innerWidth >= 992) {
-                if (window.innerWidth <= 1600) {
-                    stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 3) + 15);
+                if (window.innerWidth <= 1199) {
+                    stopPosition = -(currentSliderPosition.current,
+                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + 15);
+                } else if (window.innerWidth <= 1399) {
+                    stopPosition = -(currentSliderPosition.current,
+                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + 15);
+                } else if (window.innerWidth <= 1599) {
+                    stopPosition = -(currentSliderPosition.current,
+                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + 15);
                 } else {
-                    stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 4) + 15);
+                    stopPosition = -(currentSliderPosition.current,
+                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + 15);
                 }
+                // if (window.innerWidth <= 1600) {
+                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 3) + 15);
+                // } else {
+                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 4) + 15);
+                // }
                 if (currentSliderPosition.current > stopPosition) {
                     console.log(currentSliderPosition.current, stopPosition + (sliderItemRef.current.clientWidth - 30));
                     leftControlRef.current.classList.remove("bg-gray-400");

@@ -41,6 +41,7 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                     sliderItemRef={sliderItemRef}
                     currentSliderPosition={currentSliderPosition}
                     productsLength={featuredProducts.length}
+                    alignmentPattern={[3, 3, 3, 4]}
                 />
             </div>
             <ProductList ProductList={featuredProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
