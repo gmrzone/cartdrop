@@ -21,6 +21,7 @@ const Hero: NextPage<HeroProps> = ({ categories }) => {
                 }
             }            
             `}</style> */}
+
         </div>
     );
 };
