@@ -1,11 +1,7 @@
-import { NextPage } from 'next';
+import { NextPage } from "next";
 
 const LoginForm: NextPage = () => {
-    return (
-        <div>
+    return <div></div>;
+};
 
-        </div>
-    )
-}
-
-export default Login
+export default Login;

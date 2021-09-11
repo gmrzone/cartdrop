@@ -1,5 +1,5 @@
-import { NextPage } from 'next'
-import LogoVertical from './Logo'
+import { NextPage } from "next";
+import LogoVertical from "./Logo";
 const LoginLeft: NextPage = () => {
     return (
         <div className="w-full ipad:w-1/2 h-full relative">
@@ -23,7 +23,7 @@ const LoginLeft: NextPage = () => {
 
             `}</style>
         </div>
-    )
-}
+    );
+};
 
-export default LoginLeft
+export default LoginLeft;

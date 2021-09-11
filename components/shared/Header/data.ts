@@ -75,12 +75,12 @@ export const ProfileLogoutOptions: ProfileOptions[] = [
         name: "Login",
         value: "login",
         icon: "fa fa-sign-in",
-        to: "/login"
+        to: "/login",
     },
     {
         name: "Signup",
         value: "signup",
         icon: "far fa-user-plus",
-        to: "/signup"
+        to: "/signup",
     },
 ];

@@ -1,11 +1,7 @@
-import { NextPage } from 'next'
+import { NextPage } from "next";
 
 const SocialLogin: NextPage = () => {
-    return (
-        <div>
+    return <div></div>;
+};
 
-        </div>
-    )
-}
-
-export default SocialLogin
+export default SocialLogin;

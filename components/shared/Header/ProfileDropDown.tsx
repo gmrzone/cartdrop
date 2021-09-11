@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { ProfileLogoutOptions } from "./data";
-import Link from 'next/link';
+import Link from "next/link";
 
 type ProfileDropdown = {
     profileDropdownActive: boolean;
