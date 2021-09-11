@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 
 const SecondaryLayout: NextPage = ({ children }) => {
     return (
-        <main>
+        <main className="h-full">
             {children}
         </main>
     )

@@ -17,6 +17,7 @@ type ProfileOptions = {
     name: string;
     value: string;
     icon: string;
+    to: string;
 };
 export const navLeftData: NavLeft[] = [
     {
@@ -74,10 +75,12 @@ export const ProfileLogoutOptions: ProfileOptions[] = [
         name: "Login",
         value: "login",
         icon: "fa fa-sign-in",
+        to: "/login"
     },
     {
         name: "Signup",
         value: "signup",
         icon: "far fa-user-plus",
+        to: "/signup"
     },
 ];

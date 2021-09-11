@@ -178,3 +178,8 @@ span {
         @apply text-5xl;
     }
 }
+
+
+#__next {
+    @apply h-full;
+}
