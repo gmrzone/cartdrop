@@ -1,13 +1,18 @@
 import { NextPage } from "next";
 import LogoVertical from "./Logo";
+import SocialLoginDesktop from "./SocialLoginDesktop";
+import SocialLoginMobile from "./SocialLoginMobile";
 const LoginLeft: NextPage = () => {
     return (
-        <div className="w-full ipad:w-1/2 h-full relative">
-            <div className="w-full h-full absolute overflow-hidden">
+        <div className="w-full ipad:w-1/2 h-full relative bg-main ipad:bg-transparent">
+            <div className="w-full h-full absolute overflow-hidden hidden ipad:block">
                 <div className="afzal absolute bg-main top-0 h-full w-full ipad:w-6/12"></div>
             </div>
-            <div className="relative flex flex-col items-center w-full">
+            <div className="relative flex flex-col items-center justify-center w-full h-full space-y-20">
                 <LogoVertical />
+                <div>
+                    <SocialLoginDesktop type="login" />
+                </div>
             </div>
             <style>{`
 
