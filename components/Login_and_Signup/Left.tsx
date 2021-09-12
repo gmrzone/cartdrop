@@ -2,7 +2,12 @@ import { NextPage } from "next";
 import LogoVertical from "./Logo";
 import SocialLogin from "./SocialLogin";
 import useIsMobile from "../hooks/useIsMobile";
-const LoginLeft: NextPage = () => {
+
+interface LeftProps {
+    type: string
+}
+
+const LeftSection: NextPage<LeftProps> = ({ type }) => {
     const isMobile = useIsMobile();
 
     return (
@@ -14,7 +19,7 @@ const LoginLeft: NextPage = () => {
             )}
             <div className="relative flex flex-col items-center justify-center w-full h-full space-y-16">
                 <LogoVertical />
-                {!isMobile && <SocialLogin type="login" />}
+                {!isMobile && <SocialLogin type={type} />}
             </div>
             <style>{`
                 .left-main {
@@ -35,4 +40,4 @@ const LoginLeft: NextPage = () => {
     );
 };
 
-export default LoginLeft;
+export default LeftSection;
