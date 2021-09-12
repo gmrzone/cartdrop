@@ -9,7 +9,7 @@ const LoginForm: NextPage = () => {
     return (
         <form className="space-y-4 pb-16">
             <div className="space-y-8">
-                <Input type="text" label="Username/Email"/>
+                <Input type="text" label="Username or Email"/>
                 <Password type="password" label="Password"/>
             </div>
             <div className="text-lg ml-1 font-semibold">

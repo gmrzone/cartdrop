@@ -2,7 +2,7 @@ import { NextPage } from "next";
 
 const LogoVertical: NextPage = () => {
     return (
-        <div className="w-56 ipad:w-60 desktop:w-72 desktop-big:w-80">
+        <div className="w-56 sm:w-60 md:w-72 desktop-big:w-80">
             <svg
                 version="1.1"
                 id="Layer_1"
