@@ -8,7 +8,7 @@ type SecondaryProps = {
     fullWidth?: boolean;
 };
 
-const SecondaryButton: NextPage<SecondaryProps> = ({ text, icon, loading, disable, fullWidth=false }) => {
+const SecondaryButton: NextPage<SecondaryProps> = ({ text, icon, loading, disable, fullWidth = false }) => {
     return (
         <button
             className={`${fullWidth ? "w-full" : "w-auto"} py-3 px-6 font-semibold rounded-full border-2 transition-colors duration-300 ${

@@ -1,8 +1,8 @@
-import { NextPage } from 'next'
-import Link from 'next/link'
+import { NextPage } from "next";
+import Link from "next/link";
 
 interface SocialLoginP {
-    type: string
+    type: string;
 }
 const SocialLoginMobile: NextPage<SocialLoginP> = ({ type }) => {
     return (
@@ -20,12 +20,10 @@ const SocialLoginMobile: NextPage<SocialLoginP> = ({ type }) => {
             </ul>
             <p>
                 {type === "login" ? "Don't have a account? " : "Already have a account? "}
-                <Link href={type === "login" ? "/signup" : "/login"}>
-                    {type === "login" ? "Sign up" : "Login"}
-                </Link>
+                <Link href={type === "login" ? "/signup" : "/login"}>{type === "login" ? "Sign up" : "Login"}</Link>
             </p>
         </div>
-    )
-}
+    );
+};
 
-export default SocialLoginMobile
+export default SocialLoginMobile;

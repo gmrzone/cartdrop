@@ -8,7 +8,7 @@ type MainProps = {
     fullWidth?: boolean;
 };
 
-const MainButton: NextPage<MainProps> = ({ text, icon, loading, disable, fullWidth=false }) => {
+const MainButton: NextPage<MainProps> = ({ text, icon, loading, disable, fullWidth = false }) => {
     return (
         <button
             className={`${fullWidth ? "w-full" : "w-auto"} w-full py-3 px-6 font-semibold rounded-full transition-colors duration-300 ${

@@ -2,17 +2,16 @@ import { NextPage } from "next";
 import LogoVertical from "./Logo";
 import SocialLoginDesktop from "./SocialLoginDesktop";
 import SocialLoginMobile from "./SocialLoginMobile";
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 const LoginLeft: NextPage = () => {
-    const isMobile = useIsMobile()
+    const isMobile = useIsMobile();
     useEffect(() => {
         const updateMedia = () => {
-            const isMobile = window.matchMedia('(max-width: 992px)')
-        }
-        
-    }, [])
-    
+            const isMobile = window.matchMedia("(max-width: 992px)");
+        };
+    }, []);
+
     return (
         <div className="w-full ipad:w-1/2 h-full relative bg-main ipad:bg-transparent">
             <div className="w-full h-full absolute overflow-hidden hidden ipad:block">
