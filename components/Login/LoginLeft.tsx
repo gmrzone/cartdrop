@@ -6,23 +6,22 @@ import { useEffect, useState } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 const LoginLeft: NextPage = () => {
     const isMobile = useIsMobile();
-    useEffect(() => {
-        const updateMedia = () => {
-            const isMobile = window.matchMedia("(max-width: 992px)");
-        };
-    }, []);
 
     return (
-        <div className="w-full ipad:w-1/2 h-full relative bg-main ipad:bg-transparent">
-            <div className="w-full h-full absolute overflow-hidden hidden ipad:block">
-                <div className="afzal absolute bg-main top-0 h-full w-full ipad:w-6/12"></div>
-            </div>
-            <div className="relative flex flex-col items-center justify-center w-full h-full space-y-32">
+        <div className="left-main w-full ipad:w-1/2 h-full relative bg-transparent">
+            {!isMobile && (
+                <div className="w-full h-full absolute overflow-hidden ipad:block">
+                    <div className="afzal absolute bg-main top-0 h-full w-full ipad:w-6/12"></div>
+                </div>
+            )}
+            <div className="relative flex flex-col items-center justify-center w-full h-full space-y-16">
                 <LogoVertical />
                 {!isMobile && <SocialLoginDesktop type="login" />}
             </div>
             <style>{`
-
+                .left-main {
+                    min-height: 240px;
+                }
                 @media (min-width: 992px){
                     .afzal {
                         border-bottom-right-radius: 50%;

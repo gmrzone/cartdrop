@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const LoginForm: NextPage = () => {
     return (
-        <form className="space-y-4 pb-16">
+        <form className="space-y-4">
             <div className="space-y-8">
                 <Input type="text" label="Username or Email" />
                 <Password type="password" label="Password" />
