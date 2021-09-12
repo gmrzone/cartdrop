@@ -1,17 +1,12 @@
 import { NextPage } from "next";
-
+import LoginForm from "./LoginForm";
 const LoginRight: NextPage = () => {
     return (
-        <div className="w-full ipad:w-1/2 h-full relative">
-            {/* <div className="right-float-content w-full h-full bg-white absolute -top-20 mx-2 p-6">
-                <h1>Right</h1>
-            </div> */}
-            <style>{`
-                .right-float-content {
-                    border-radius: 50px;
-                }
-            
-            `}</style>
+        <div className="w-full ipad:w-1/2 h-full relative flex items-center">
+            <div className="w-2/3 max-w-md mx-auto space-y-8">
+                <h1 className="text-main text-center">LOGIN</h1>
+                <LoginForm />
+            </div>
         </div>
     );
 };

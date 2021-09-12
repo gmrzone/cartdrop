@@ -5,12 +5,13 @@ type MainProps = {
     icon?: string;
     disable?: boolean;
     loading?: boolean;
+    fullWidth?: boolean;
 };
 
-const MainButton: NextPage<MainProps> = ({ text, icon, loading, disable }) => {
+const MainButton: NextPage<MainProps> = ({ text, icon, loading, disable, fullWidth=false }) => {
     return (
         <button
-            className={`w-auto py-3 px-6 font-semibold rounded-full transition-colors duration-300 ${
+            className={`${fullWidth ? "w-full" : "w-auto"} w-full py-3 px-6 font-semibold rounded-full transition-colors duration-300 ${
                 disable ? "bg-gray-600 cursor-not-allowed bg-opacity-75" : "bg-main hover:bg-blue-800"
             }`}>
             {icon && <i className={`${icon} mr-2 text-white`} />}

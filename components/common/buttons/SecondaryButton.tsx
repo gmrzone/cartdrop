@@ -5,12 +5,13 @@ type SecondaryProps = {
     icon?: string;
     disable?: boolean;
     loading?: boolean;
+    fullWidth?: boolean;
 };
 
-const SecondaryButton: NextPage<SecondaryProps> = ({ text, icon, loading, disable }) => {
+const SecondaryButton: NextPage<SecondaryProps> = ({ text, icon, loading, disable, fullWidth=false }) => {
     return (
         <button
-            className={`w-auto py-3 px-6 font-semibold rounded-full border-2 transition-colors duration-300 ${
+            className={`${fullWidth ? "w-full" : "w-auto"} py-3 px-6 font-semibold rounded-full border-2 transition-colors duration-300 ${
                 disable ? "bg-gray-400 border-none cursor-not-allowed bg-opacity-75" : "border-main"
             }`}>
             {icon && <i className={`${icon} mr-2 text-main`} />}

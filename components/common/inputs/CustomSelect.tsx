@@ -69,7 +69,7 @@ const Select: NextPage<SelectProps> = ({ options, initialLabel }) => {
 
     return (
         <div
-            className={`py-3 px-3 border-solid border-main font-poppins rounded-normal h-14 cursor-pointer relative ${
+            className={`py-3 bg-white px-3 border-solid border-main font-poppins rounded-normal h-14 cursor-pointer relative ${
                 !dropDownOpen && !selected ? "border" : "border-2"
             }`}
             onClick={toggleDropDown}
