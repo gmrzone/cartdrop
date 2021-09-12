@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Input from "../common/inputs/Input";
 import Password from "../common/inputs/Password";
 import Button from "../common/buttons/MainButton";
-import SecondaryButton from "../common/buttons/SecondaryButton";
+import SecondaryButtonLink from "../common/buttons/SecondaryButtonLink";
 import useIsMobile from "../hooks/useIsMobile";
 
 const SignupForm: NextPage = () => {
@@ -17,7 +17,7 @@ const SignupForm: NextPage = () => {
             </div>
             <div className="flex space-x-6">
                 <Button text="Signup" fullWidth={true} />
-                {!isMobile && <SecondaryButton text="Login" fullWidth={true} />}
+                {!isMobile && <SecondaryButtonLink text="Login" to="/login" fullWidth={true} />}
             </div>
         </form>
     );
