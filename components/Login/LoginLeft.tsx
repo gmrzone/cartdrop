@@ -1,8 +1,6 @@
 import { NextPage } from "next";
 import LogoVertical from "./Logo";
-import SocialLoginDesktop from "./SocialLoginDesktop";
-import SocialLoginMobile from "./SocialLoginMobile";
-import { useEffect, useState } from "react";
+import SocialLogin from "./SocialLogin";
 import useIsMobile from "../hooks/useIsMobile";
 const LoginLeft: NextPage = () => {
     const isMobile = useIsMobile();
@@ -16,7 +14,7 @@ const LoginLeft: NextPage = () => {
             )}
             <div className="relative flex flex-col items-center justify-center w-full h-full space-y-16">
                 <LogoVertical />
-                {!isMobile && <SocialLoginDesktop type="login" />}
+                {!isMobile && <SocialLogin type="login" />}
             </div>
             <style>{`
                 .left-main {

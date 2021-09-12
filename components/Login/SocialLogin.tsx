@@ -1,13 +1,15 @@
 import { NextPage } from "next";
+import useIsMobile from "../hooks/useIsMobile";
 import Link from "next/link";
 
 interface SocialLoginP {
     type: string;
 }
 const SocialLoginDesktop: NextPage<SocialLoginP> = ({ type }) => {
+    const isMobile = useIsMobile();
     return (
         <div className="space-y-6">
-            <h6 className="text-center text-white font-semibold">{type === "login" ? "Login with" : "Signup with"}</h6>
+            {!isMobile && <h6 className="text-center text-white font-semibold">{type === "login" ? "Login with" : "Signup with"}</h6>}
             <ul className="flex space-x-12 justify-center">
                 <li className="cursor-pointer w-10">
                     <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 28 27.311" viewBox="0 0 28 27.311">
@@ -47,6 +49,12 @@ const SocialLoginDesktop: NextPage<SocialLoginP> = ({ type }) => {
                     </svg>
                 </li>
             </ul>
+            {isMobile && (
+                <p className="text-center">
+                    {type === "login" ? "Don;t have a account? " : "Already have a account? "}
+                    {type === "login" ? <Link href="/signup">Signup</Link> : <Link href="/login">Login</Link>}
+                </p>
+            )}
         </div>
     );
 };

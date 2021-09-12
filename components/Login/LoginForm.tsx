@@ -4,10 +4,12 @@ import Password from "../common/inputs/Password";
 import Button from "../common/buttons/MainButton";
 import SecondaryButton from "../common/buttons/SecondaryButton";
 import Link from "next/link";
+import useIsMobile from "../hooks/useIsMobile";
 
 const LoginForm: NextPage = () => {
+    const isMobile = useIsMobile();
     return (
-        <form className="space-y-4">
+        <form className="space-y-4 px-3">
             <div className="space-y-8">
                 <Input type="text" label="Username or Email" />
                 <Password type="password" label="Password" />
@@ -17,7 +19,7 @@ const LoginForm: NextPage = () => {
             </div>
             <div className="flex space-x-6">
                 <Button text="Login" fullWidth={true} />
-                <SecondaryButton text="Signup" fullWidth={true} />
+                {!isMobile && <SecondaryButton text="Signup" fullWidth={true} />}
             </div>
         </form>
     );
