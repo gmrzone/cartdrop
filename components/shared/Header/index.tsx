@@ -9,13 +9,13 @@ import BurgerIcon from "./BurgerIcon";
 import CartSidebar from "./CartSidebar";
 import Backdrop from "../../common/Backdrop";
 import Link from "next/link";
-import useMobile from '../../hooks/useIsMobile'
+import useMobile from "../../hooks/useIsMobile";
 
 const Header: NextPage = () => {
     const backdropRef = useRef<null | HTMLDivElement>(null);
     const [leftNavActive, setLeftNavActive] = useState<boolean>(false);
     const [cartSideBarActive, setCartSideBarActive] = useState<boolean>(false);
-    const isMobile = useMobile()
+    const isMobile = useMobile();
     const toggleCartSidebar: MouseEventHandler = (e) => {
         setCartSideBarActive(!cartSideBarActive);
     };
@@ -62,9 +62,7 @@ const Header: NextPage = () => {
         <div className="container flex">
             <BurgerIcon toggleLeftNav={toggleLeftNav} />
             <Link href="/" passHref>
-                <a>
-                    {isMobile ? <LogoSmall /> : <Logo />}
-                </a>
+                <a>{isMobile ? <LogoSmall /> : <Logo />}</a>
             </Link>
             <NavLeft toggleLeftNav={toggleLeftNav} leftNavActive={leftNavActive} />
             <div className="ml-auto hidden md:block">

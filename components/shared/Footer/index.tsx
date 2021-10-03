@@ -67,7 +67,7 @@ const Footer: NextPage = () => {
     });
 
     return (
-        <footer className="bg-main py-1">
+        <footer className="bg-main py-1 mt-auto">
             <div className="container">
                 <div className="py-8">
                     <h1 className="text-center">
