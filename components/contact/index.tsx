@@ -1,8 +1,9 @@
 import { NextPage } from "next";
-import HeroPlain from "./Hero";
+import HeroPlain from "./HeroPlain";
+import ContactForm from "./ContactForm";
 const Contact: NextPage = () => {
     return (
-        <div>
+        <div className="relative">
             <HeroPlain />
         </div>
     );

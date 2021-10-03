@@ -2,11 +2,10 @@ import { NextPage } from "next";
 import { FocusEventHandler, useRef } from "react";
 
 interface InputProps {
-    type: string;
     label: string;
 }
 
-const TextArea: NextPage<InputProps> = ({ type, label }) => {
+const TextArea: NextPage<InputProps> = ({ label }) => {
     const inputRef = useRef<HTMLTextAreaElement | null>(null);
     const handleFocus: FocusEventHandler<HTMLTextAreaElement> = (e) => {
         e.target.classList.remove("border");
