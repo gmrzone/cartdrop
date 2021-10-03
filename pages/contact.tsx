@@ -12,7 +12,7 @@ const Contact: NextPage = () => {
                 currentUrl="/contact"
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
-            <MainLayout></MainLayout>
+            {/* <MainLayout></MainLayout> */}
         </>
     );
 };
