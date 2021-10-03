@@ -3,35 +3,36 @@ import { navLeftData, NavLeftData2 } from "./data";
 import Image from "next/image";
 import DefaultProfile from "../../../public/default_profilepic.png";
 import { MouseEventHandler } from "react";
+import Link from "next/link";
 
 type LeftNavProps = {
     toggleLeftNav: MouseEventHandler<HTMLDivElement>;
     leftNavActive: boolean;
 };
 const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
-    const renderData = navLeftData.map((x, i) => {
+    const renderData = navLeftData.map((x) => {
         return (
-            <li
-                key={x.value}
-                className="text-text px-6 py-3 font-semibold desktop:text-main desktop:font-bold text-lg desktop:text-base desktop:px-0 desktop:py-0">
-                <div>
-                    <i className={`${x.icon} desktop:hidden mr-4`} />
-                    {x.name}
-                </div>
+            <li key={x.value} className="px-6 py-3 desktop:px-0 desktop:py-0">
+                <Link href={x.to} passHref>
+                    <a className="font-semibold text-text desktop:text-main desktop:font-bold desktop:text-base text-lg">
+                        <i className={`${x.icon} desktop:hidden mr-4`} />
+                        {x.name}
+                    </a>
+                </Link>
             </li>
         );
     });
 
     const renderData2 = NavLeftData2.map((x) => {
         return (
-            <li
-                key={x.value}
-                className="text-text px-6 py-3 font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base desktop:bg-white desktop:hover:bg-gray-200">
-                <div>
-                    <i className={`${x.icon} desktop:hidden mr-4`} />
-                    {x.name}
-                </div>
-            </li>
+            <Link href={x.to} passHref key={x.value}>
+                <li className="px-6 py-3 desktop:bg-white desktop:hover:bg-gray-200 cursor-pointer">
+                    <a className="text-text font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base">
+                        <i className={`${x.icon} desktop:hidden mr-4`} />
+                        {x.name}
+                    </a>
+                </li>
+            </Link>
         );
     });
     return (
@@ -48,7 +49,7 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
                 <ul className="flex flex-col desktop:space-x-7 desktop-big:space-x-11 desktop:flex-row desktop:p-0 mt-1 desktop:mt-0">
                     {renderData}
                     <li className="text-main font-bold text-md ipad:px-0 ipad:py-0 group">
-                        <div className="hidden desktop:block">
+                        <div className="hidden desktop:block cursor-pointer">
                             More
                             <i className="fas fa-caret-down text-xs ml-1" />
                         </div>

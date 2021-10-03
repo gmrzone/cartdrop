@@ -3,8 +3,8 @@ import useIsMobile from "../hooks/useIsMobile";
 import SocialLogin from "./SocialLogin";
 
 interface LoginRightProps {
-    Form: NextPage<{}, {}>,
-    type: string,
+    Form: NextPage<{}, {}>;
+    type: string;
 }
 
 const RightSection: NextPage<LoginRightProps> = ({ Form, type }) => {

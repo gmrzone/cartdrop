@@ -2,9 +2,10 @@ import { NextPage } from "next";
 import LogoVertical from "./Logo";
 import SocialLogin from "./SocialLogin";
 import useIsMobile from "../hooks/useIsMobile";
+import Link from "next/link";
 
 interface LeftProps {
-    type: string
+    type: string;
 }
 
 const LeftSection: NextPage<LeftProps> = ({ type }) => {
@@ -18,7 +19,11 @@ const LeftSection: NextPage<LeftProps> = ({ type }) => {
                 </div>
             )}
             <div className="relative flex flex-col items-center justify-center w-full h-full space-y-16">
-                <LogoVertical />
+                <Link href="/" passHref>
+                    <a>
+                        <LogoVertical />
+                    </a>
+                </Link>
                 {!isMobile && <SocialLogin type={type} />}
             </div>
             <style>{`
