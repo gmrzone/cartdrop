@@ -181,4 +181,7 @@ span {
 
 #__next {
     @apply h-full;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
 }

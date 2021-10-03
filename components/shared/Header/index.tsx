@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Dynamic from "next/dynamic";
 import Logo from "./Logo";
 import LogoSmall from "./LogoSmall";
 import NavLeft from "./NavLeft";
@@ -9,6 +8,7 @@ import { useState, MouseEventHandler, useRef, useEffect } from "react";
 import BurgerIcon from "./BurgerIcon";
 import CartSidebar from "./CartSidebar";
 import Backdrop from "../../common/Backdrop";
+import Link from "next/link";
 
 const Header: NextPage = () => {
     const backdropRef = useRef<null | HTMLDivElement>(null);
@@ -60,8 +60,12 @@ const Header: NextPage = () => {
     return (
         <div className="container flex">
             <BurgerIcon toggleLeftNav={toggleLeftNav} />
-            <Logo />
-            <LogoSmall />
+            <Link href="/" passHref>
+                <a>
+                    <Logo />
+                    <LogoSmall />
+                </a>
+            </Link>
             <NavLeft toggleLeftNav={toggleLeftNav} leftNavActive={leftNavActive} />
             <div className="ml-auto hidden md:block">
                 <SearchBar />

@@ -16,7 +16,7 @@ const MainLayout: NextPage<MainLayoutProps> = ({ children }) => {
                     <SearchBar />
                 </div>
             </header>
-            <main>{children}</main>
+            <main className="">{children}</main>
             <Footer />
         </>
     );

@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import MetaHead from "../components/common/Head";
-// import MainLayout from "../components/common/MainLayout";
-
+import ContactMain from "../components/contact";
+import MainLayout from "../components/common/MainLayout";
 
 const Contact: NextPage = () => {
     const description: string =
@@ -14,9 +14,11 @@ const Contact: NextPage = () => {
                 currentUrl="/contact"
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
-            {/* <MainLayout></MainLayout> */}
+            <MainLayout>
+                <ContactMain />
+            </MainLayout>
         </>
     );
 };
 
-export default Contact
+export default Contact;
