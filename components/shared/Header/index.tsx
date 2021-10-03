@@ -9,12 +9,13 @@ import BurgerIcon from "./BurgerIcon";
 import CartSidebar from "./CartSidebar";
 import Backdrop from "../../common/Backdrop";
 import Link from "next/link";
+import useMobile from '../../hooks/useIsMobile'
 
 const Header: NextPage = () => {
     const backdropRef = useRef<null | HTMLDivElement>(null);
     const [leftNavActive, setLeftNavActive] = useState<boolean>(false);
     const [cartSideBarActive, setCartSideBarActive] = useState<boolean>(false);
-
+    const isMobile = useMobile()
     const toggleCartSidebar: MouseEventHandler = (e) => {
         setCartSideBarActive(!cartSideBarActive);
     };
@@ -62,8 +63,7 @@ const Header: NextPage = () => {
             <BurgerIcon toggleLeftNav={toggleLeftNav} />
             <Link href="/" passHref>
                 <a>
-                    <Logo />
-                    <LogoSmall />
+                    {isMobile ? <LogoSmall /> : <Logo />}
                 </a>
             </Link>
             <NavLeft toggleLeftNav={toggleLeftNav} leftNavActive={leftNavActive} />

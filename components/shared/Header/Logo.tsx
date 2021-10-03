@@ -1,6 +1,6 @@
 const Logo = () => {
     return (
-        <div className="w-60 hidden mobile-lg:block">
+        <div className="w-60 block">
             <svg
                 version="1.1"
                 id="Layer_1"
