@@ -18,7 +18,7 @@ const LoginForm: NextPage = () => {
                 <Link href="/reset-password">Forgot password?</Link>
             </div>
             <div className="flex space-x-6">
-                <Button text="Login" fullWidth={true} />
+                <Button text="Login" fullWidth={true} type="submit" />
                 {!isMobile && <SecondaryButtonLink text="Signup" to="/signup" fullWidth={true} />}
             </div>
         </form>
