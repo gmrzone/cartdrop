@@ -16,7 +16,7 @@ const SignupForm: NextPage = () => {
                 <Password type="password" label="Confirm Password" />
             </div>
             <div className="flex space-x-6">
-                <Button text="Signup" fullWidth={true} />
+                <Button text="Signup" fullWidth={true} type="submit" />
                 {!isMobile && <SecondaryButtonLink text="Login" to="/login" fullWidth={true} />}
             </div>
         </form>
