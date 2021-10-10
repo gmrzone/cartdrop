@@ -68,21 +68,21 @@ const UI: NextPage = () => {
                     <div className="pt-6 w-96 mb-11 pl-5">
                         <h1>Buttons</h1>
                         <div className="space-y-6">
-                            <MainButton text="Main Button" />
+                            <MainButton text="Main Button" type="button" />
                             <br />
-                            <MainButton text="Disabled" disable={true} />
+                            <MainButton text="Disabled" disable={true} type="button" />
                             <br />
-                            <MainButton text="With icon" icon="far fa-alarm-clock" />
+                            <MainButton text="With icon" icon="far fa-alarm-clock" type="button" />
                             <br />
-                            <MainButton text="Loading" loading={true} />
+                            <MainButton text="Loading" loading={true} type="button" />
                             <br />
-                            <SecondaryButton text="Secondary Button" />
+                            <SecondaryButton text="Secondary Button" type="button" />
                             <br />
-                            <SecondaryButton text="Disabled" disable={true} />
+                            <SecondaryButton text="Disabled" disable={true} type="button" />
                             <br />
-                            <SecondaryButton text="With Icon" icon="far fa-alien" />
+                            <SecondaryButton text="With Icon" icon="far fa-alien" type="button" />
                             <br />
-                            <SecondaryButton text="Loading" loading={true} />
+                            <SecondaryButton text="Loading" loading={true} type="button" />
                             <br />
                             <ExtraButton text="Extra Button" /> <br />
                             <ExtraButton text="Disabled" disable={true} /> <br />
