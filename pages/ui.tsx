@@ -61,7 +61,7 @@ const UI: NextPage = () => {
                             <Input type="text" label="NAME" />
                             <Input type="email" label="EMAIL" />
                             <Password type="password" label="PASSWORD" />
-                            <TextArea type="textarea" label="COMMENTS" />
+                            <TextArea label="COMMENTS" />
                             <CustomSelect options={selectOptions} initialLabel={{ value: "select-options", label: "SELECT OPTIONS" }} />
                         </div>
                     </div>
