@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import CartIcon from "./Icons/Cart";
 import { MouseEventHandler, useEffect, useRef } from "react";
-import MainButton from "../../common/buttons/MainButton";
+import MainButtonLink from "../../common/buttons/MainButtonLink";
 type CartSidebarProps = {
     toggleCartSidebar: MouseEventHandler<HTMLDivElement>;
     cartSidebarActive: boolean;
@@ -59,7 +59,7 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
                     <p className="text-lg text-gray-500">Your cart is emply. Please add some items in your cart.</p>
                 </div>
                 <div className="text-center mt-5">
-                    <MainButton text="Continue Shopping" icon="far fa-shopping-cart" />
+                    <MainButtonLink text="Continue Shopping" icon="far fa-shopping-cart" to="/"/>
                 </div>
             </div>
         </div>
