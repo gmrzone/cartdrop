@@ -1,6 +1,11 @@
 export type Image = {
     image: string;
 };
+
+export type coupon = {
+    code: string;
+    discount: number;
+}
 export type CategoryType = {
     name: string;
     slug: string;
@@ -8,6 +13,15 @@ export type CategoryType = {
     category_images: Image[];
     created: string;
 };
+
+export type SubcategoryType = {
+    name: string;
+    slug: string;
+    uuid: string;
+    subcategory_images: Image[];
+    coupons: coupon[]
+
+}
 
 export type ProductColorType = {
     name: string;
