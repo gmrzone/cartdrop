@@ -5,7 +5,7 @@ export type Image = {
 export type coupon = {
     code: string;
     discount: number;
-}
+};
 export type CategoryType = {
     name: string;
     slug: string;
@@ -19,9 +19,8 @@ export type SubcategoryType = {
     slug: string;
     uuid: string;
     subcategory_images: Image[];
-    coupons: coupon[]
-
-}
+    coupons: coupon[];
+};
 
 export type ProductColorType = {
     name: string;

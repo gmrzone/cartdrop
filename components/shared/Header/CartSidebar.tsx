@@ -59,7 +59,7 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
                     <p className="text-lg text-gray-500">Your cart is emply. Please add some items in your cart.</p>
                 </div>
                 <div className="text-center mt-5">
-                    <MainButtonLink text="Continue Shopping" icon="far fa-shopping-cart" to="/"/>
+                    <MainButtonLink text="Continue Shopping" icon="far fa-shopping-cart" to="/" />
                 </div>
             </div>
         </div>
