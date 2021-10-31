@@ -25,7 +25,7 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts 
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
-                <h1>Afzal</h1>
+                
             </MainLayout>
         </>
     );

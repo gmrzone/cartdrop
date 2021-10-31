@@ -13,7 +13,7 @@ import ProductHistory from "../components/Home/ProductHistory";
 export const getStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
     const featuredProducts = await axios.get(BACKEND_URL + "/products/featured/");
-    const subcategoryOffers = await axios.get(BACKEND_URL + "/core/subcategory/offers/");
+    const subcategoryOffers = await axios.get(BACKEND_URL + "/core/offers/");
 
     return {
         props: {
