@@ -46,7 +46,6 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts, subcategoryOf
                 <TodaysDeal />
                 <FeaturedProducts featuredProducts={featuredProducts} />
                 <SubcategoryOffer subcategoryOffers={subcategoryOffers} />
-                {/* TODO : Change feature product to ProductHistory with the help of cookies and api */}
                 <ProductHistory historyProducts={featuredProducts} />
             </MainLayout>
         </>
