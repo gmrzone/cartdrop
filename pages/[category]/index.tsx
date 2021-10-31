@@ -4,6 +4,8 @@ import MetaHead from "../../components/common/Head";
 import axios from "axios";
 import { BACKEND_URL } from "../../utils";
 import { CategoryType, SubcategoryType, ProductVariationType } from "../../shared/types";
+import TopProducts from "../../components/categories/topProducts";
+import { useRouter } from "next/router";
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
@@ -13,6 +15,7 @@ interface CategoryListProps {
 const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts }) => {
     console.log(subcategories);
     console.log(topProducts);
+    const router = useRouter();
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
 
@@ -25,7 +28,7 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts 
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
-                
+                <TopProducts category={String(router.query["category"])} topProducts={topProducts} />
             </MainLayout>
         </>
     );
