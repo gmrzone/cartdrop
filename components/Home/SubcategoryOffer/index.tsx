@@ -4,6 +4,7 @@ import { SubcategoryOfferType } from "../../../shared/types";
 import Slider from "./Slider";
 import SliderControl from "../../common/SliderControl";
 import { useRef, useEffect } from "react";
+import useMobile from "../../hooks/useIsMobile";
 
 interface Props {
     subcategoryOffers: SubcategoryOfferType[];
@@ -12,6 +13,8 @@ const SubcategoryOffer: NextPage<Props> = ({ subcategoryOffers }) => {
     const slideableContainerRef = useRef<HTMLDivElement | null>(null);
     const sliderItemRef = useRef<HTMLDivElement | null>(null);
     const currentSliderPosition = useRef<number>(0);
+    const isMobile = useMobile();
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 992) {
@@ -28,15 +31,17 @@ const SubcategoryOffer: NextPage<Props> = ({ subcategoryOffers }) => {
     }, []);
     return (
         <Section title="OFFERS">
-            <div className="absolute z-10 right-0 top-2 hidden ipad:block">
-                <SliderControl
-                    slideableContainerRef={slideableContainerRef}
-                    sliderItemRef={sliderItemRef}
-                    currentSliderPosition={currentSliderPosition}
-                    productsLength={subcategoryOffers.length}
-                    alignmentPattern={[3, 3, 4, 4]}
-                />
-            </div>
+            {!isMobile && (
+                <div className="absolute z-10 right-0 top-2">
+                    <SliderControl
+                        slideableContainerRef={slideableContainerRef}
+                        sliderItemRef={sliderItemRef}
+                        currentSliderPosition={currentSliderPosition}
+                        productsLength={subcategoryOffers.length}
+                        alignmentPattern={[3, 3, 4, 4]}
+                    />
+                </div>
+            )}
             <Slider subcategoryOffers={subcategoryOffers} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
         </Section>
     );
