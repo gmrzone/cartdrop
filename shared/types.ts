@@ -68,7 +68,7 @@ export type ProductVariationImageType = {
     image: string;
     primary: boolean;
 };
-export type FeaturedProductType = {
+export type ProductVariationType = {
     uuid: string;
     pid: string;
     product: ProductBaseType;

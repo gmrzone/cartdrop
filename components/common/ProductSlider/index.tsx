@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { FeaturedProductType } from "../../../shared/types";
+import { ProductVariationType } from "../../../shared/types";
 import ProductItem from "./ProductItem";
 import { MutableRefObject } from "react";
 
 interface IProps {
-    ProductList: FeaturedProductType[];
+    ProductList: ProductVariationType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
     sliderItemRef: MutableRefObject<HTMLDivElement | null>;
 }

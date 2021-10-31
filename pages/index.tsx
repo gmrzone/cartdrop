@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import Hero from "../components/Home/HeroSection/Hero";
 import { BACKEND_URL } from "../utils";
 import axios from "axios";
-import { CategoryType, FeaturedProductType, SubcategoryOfferType } from "../shared/types";
+import { CategoryType, ProductVariationType, SubcategoryOfferType } from "../shared/types";
 import TodaysDeal from "../components/Home/TodeysDeal";
 import FeaturedProducts from "../components/Home/FeaturedProducts";
 import SubcategoryOffer from "../components/Home/SubcategoryOffer";
@@ -26,7 +26,7 @@ export const getStaticProps = async () => {
 
 type HomeProps = {
     categories: CategoryType[];
-    featuredProducts: FeaturedProductType[];
+    featuredProducts: ProductVariationType[];
     subcategoryOffers: SubcategoryOfferType[];
 };
 

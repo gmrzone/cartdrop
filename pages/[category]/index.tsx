@@ -1,17 +1,18 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import MainLayout from "../../components/common/MainLayout";
 import MetaHead from "../../components/common/Head";
-import { useRouter } from "next/router";
 import axios from "axios";
 import { BACKEND_URL } from "../../utils";
-import { CategoryType, SubcategoryType } from "../../shared/types";
+import { CategoryType, SubcategoryType, ProductVariationType } from "../../shared/types";
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
+    topProducts: ProductVariationType[];
 }
 
-const CategoryList: NextPage<CategoryListProps> = ({ subcategories }) => {
+const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts }) => {
     console.log(subcategories);
+    console.log(topProducts);
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
 
@@ -33,11 +34,14 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories }) => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const currentCategory = params!.category;
     const response = await axios.get(BACKEND_URL + `/core/subcategory/${currentCategory}/`);
-    const subcategories: SubcategoryType[] = response.data;
+    const response1 = await axios.get(BACKEND_URL + `/products/${currentCategory}/top/`);
 
+    const subcategories: SubcategoryType[] = response.data;
+    const topProducts: ProductVariationType[] = response1.data;
     return {
         props: {
             subcategories,
+            topProducts,
         },
         revalidate: 86400, // 1 day
     };

@@ -1,13 +1,13 @@
 import { NextPage } from "next";
 import Section from "../common/Section";
 import ProductList from "../common/ProductSlider";
-import { FeaturedProductType } from "../../shared/types";
+import { ProductVariationType } from "../../shared/types";
 import SmallButtonLink from "../common/buttons/SmallButtonLink";
 import SliderControl from "../common/SliderControl";
 import { useRef, useEffect } from "react";
 
 interface IProps {
-    featuredProducts: FeaturedProductType[];
+    featuredProducts: ProductVariationType[];
 }
 
 const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
