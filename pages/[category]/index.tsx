@@ -6,13 +6,14 @@ import { BACKEND_URL } from "../../utils";
 import { CategoryType, SubcategoryType, ProductVariationType } from "../../shared/types";
 import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
+import CategoryPanel from '../../components/common/CategortPanelNew'
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
     topProducts: ProductVariationType[];
 }
 
-const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts }) => {
+const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories }) => {
     console.log(subcategories);
     console.log(topProducts);
     const router = useRouter();
@@ -28,6 +29,7 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts 
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
+                <CategoryPanel categories={categories}/>
                 <TopProducts category={String(router.query["category"])} topProducts={topProducts} />
             </MainLayout>
         </>
@@ -38,13 +40,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const currentCategory = params!.category;
     const response = await axios.get(BACKEND_URL + `/core/subcategory/${currentCategory}/`);
     const response1 = await axios.get(BACKEND_URL + `/products/${currentCategory}/top/`);
+    const response2 = await axios.get(BACKEND_URL + "/core/categories/");
 
     const subcategories: SubcategoryType[] = response.data;
     const topProducts: ProductVariationType[] = response1.data;
+    const categories = response2.data
     return {
         props: {
             subcategories,
             topProducts,
+            categories
         },
         revalidate: 86400, // 1 day
     };

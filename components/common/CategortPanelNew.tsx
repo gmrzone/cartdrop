@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import { CategoryType } from "../../../shared/types";
+import { CategoryType } from "../../shared/types";
 import Image from "next/image";
-import style from "../../../styles/category.module.scss";
+import style from "../../styles/category.module.scss";
 import Link from "next/link";
 
 type CategoryPanelProps = {

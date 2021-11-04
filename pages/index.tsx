@@ -9,6 +9,7 @@ import TodaysDeal from "../components/Home/TodeysDeal";
 import FeaturedProducts from "../components/Home/FeaturedProducts";
 import SubcategoryOffer from "../components/Home/SubcategoryOffer";
 import ProductHistory from "../components/Home/ProductHistory";
+import CategoryPanel from "../components/common/CategortPanelNew";
 
 export const getStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
@@ -42,7 +43,8 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts, subcategoryOf
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
-                <Hero categories={categories} />
+                <CategoryPanel categories={categories}/>
+                <Hero />
                 <TodaysDeal />
                 <FeaturedProducts featuredProducts={featuredProducts} />
                 <SubcategoryOffer subcategoryOffers={subcategoryOffers} />
