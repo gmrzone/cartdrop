@@ -43,7 +43,7 @@ const Home: NextPage<HomeProps> = ({ categories, featuredProducts, subcategoryOf
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
-                <CategoryPanel categories={categories}/>
+                <CategoryPanel categories={categories} activeCategory={null} />
                 <Hero />
                 <TodaysDeal />
                 <FeaturedProducts featuredProducts={featuredProducts} />

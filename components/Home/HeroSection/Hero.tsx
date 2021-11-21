@@ -1,8 +1,5 @@
 import { NextPage } from "next";
 
-
-
-
 const Hero: NextPage = () => {
     return (
         <div className="bg-hero-image relative w-full h-hero-mobile-sm mobile-bg:h-hero-mobile-bg ipad:h-hero-ipad desktop:h-hero-desktop desktop-big:h-hero-desktop-lg bg-no-repeat bg-cover bg-clip-content bg-center flex justify-center items-center z-0">

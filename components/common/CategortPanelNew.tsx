@@ -6,13 +6,14 @@ import Link from "next/link";
 
 type CategoryPanelProps = {
     categories: CategoryType[];
+    activeCategory: string | null;
 };
-const CategoryPanel: NextPage<CategoryPanelProps> = ({ categories }) => {
+const CategoryPanel: NextPage<CategoryPanelProps> = ({ activeCategory, categories }) => {
     const renderCategory = categories.map((x) => {
         return (
             <li key={x.uuid}>
                 <Link href={`/${x.slug}`}>
-                    <a className={style["category-item"]}>
+                    <a className={`${style["category-item"]} ${activeCategory === x.slug ? style["category-active"] : ""}`}>
                         <div className={style["image-container"]}>
                             <Image src={x.category_images[0]?.image} alt={x.slug} layout="fill" objectFit="cover" />
                             {/* <img src={x.category_images[0]?.image} alt="testing"/> */}

@@ -6,7 +6,7 @@ import { BACKEND_URL } from "../../utils";
 import { CategoryType, SubcategoryType, ProductVariationType } from "../../shared/types";
 import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
-import CategoryPanel from '../../components/common/CategortPanelNew'
+import CategoryPanel from "../../components/common/CategortPanelNew";
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
@@ -17,6 +17,7 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
     console.log(subcategories);
     console.log(topProducts);
     const router = useRouter();
+    const activeCategory = String(router.query["category"]);
     const description: string =
         "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
 
@@ -29,8 +30,8 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
             />
             <MainLayout>
-                <CategoryPanel categories={categories}/>
-                <TopProducts category={String(router.query["category"])} topProducts={topProducts} />
+                <CategoryPanel categories={categories} activeCategory={activeCategory} />
+                <TopProducts category={activeCategory} topProducts={topProducts} />
             </MainLayout>
         </>
     );
@@ -44,12 +45,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const subcategories: SubcategoryType[] = response.data;
     const topProducts: ProductVariationType[] = response1.data;
-    const categories = response2.data
+    const categories = response2.data;
     return {
         props: {
             subcategories,
             topProducts,
-            categories
+            categories,
         },
         revalidate: 86400, // 1 day
     };
