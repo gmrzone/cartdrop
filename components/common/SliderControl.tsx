@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { MutableRefObject } from "react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 interface SliderControlProps {
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
@@ -20,6 +20,32 @@ const SliderControl: NextPage<SliderControlProps> = ({
 }) => {
     const rightControlRef = useRef<HTMLDivElement | null>(null);
     const leftControlRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const resetControls = () => {
+            if (rightControlRef.current && leftControlRef.current) {
+                rightControlRef.current.classList.remove("bg-gray-400");
+                rightControlRef.current.classList.remove("text-gray-200");
+                rightControlRef.current.classList.remove("cursor-not-allowed");
+                rightControlRef.current.classList.add("bg-secondary");
+                rightControlRef.current.classList.add("hover:bg-main");
+                rightControlRef.current.classList.add("text-white");
+                rightControlRef.current.classList.add("cursor-pointer");
+
+                leftControlRef.current.classList.remove("bg-secondary");
+                leftControlRef.current.classList.remove("hover:bg-main");
+                leftControlRef.current.classList.remove("text-white");
+                leftControlRef.current.classList.remove("cursor-pointer");
+                leftControlRef.current.classList.add("bg-gray-400");
+                leftControlRef.current.classList.add("text-gray-200");
+                leftControlRef.current.classList.add("cursor-not-allowed");
+            }
+        };
+
+        if (currentSliderPosition === 0) {
+            resetControls();
+        }
+    }, [currentSliderPosition]);
     const goLeft = () => {
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             let stopPosition;
