@@ -23,17 +23,13 @@ const SliderControl: NextPage<SliderControlProps> = ({
             let stopPosition;
             if (window.innerWidth >= 992) {
                 if (window.innerWidth <= 1199) {
-                    stopPosition = -(currentSliderPosition.current,
-                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + 15);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + 15);
                 } else if (window.innerWidth <= 1399) {
-                    stopPosition = -(currentSliderPosition.current,
-                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + 15);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + 15);
                 } else if (window.innerWidth <= 1599) {
-                    stopPosition = -(currentSliderPosition.current,
-                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + 15);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + 15);
                 } else {
-                    stopPosition = -(currentSliderPosition.current,
-                    sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + 15);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + 15);
                 }
                 // if (window.innerWidth <= 1600) {
                 //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 3) + 15);
