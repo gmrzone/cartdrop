@@ -4,7 +4,7 @@ import ProductList from "../common/ProductSlider";
 import { ProductVariationType } from "../../shared/types";
 import SmallButtonLink from "../common/buttons/SmallButtonLink";
 import SliderControl from "../common/SliderControl";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import useMobile from "../hooks/useIsMobile";
 
 interface IProps {
@@ -15,13 +15,13 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
     const isMobile = useMobile();
     const slideableContainerRef = useRef<HTMLDivElement | null>(null);
     const sliderItemRef = useRef<HTMLDivElement | null>(null);
-    const currentSliderPosition = useRef<number>(0);
+    const [currentSliderPosition, setCurrentSliderPosition] = useState<number>(0);
 
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 992) {
                 if (slideableContainerRef.current) {
-                    currentSliderPosition.current = 0;
+                    setCurrentSliderPosition(0);
                     slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
                 }
             }
@@ -32,6 +32,9 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
         };
     }, []);
 
+    const setCurrentSliderPositionTo = (n: number) => {
+        setCurrentSliderPosition(n);
+    };
     return (
         <Section title="FEATURED">
             {isMobile ? (
@@ -44,6 +47,7 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                         slideableContainerRef={slideableContainerRef}
                         sliderItemRef={sliderItemRef}
                         currentSliderPosition={currentSliderPosition}
+                        setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                         productsLength={featuredProducts.length}
                         alignmentPattern={[3, 3, 3, 4]}
                     />
@@ -54,6 +58,7 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                 slideableContainerRef={slideableContainerRef}
                 sliderItemRef={sliderItemRef}
                 currentSliderPosition={currentSliderPosition}
+                setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                 category=""
             />
         </Section>

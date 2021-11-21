@@ -8,10 +8,18 @@ interface IProps {
     ProductList: ProductVariationType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
     sliderItemRef: MutableRefObject<HTMLDivElement | null>;
-    currentSliderPosition: MutableRefObject<number>;
+    currentSliderPosition: number;
+    setCurrentSliderPositionTo: (n: number) => void;
     category: string;
 }
-const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sliderItemRef, currentSliderPosition, category }) => {
+const ProductList: NextPage<IProps> = ({
+    ProductList,
+    slideableContainerRef,
+    sliderItemRef,
+    currentSliderPosition,
+    setCurrentSliderPositionTo,
+    category,
+}) => {
     const renderProductList = ProductList?.map((x, i) => {
         return <ProductItem key={x.uuid} item={x} index={i} sliderItemRef={sliderItemRef} />;
     });
@@ -20,7 +28,7 @@ const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sli
         const resetSlider = () => {
             if (window.innerWidth >= 992) {
                 if (slideableContainerRef.current) {
-                    currentSliderPosition.current = 0;
+                    setCurrentSliderPositionTo(0);
                     slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
                 }
             }
@@ -30,7 +38,7 @@ const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sli
         return () => {
             resetSlider();
         };
-    }, [category, currentSliderPosition, slideableContainerRef]);
+    }, [category, slideableContainerRef]);
     return (
         <div className="overflow-x-hidden">
             <div

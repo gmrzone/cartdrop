@@ -3,7 +3,7 @@ import Section from "../../common/Section";
 import { SubcategoryOfferType } from "../../../shared/types";
 import Slider from "./Slider";
 import SliderControl from "../../common/SliderControl";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import useMobile from "../../hooks/useIsMobile";
 
 interface Props {
@@ -12,14 +12,14 @@ interface Props {
 const SubcategoryOffer: NextPage<Props> = ({ subcategoryOffers }) => {
     const slideableContainerRef = useRef<HTMLDivElement | null>(null);
     const sliderItemRef = useRef<HTMLDivElement | null>(null);
-    const currentSliderPosition = useRef<number>(0);
+    const [currentSliderPosition, setCurrentSliderPosition] = useState<number>(0);
     const isMobile = useMobile();
 
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 992) {
                 if (slideableContainerRef.current) {
-                    currentSliderPosition.current = 0;
+                    setCurrentSliderPosition(0);
                     slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
                 }
             }
@@ -29,6 +29,10 @@ const SubcategoryOffer: NextPage<Props> = ({ subcategoryOffers }) => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
+    const setCurrentSliderPositionTo = (n: number) => {
+        setCurrentSliderPosition(n);
+    };
     return (
         <Section title="OFFERS">
             {!isMobile && (
@@ -37,6 +41,7 @@ const SubcategoryOffer: NextPage<Props> = ({ subcategoryOffers }) => {
                         slideableContainerRef={slideableContainerRef}
                         sliderItemRef={sliderItemRef}
                         currentSliderPosition={currentSliderPosition}
+                        setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                         productsLength={subcategoryOffers.length}
                         alignmentPattern={[3, 3, 4, 4]}
                     />
