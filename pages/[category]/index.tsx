@@ -11,6 +11,7 @@ import CategoryPanel from "../../components/common/CategortPanelNew";
 interface CategoryListProps {
     subcategories: SubcategoryType[];
     topProducts: ProductVariationType[];
+    categories: CategoryType[];
 }
 
 const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories }) => {
