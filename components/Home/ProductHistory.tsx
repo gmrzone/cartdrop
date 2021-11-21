@@ -50,7 +50,13 @@ const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
                 </div>
             )}
 
-            <ProductList ProductList={historyProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
+            <ProductList
+                ProductList={historyProducts}
+                slideableContainerRef={slideableContainerRef}
+                sliderItemRef={sliderItemRef}
+                currentSliderPosition={currentSliderPosition}
+                category=""
+            />
         </Section>
     );
 };

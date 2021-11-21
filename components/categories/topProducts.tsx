@@ -34,6 +34,7 @@ const TopProducts: NextPage<TopProductsProps> = ({ category, topProducts }) => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
     return (
         <Section title={`BEST SELLING ${category?.toUpperCase()}`}>
             {isMobile ? (
@@ -51,7 +52,13 @@ const TopProducts: NextPage<TopProductsProps> = ({ category, topProducts }) => {
                     />
                 </div>
             )}
-            <ProductList ProductList={topProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
+            <ProductList
+                ProductList={topProducts}
+                slideableContainerRef={slideableContainerRef}
+                sliderItemRef={sliderItemRef}
+                currentSliderPosition={currentSliderPosition}
+                category={category}
+            />
         </Section>
     );
 };

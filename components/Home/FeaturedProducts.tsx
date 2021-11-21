@@ -49,7 +49,13 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                     />
                 </div>
             )}
-            <ProductList ProductList={featuredProducts} slideableContainerRef={slideableContainerRef} sliderItemRef={sliderItemRef} />
+            <ProductList
+                ProductList={featuredProducts}
+                slideableContainerRef={slideableContainerRef}
+                sliderItemRef={sliderItemRef}
+                currentSliderPosition={currentSliderPosition}
+                category=""
+            />
         </Section>
     );
 };
