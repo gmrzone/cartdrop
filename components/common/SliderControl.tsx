@@ -51,21 +51,20 @@ const SliderControl: NextPage<SliderControlProps> = ({
             let stopPosition;
             if (window.innerWidth >= 992) {
                 if (window.innerWidth <= 1199) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + 15);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + 18);
                 } else if (window.innerWidth <= 1399) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + 15);
-                } else if (window.innerWidth <= 1599) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + 15);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + 18);
+                } else if (window.innerWidth <= 1899) {
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + 18);
                 } else {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + 15);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + 18);
                 }
                 // if (window.innerWidth <= 1600) {
-                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 3) + 15);
+                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 3) + 18);
                 // } else {
-                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 4) + 15);
+                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 4) + 18);
                 // }
                 if (currentSliderPosition > stopPosition) {
-                    console.log(currentSliderPosition, stopPosition + (sliderItemRef.current.clientWidth - 30));
                     leftControlRef.current.classList.remove("bg-gray-400");
                     leftControlRef.current.classList.remove("text-gray-200");
                     leftControlRef.current.classList.remove("cursor-not-allowed");
@@ -74,10 +73,11 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     leftControlRef.current.classList.add("text-white");
                     leftControlRef.current.classList.add("cursor-pointer");
 
-                    const temp_pos = currentSliderPosition - sliderItemRef.current.clientWidth - 15;
+                    const temp_pos = currentSliderPosition - sliderItemRef.current.clientWidth - 18;
                     slideableContainerRef.current.style.transform = `translate3d(${temp_pos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(temp_pos);
                 }
+                console.log(currentSliderPosition, stopPosition)
 
                 if (currentSliderPosition <= stopPosition) {
                     rightControlRef.current.classList.remove("bg-secondary");
@@ -103,12 +103,12 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     rightControlRef.current.classList.add("text-white");
                     rightControlRef.current.classList.add("cursor-pointer");
 
-                    const temp_pos = currentSliderPosition + sliderItemRef.current.clientWidth + 15;
+                    const temp_pos = currentSliderPosition + sliderItemRef.current.clientWidth + 18;
                     slideableContainerRef.current.style.transform = `translate3d(${temp_pos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(temp_pos);
                 }
 
-                if (currentSliderPosition >= 0 - sliderItemRef.current.clientWidth + 15) {
+                if (currentSliderPosition >= (sliderItemRef.current.clientWidth + 18)) {
                     leftControlRef.current.classList.remove("bg-secondary");
                     leftControlRef.current.classList.remove("hover:bg-main");
                     leftControlRef.current.classList.remove("text-white");
