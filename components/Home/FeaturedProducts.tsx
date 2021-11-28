@@ -16,7 +16,6 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
     const slideableContainerRef = useRef<HTMLDivElement | null>(null);
     const sliderItemRef = useRef<HTMLDivElement | null>(null);
     const [currentSliderPosition, setCurrentSliderPosition] = useState<number>(0);
-    console.log(featuredProducts);
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 992) {

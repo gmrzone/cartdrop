@@ -76,20 +76,19 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     leftControlRef.current.classList.add("text-white");
                     leftControlRef.current.classList.add("cursor-pointer");
 
-                    const temp_pos = currentSliderPosition - sliderItemRef.current.clientWidth - extraSpace;
-                    slideableContainerRef.current.style.transform = `translate3d(${temp_pos}px, 0px, 0px)`;
-                    setCurrentSliderPositionTo(temp_pos);
-                }
-                console.log(currentSliderPosition, stopPosition);
+                    const nextPos = currentSliderPosition - sliderItemRef.current.clientWidth - extraSpace;
+                    slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
+                    setCurrentSliderPositionTo(nextPos);
 
-                if (currentSliderPosition <= stopPosition) {
-                    rightControlRef.current.classList.remove("bg-secondary");
-                    rightControlRef.current.classList.remove("hover:bg-main");
-                    rightControlRef.current.classList.remove("text-white");
-                    rightControlRef.current.classList.remove("cursor-pointer");
-                    rightControlRef.current.classList.add("bg-gray-400");
-                    rightControlRef.current.classList.add("text-gray-200");
-                    rightControlRef.current.classList.add("cursor-not-allowed");
+                    if (nextPos <= stopPosition) {
+                        rightControlRef.current.classList.remove("bg-secondary");
+                        rightControlRef.current.classList.remove("hover:bg-main");
+                        rightControlRef.current.classList.remove("text-white");
+                        rightControlRef.current.classList.remove("cursor-pointer");
+                        rightControlRef.current.classList.add("bg-gray-400");
+                        rightControlRef.current.classList.add("text-gray-200");
+                        rightControlRef.current.classList.add("cursor-not-allowed");
+                    }
                 }
             }
         }
@@ -107,9 +106,9 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     rightControlRef.current.classList.add("text-white");
                     rightControlRef.current.classList.add("cursor-pointer");
 
-                    const temp_pos = currentSliderPosition + sliderItemRef.current.clientWidth + 18;
-                    slideableContainerRef.current.style.transform = `translate3d(${temp_pos}px, 0px, 0px)`;
-                    setCurrentSliderPositionTo(temp_pos);
+                    const nextPos = currentSliderPosition + sliderItemRef.current.clientWidth + 18;
+                    slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
+                    setCurrentSliderPositionTo(nextPos);
                 }
 
                 if (currentSliderPosition >= sliderItemRef.current.clientWidth + 18) {
