@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { ProductVariationType } from "../../../shared/types";
-import ProductItem from "./ProductItem";
+import SliderItem from "./SliderItem";
 import { MutableRefObject } from "react";
 import { useEffect } from "react";
 
@@ -21,7 +21,7 @@ const ProductList: NextPage<IProps> = ({
     category,
 }) => {
     const renderProductList = ProductList?.map((x, i) => {
-        return <ProductItem key={x.uuid} item={x} index={i} sliderItemRef={sliderItemRef} />;
+        return <SliderItem key={x.uuid} item={x} index={i} sliderItemRef={sliderItemRef} />;
     });
 
     useEffect(() => {

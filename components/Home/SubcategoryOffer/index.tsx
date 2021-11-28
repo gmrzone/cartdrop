@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Section from "../../common/Section";
 import { SubcategoryOfferType } from "../../../shared/types";
-import Slider from "./Slider";
+import Slider from "../../common/CategorySlider";
 import SliderControl from "../../common/SliderControl";
 import { useRef, useEffect, useState } from "react";
 import useMobile from "../../hooks/useIsMobile";

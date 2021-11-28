@@ -25,7 +25,7 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
     return (
         <>
             <MetaHead
-                title="Contact us"
+                title={`Best ${activeCategory}`}
                 description={description}
                 currentUrl="/contact"
                 keywords="ecommerce, opensource, django, django rest framework, redis, postgresql, nextjs, typescript, tailwing, best, ecommerce, platform, india, 2021, fullstack"
