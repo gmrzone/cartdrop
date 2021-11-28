@@ -61,7 +61,6 @@ const TopProducts: NextPage<TopProductsProps> = ({ category, topProducts }) => {
                 ProductList={topProducts}
                 slideableContainerRef={slideableContainerRef}
                 sliderItemRef={sliderItemRef}
-                currentSliderPosition={currentSliderPosition}
                 setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                 category={category}
             />

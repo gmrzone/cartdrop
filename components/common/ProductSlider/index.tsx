@@ -8,7 +8,6 @@ interface IProps {
     ProductList: ProductVariationType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
     sliderItemRef: MutableRefObject<HTMLDivElement | null>;
-    currentSliderPosition: number;
     setCurrentSliderPositionTo: (n: number) => void;
     category: string;
 }
@@ -16,7 +15,6 @@ const ProductList: NextPage<IProps> = ({
     ProductList,
     slideableContainerRef,
     sliderItemRef,
-    currentSliderPosition,
     setCurrentSliderPositionTo,
     category,
 }) => {

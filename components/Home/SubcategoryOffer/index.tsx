@@ -44,7 +44,7 @@ const SubcategoryOffer: NextPage<Props> = ({ subcategoryOffers }) => {
                         setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                         productsLength={subcategoryOffers.length}
                         alignmentPattern={[3, 3, 4, 4]}
-                        extraSpace={14}
+                        extraSpace={15.5}
                     />
                 </div>
             )}

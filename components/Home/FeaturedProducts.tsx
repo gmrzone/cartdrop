@@ -57,7 +57,6 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                 ProductList={featuredProducts}
                 slideableContainerRef={slideableContainerRef}
                 sliderItemRef={sliderItemRef}
-                currentSliderPosition={currentSliderPosition}
                 setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                 category=""
             />

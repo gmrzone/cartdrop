@@ -60,7 +60,6 @@ const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
                 ProductList={historyProducts}
                 slideableContainerRef={slideableContainerRef}
                 sliderItemRef={sliderItemRef}
-                currentSliderPosition={currentSliderPosition}
                 setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                 category=""
             />
