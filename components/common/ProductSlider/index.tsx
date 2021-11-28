@@ -11,13 +11,7 @@ interface IProps {
     setCurrentSliderPositionTo: (n: number) => void;
     category: string;
 }
-const ProductList: NextPage<IProps> = ({
-    ProductList,
-    slideableContainerRef,
-    sliderItemRef,
-    setCurrentSliderPositionTo,
-    category,
-}) => {
+const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sliderItemRef, setCurrentSliderPositionTo, category }) => {
     const renderProductList = ProductList?.map((x, i) => {
         return <SliderItem key={x.uuid} item={x} index={i} sliderItemRef={sliderItemRef} />;
     });
