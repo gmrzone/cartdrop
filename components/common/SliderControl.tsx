@@ -47,6 +47,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
         }
     }, [currentSliderPosition]);
     const goLeft = () => {
+        console.log("Left")
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             let stopPosition;
             if (window.innerWidth >= 992) {
@@ -54,7 +55,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + 18);
                 } else if (window.innerWidth <= 1399) {
                     stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + 18);
-                } else if (window.innerWidth <= 1899) {
+                } else if (window.innerWidth <= 1599) {
                     stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + 18);
                 } else {
                     stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + 18);
@@ -92,6 +93,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
         }
     };
     const goRight = () => {
+        console.log("Right")
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             if (window.innerWidth >= 992) {
                 if (currentSliderPosition < 0) {
