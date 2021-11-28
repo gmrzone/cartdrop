@@ -9,6 +9,7 @@ interface SliderControlProps {
     setCurrentSliderPositionTo: (n: number) => void;
     productsLength: number;
     alignmentPattern: [number, number, number, number];
+    extraSpace: number;
 }
 const SliderControl: NextPage<SliderControlProps> = ({
     slideableContainerRef,
@@ -17,6 +18,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
     setCurrentSliderPositionTo,
     productsLength,
     alignmentPattern,
+    extraSpace,
 }) => {
     const rightControlRef = useRef<HTMLDivElement | null>(null);
     const leftControlRef = useRef<HTMLDivElement | null>(null);
@@ -47,18 +49,18 @@ const SliderControl: NextPage<SliderControlProps> = ({
         }
     }, [currentSliderPosition]);
     const goLeft = () => {
-        console.log("Left")
+        console.log("Left");
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             let stopPosition;
             if (window.innerWidth >= 992) {
                 if (window.innerWidth <= 1199) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + 18);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + extraSpace);
                 } else if (window.innerWidth <= 1399) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + 18);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + extraSpace);
                 } else if (window.innerWidth <= 1599) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + 18);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + extraSpace);
                 } else {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + 18);
+                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + extraSpace);
                 }
                 // if (window.innerWidth <= 1600) {
                 //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 3) + 18);
@@ -74,11 +76,11 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     leftControlRef.current.classList.add("text-white");
                     leftControlRef.current.classList.add("cursor-pointer");
 
-                    const temp_pos = currentSliderPosition - sliderItemRef.current.clientWidth - 18;
+                    const temp_pos = currentSliderPosition - sliderItemRef.current.clientWidth - extraSpace;
                     slideableContainerRef.current.style.transform = `translate3d(${temp_pos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(temp_pos);
                 }
-                console.log(currentSliderPosition, stopPosition)
+                console.log(currentSliderPosition, stopPosition);
 
                 if (currentSliderPosition <= stopPosition) {
                     rightControlRef.current.classList.remove("bg-secondary");
@@ -93,7 +95,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
         }
     };
     const goRight = () => {
-        console.log("Right")
+        console.log("Right");
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             if (window.innerWidth >= 992) {
                 if (currentSliderPosition < 0) {
@@ -110,7 +112,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     setCurrentSliderPositionTo(temp_pos);
                 }
 
-                if (currentSliderPosition >= (sliderItemRef.current.clientWidth + 18)) {
+                if (currentSliderPosition >= sliderItemRef.current.clientWidth + 18) {
                     leftControlRef.current.classList.remove("bg-secondary");
                     leftControlRef.current.classList.remove("hover:bg-main");
                     leftControlRef.current.classList.remove("text-white");

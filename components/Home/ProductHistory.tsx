@@ -51,6 +51,7 @@ const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
                         setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                         productsLength={historyProducts.length}
                         alignmentPattern={[3, 3, 3, 4]}
+                        extraSpace={18}
                     />
                 </div>
             )}
