@@ -1,9 +1,14 @@
 import { NextPage } from "next";
 import SortByDropDown from "./SortByDropDown";
-const FilterHead: NextPage = () => {
+
+type FilterHeadProps = {
+    openFilterSilder: () => void;
+
+}
+const FilterHead: NextPage<FilterHeadProps> = ({ openFilterSilder }) => {
     return (
         <div className="drop-shadow px-4 py-2 flex justify-between items-center">
-            <div className="flex space-x-2 mobile-bg:space-x-3 ipad:space-x-4 items-center">
+            <div className="flex space-x-2 mobile-bg:space-x-3 ipad:space-x-4 items-center cursor-pointer" onClick={openFilterSilder}>
                 {/* Filter icon */}
                 <i className="far fa-filter text-white text-sm mobile-lg:text-base ipad:text-xl desktop-big:text-2xl" />
                 <h2 className="text-white text-sm mobile-lg:text-base ipad:text-xl desktop-big:text-2xl">FILTERS</h2>
