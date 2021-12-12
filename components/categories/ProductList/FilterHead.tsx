@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import CustomSelect from "../../../components/common/inputs/CustomSelect";
+import SortByDropDown from "./SortByDropDown";
 const FilterHead: NextPage = () => {
     return (
         <div className="drop-shadow px-4 py-2 flex justify-between items-center">
@@ -9,7 +9,7 @@ const FilterHead: NextPage = () => {
                 <i className="far fa-filter text-white text-3xl" />
                 <h2 className="text-white">FILTERS</h2>
             </div>
-            <div>
+            <div className="flex w-full space-x-2 justify-end items-center">
                 <div className="flex space-x-2">
                     {/* Applied filters  */}
                     <div className="text-xs bg-white px-2 py-2 rounded-full flex space-x-1">
@@ -29,6 +29,7 @@ const FilterHead: NextPage = () => {
                         </div>
                     </div>
                 </div>
+                <SortByDropDown />
             </div>
         </div>
     );

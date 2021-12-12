@@ -8,7 +8,6 @@ import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
 import CategoryPanel from "../../components/common/CategortPanelNew";
 import ProductList from "../../components/categories/ProductList";
-import Section from "../../components/common/Section";
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];

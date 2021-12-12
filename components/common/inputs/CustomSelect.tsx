@@ -74,11 +74,11 @@ const Select: NextPage<SelectProps> = ({ options, initialLabel }) => {
             }`}
             onClick={toggleDropDown}
             ref={mainContainer}>
-            <select className="hidden">
+            {/* <select className="hidden">
                 {options.map((x) => {
                     return <option key={x.value}>{x.label}</option>;
                 })}
-            </select>
+            </select> */}
             <i className="fas fa-sort-down absolute right-4 top-4 text-main" />
             <div className="font-medium text-xl text-main">
                 <span
