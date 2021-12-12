@@ -21,6 +21,17 @@ const Filter: NextPage<FilterProps> = ({ closeFilterSlider, filterSliderActive }
         }
     }, [filterSliderActive])
 
+    useEffect(() => {
+        const clickOutside = () => {
+            closeFilterSlider()
+        }
+
+        document.body.addEventListener("click", clickOutside)
+
+        return () => {
+            document.body.removeEventListener("click", clickOutside)
+        }
+    }, [closeFilterSlider])
     return (
         <div className="h-screen fixed w-full max-w-sm bg-white top-0 left-0 z-[100] shadow-drop-down transition-transform duration-300 -translate-x-full" ref={slider}>
             <div className="p-3 flex items-center justify-between shadow-g-in">
