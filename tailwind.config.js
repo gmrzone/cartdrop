@@ -75,6 +75,7 @@ module.exports = {
             screens: {
                 "mobile-bg": "361px",
                 "mobile-lg": "550px",
+                "mobile-xl": "690px",
                 ipad: "992px",
                 desktop: "1199px",
                 "desktop-big": "1399px",
