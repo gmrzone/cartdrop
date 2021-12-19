@@ -52,7 +52,7 @@ const Filter: NextPage<FilterProps> = ({ closeFilterSlider, filterSliderActive }
             </div>
             {/* Filters */}
             <div className="py-8 px-6">
-                <PriceRangeSLider maxPrice={5000000} />
+                <PriceRangeSLider maxPrice={50000} />
             </div>
         </div>
     );

@@ -1,11 +1,13 @@
 import { NextPage } from "next";
-import { Dispatch, FormEventHandler, SetStateAction } from "react";
+import { FormEventHandler } from "react";
 
 type NumberInputProps = {
     currentValue: number;
     onChange: FormEventHandler<HTMLInputElement>;
-    type:string
+    type: string;
 };
+
+// TODO : Fix This component later (change input type number to select dropdown with different prices)
 const NumberInput: NextPage<NumberInputProps> = ({ currentValue, onChange, type }) => {
     return (
         <div className="font-roboto whitespace-nowrap text-main number-input">
@@ -16,6 +18,7 @@ const NumberInput: NextPage<NumberInputProps> = ({ currentValue, onChange, type 
                 className="border w-[100px] ipad:w-[120px] h-[40px] rounded-md text-center text-md ipad:text-lg"
                 onChange={onChange}
                 data-type={type}
+                disabled
             />
             <style jsx>{`
                 .number-input input[type="number"] {

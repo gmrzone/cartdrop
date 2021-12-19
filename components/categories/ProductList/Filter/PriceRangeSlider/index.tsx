@@ -9,11 +9,11 @@ type PriceRangeSliderType = {
 
 const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
     const [firstRangeValue, setFirstRangeValue] = useState<number>(0); // add default start price
-    const [secondRangeValue, setSecondRangeValue] = useState<number>(5000000); // add default end price
+    const [secondRangeValue, setSecondRangeValue] = useState<number>(maxPrice); // add default end price
     const innerRange = useRef<null | HTMLDivElement>(null);
     const firstRangeRef = useRef<null | HTMLInputElement>(null);
     const secondRangeRef = useRef<null | HTMLInputElement>(null);
-    const priceGap = (maxPrice * 10) / 100;
+    const priceGap = (maxPrice * 8) / 100;
 
     const rangeInputHandler: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (innerRange.current && firstRangeRef.current && secondRangeRef.current) {
@@ -51,7 +51,7 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
 
     return (
         <div>
-            <h4 className="text-gray-700 mb-4">Price Range</h4>
+            <h5 className="text-gray-700 mb-4">Price Range</h5>
             <Slider innerRange={innerRange} />
             <div className="relative range-input">
                 <input
