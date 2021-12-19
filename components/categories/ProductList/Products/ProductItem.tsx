@@ -1,9 +1,5 @@
 const ProductItem = () => {
-    return (
-        <div>
+    return <div></div>;
+};
 
-        </div>
-    )
-}
-
-export default ProductItem
+export default ProductItem;

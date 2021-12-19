@@ -1,39 +1,46 @@
-import { NextPage } from 'next';
-import { useEffect, useRef } from 'react';
+import { NextPage } from "next";
+import { MouseEventHandler, useEffect, useRef } from "react";
+import PriceRangeSLider from "./PriceRangeSlider";
 
 type FilterProps = {
     closeFilterSlider: () => void;
     filterSliderActive: boolean;
-}
+};
 
 const Filter: NextPage<FilterProps> = ({ closeFilterSlider, filterSliderActive }) => {
-    const slider = useRef<HTMLDivElement | null>(null)
+    const slider = useRef<HTMLDivElement | null>(null);
     useEffect(() => {
-        if (slider.current){
-            if (filterSliderActive){
-                slider.current.classList.remove("-translate-x-full")
-                slider.current.classList.add("translate-x-0")
-            }
-            else{
-                slider.current.classList.remove("translate-x-0")
-                slider.current.classList.add("-translate-x-full")
+        if (slider.current) {
+            if (filterSliderActive) {
+                slider.current.classList.remove("-translate-x-full");
+                slider.current.classList.add("translate-x-0");
+            } else {
+                slider.current.classList.remove("translate-x-0");
+                slider.current.classList.add("-translate-x-full");
             }
         }
-    }, [filterSliderActive])
+    }, [filterSliderActive]);
 
     useEffect(() => {
         const clickOutside = () => {
-            closeFilterSlider()
-        }
+            closeFilterSlider();
+        };
 
-        document.body.addEventListener("click", clickOutside)
+        document.body.addEventListener("click", clickOutside);
 
         return () => {
-            document.body.removeEventListener("click", clickOutside)
-        }
-    }, [closeFilterSlider])
+            document.body.removeEventListener("click", clickOutside);
+        };
+    }, [closeFilterSlider]);
+
+    const ignoreClickInside: MouseEventHandler = (e) => {
+        e.stopPropagation();
+    };
     return (
-        <div className="h-screen fixed w-full max-w-sm bg-white top-0 left-0 z-[100] shadow-drop-down transition-transform duration-300 -translate-x-full" ref={slider}>
+        <div
+            className="h-screen fixed w-full max-w-sm bg-white top-0 left-0 z-[100] shadow-drop-down transition-transform duration-300 -translate-x-full"
+            ref={slider}
+            onClick={ignoreClickInside}>
             <div className="p-3 flex items-center justify-between shadow-g-in">
                 <div className="pl-2">
                     <i className="far fa-filter text-main text-2xl ipad:text-3xl" />
@@ -43,8 +50,12 @@ const Filter: NextPage<FilterProps> = ({ closeFilterSlider, filterSliderActive }
                     <i className="fal fa-times text-3xl text-main cursor-pointer" />
                 </div>
             </div>
+            {/* Filters */}
+            <div className="py-8 px-6">
+                <PriceRangeSLider maxPrice={5000000} />
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Filter
+export default Filter;
