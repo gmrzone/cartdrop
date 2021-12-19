@@ -8,6 +8,8 @@ type PriceRangeSliderType = {
 };
 
 const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
+    const [firstRangeValue, setFirstRangeValue] = useState<number>(0); // add default start price
+    const [secondRangeValue, setSecondRangeValue] = useState<number>(5000000); // add default end price
     const innerRange = useRef<null | HTMLDivElement>(null);
     const firstRangeRef = useRef<null | HTMLInputElement>(null);
     const secondRangeRef = useRef<null | HTMLInputElement>(null);
@@ -15,24 +17,35 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
     const rangeInputHandler: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (innerRange.current && firstRangeRef.current && secondRangeRef.current) {
             const priceGap = (+maxPrice * 10) / 100;
-            const minValue = +firstRangeRef.current.value;
-            const maxValue = +secondRangeRef.current.value;
-            const leftPercent = (minValue / maxPrice) * 100;
-            const rightPercent = 100 - (maxValue / maxPrice) * 100;
+            const minValue = +firstRangeRef.current.value; // get value of first range
+            const maxValue = +secondRangeRef.current.value; // get value of second range
+            const leftPercent = (firstRangeValue / maxPrice) * 100; // left progress percent
+            const rightPercent = 100 - (secondRangeValue / maxPrice) * 100; // right progress percent
+            const rangeType = e.target.dataset.type;
             if (maxValue - minValue < priceGap) {
-                const rangeType = e.target.dataset.type;
-                console.log(rangeType);
+                // if both range is too close (ie px between them is < priceGap)
                 if (rangeType === "left") {
-                    const newValue = maxValue - priceGap;
+                    // change the value of first range to priceGap from second range to right
+                    const newValue = secondRangeValue - priceGap;
+                    setFirstRangeValue(newValue);
                     firstRangeRef.current.value = newValue.toString();
                 } else {
-                    const newValue = minValue + priceGap;
+                    // change the value of second range to priceGap from first range to left
+                    const newValue = firstRangeValue + priceGap;
+                    setSecondRangeValue(newValue);
                     secondRangeRef.current.value = newValue.toString();
                 }
             } else {
-                innerRange.current.style.left = leftPercent + "%";
-                innerRange.current.style.right = rightPercent + "%";
+                // if both range is not too close just change its value
+                if (rangeType === "left") {
+                    setFirstRangeValue(+e.target.value);
+                } else {
+                    setSecondRangeValue(+e.target.value);
+                }
             }
+            // update inner progress bar according to both range position
+            innerRange.current.style.left = leftPercent + "%";
+            innerRange.current.style.right = rightPercent + "%";
         }
     };
 
@@ -45,25 +58,25 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
                     type="range"
                     min={0}
                     max={maxPrice}
-                    defaultValue={2000}
                     onInput={rangeInputHandler}
                     data-type="left"
                     ref={firstRangeRef}
+                    value={firstRangeValue}
                 />
                 <input
                     type="range"
                     min={0}
                     max={maxPrice}
-                    defaultValue={200000}
                     onInput={rangeInputHandler}
                     data-type="right"
                     ref={secondRangeRef}
+                    value={secondRangeValue}
                 />
             </div>
             <div className="flex mt-4 justify-between items-center">
-                <NumberInput currentValue={2000} />
+                <NumberInput currentValue={firstRangeValue} setRangeValue={setFirstRangeValue} />
                 -
-                <NumberInput currentValue={maxPrice} />
+                <NumberInput currentValue={secondRangeValue} setRangeValue={setSecondRangeValue} />
             </div>
             <style jsx>{`
                 .range-input input {
