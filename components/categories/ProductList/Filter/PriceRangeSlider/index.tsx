@@ -13,10 +13,10 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
     const innerRange = useRef<null | HTMLDivElement>(null);
     const firstRangeRef = useRef<null | HTMLInputElement>(null);
     const secondRangeRef = useRef<null | HTMLInputElement>(null);
+    const priceGap = (maxPrice * 10) / 100;
 
     const rangeInputHandler: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (innerRange.current && firstRangeRef.current && secondRangeRef.current) {
-            const priceGap = (+maxPrice * 10) / 100;
             const minValue = +firstRangeRef.current.value; // get value of first range
             const maxValue = +secondRangeRef.current.value; // get value of second range
             const leftPercent = (firstRangeValue / maxPrice) * 100; // left progress percent
@@ -74,9 +74,9 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
                 />
             </div>
             <div className="flex mt-4 justify-between items-center">
-                <NumberInput currentValue={firstRangeValue} setRangeValue={setFirstRangeValue} />
+                <NumberInput currentValue={firstRangeValue} onChange={rangeInputHandler} type="left" />
                 -
-                <NumberInput currentValue={secondRangeValue} setRangeValue={setSecondRangeValue} />
+                <NumberInput currentValue={secondRangeValue} onChange={rangeInputHandler} type="right" />
             </div>
             <style jsx>{`
                 .range-input input {
