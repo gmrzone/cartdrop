@@ -103,3 +103,9 @@ export type SubcategoryOfferType = {
     subcategory_images: SubcategoryImage[];
     coupons: CouponsBaseType[];
 };
+
+export type BrandsTypes = {
+    name: string;
+    photo: string;
+    placeholder: string;
+};

@@ -3,21 +3,22 @@ import MainLayout from "../../components/common/MainLayout";
 import MetaHead from "../../components/common/Head";
 import axios from "axios";
 import { BACKEND_URL } from "../../utils";
-import { CategoryType, SubcategoryType, ProductVariationType } from "../../shared/types";
+import { CategoryType, SubcategoryType, ProductVariationType, BrandsTypes } from "../../shared/types";
 import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
 import CategoryPanel from "../../components/common/CategortPanelNew";
 import ProductList from "../../components/categories/ProductList";
+import BrandContext from "../../context/BrandContext";
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
     topProducts: ProductVariationType[];
     categories: CategoryType[];
+    brands: BrandsTypes[];
 }
 
-const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories }) => {
+const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories, brands }) => {
     console.log(subcategories);
-    console.log(topProducts);
     const router = useRouter();
     const activeCategory = String(router.query["category"]);
     const description: string =
@@ -34,7 +35,10 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
             <MainLayout>
                 <CategoryPanel categories={categories} activeCategory={activeCategory} />
                 <TopProducts category={activeCategory} topProducts={topProducts} />
-                <ProductList />
+                {/* Adding Context to pass brand to nested component */}
+                <BrandContext.Provider value={brands}>
+                    <ProductList />
+                </BrandContext.Provider>
             </MainLayout>
         </>
     );
@@ -45,17 +49,21 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const response = await axios.get(BACKEND_URL + `/core/subcategory/${currentCategory}/`);
     const response1 = await axios.get(BACKEND_URL + `/products/${currentCategory}/top/`);
     const response2 = await axios.get(BACKEND_URL + "/core/categories/");
+    const response3 = await axios.get(BACKEND_URL + `/core/brand/${currentCategory}/`);
 
     const subcategories: SubcategoryType[] = response.data;
     const topProducts: ProductVariationType[] = response1.data;
-    const categories = response2.data;
+    const categories: CategoryType[] = response2.data;
+    const brands: BrandsTypes[] = response3.data;
+
     return {
         props: {
             subcategories,
             topProducts,
             categories,
+            brands,
         },
-        revalidate: 86400, // 1 day
+        revalidate: 43200, // 12 Hours
     };
 };
 

@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { MouseEventHandler, useEffect, useRef } from "react";
 import PriceRangeSLider from "./PriceRangeSlider";
+import BrandFilter from "./BrandFilter";
 
 type FilterProps = {
     closeFilterSlider: () => void;
@@ -51,8 +52,9 @@ const Filter: NextPage<FilterProps> = ({ closeFilterSlider, filterSliderActive }
                 </div>
             </div>
             {/* Filters */}
-            <div className="py-8 px-6">
+            <div className="py-8 px-6 space-y-8">
                 <PriceRangeSLider maxPrice={50000} />
+                <BrandFilter />
             </div>
         </div>
     );

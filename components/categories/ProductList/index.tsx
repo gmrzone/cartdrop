@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Filter from "./Filter";
 import FilterHead from "./FilterHead";
 import { useState } from "react";
+
 const ProductList: NextPage = () => {
     const [filterSliderActive, setFilterSilderActive] = useState<boolean>(false);
 
