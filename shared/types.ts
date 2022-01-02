@@ -109,3 +109,8 @@ export type BrandsTypes = {
     photo: string;
     placeholder: string;
 };
+
+export type FilterContextType = {
+    brands: BrandsTypes[];
+    subcategories: SubcategoryType[];
+};

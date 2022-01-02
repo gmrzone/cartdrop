@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import BrandContext from "../../../../../context/BrandContext";
+import FilterContext from "../../../../../context/FilterContext";
 import BrandFilterItem from "./BrandFilterItem";
 const BrandFilter = () => {
-    const brands = useContext(BrandContext);
+    const { brands } = useContext(FilterContext);
     const filterList = brands?.map((x, i) => {
         return <BrandFilterItem brand={x} key={i} />;
     });
     return (
         <div>
-            <h5 className="text-gray-700 mb-4">Brands</h5>
-            {filterList}
+            <h5 className="text-gray-700 mb-3">Brands</h5>
+            <div className="space-y-2">{filterList}</div>
         </div>
     );
 };

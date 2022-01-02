@@ -8,7 +8,7 @@ import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
 import CategoryPanel from "../../components/common/CategortPanelNew";
 import ProductList from "../../components/categories/ProductList";
-import BrandContext from "../../context/BrandContext";
+import FilterContext from "../../context/FilterContext";
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
@@ -36,9 +36,9 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
                 <CategoryPanel categories={categories} activeCategory={activeCategory} />
                 <TopProducts category={activeCategory} topProducts={topProducts} />
                 {/* Adding Context to pass brand to nested component */}
-                <BrandContext.Provider value={brands}>
+                <FilterContext.Provider value={{ brands, subcategories }}>
                     <ProductList />
-                </BrandContext.Provider>
+                </FilterContext.Provider>
             </MainLayout>
         </>
     );

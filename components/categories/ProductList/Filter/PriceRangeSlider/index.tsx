@@ -51,7 +51,7 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
 
     return (
         <div>
-            <h5 className="text-gray-700 mb-4">Price Range</h5>
+            <h5 className="text-gray-700 mb-3">Price Range</h5>
             <Slider innerRange={innerRange} />
             <div className="relative range-input">
                 <input
