@@ -3,7 +3,7 @@ import { FilterContextType } from "../shared/types";
 const initialContext = {
     brands: null,
     subcategories: null,
-    products: null,
+    paginatedProduct: null,
 };
 const ProductListContext = createContext<typeof initialContext | FilterContextType>(initialContext);
 

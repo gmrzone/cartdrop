@@ -119,8 +119,8 @@ export type BrandsTypes = {
     placeholder: string;
 };
 
-export type FilterContextType = {
+export type ProductListContextType = {
     brands: BrandsTypes[];
     subcategories: SubcategoryType[];
-    products: PaginatedProductVariationType;
+    paginatedProduct: PaginatedProductVariationType;
 };

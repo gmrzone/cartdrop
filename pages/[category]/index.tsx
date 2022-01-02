@@ -15,10 +15,10 @@ interface CategoryListProps {
     topProducts: ProductVariationType[];
     categories: CategoryType[];
     brands: BrandsTypes[];
-    products: PaginatedProductVariationType;
+    paginatedProduct: PaginatedProductVariationType;
 }
 
-const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories, brands, products }) => {
+const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories, brands, paginatedProduct }) => {
     const router = useRouter();
     const activeCategory = String(router.query["category"]);
     const description: string =
@@ -36,7 +36,7 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
                 <CategoryPanel categories={categories} activeCategory={activeCategory} />
                 <TopProducts category={activeCategory} topProducts={topProducts} />
                 {/* Adding Context to pass brand to nested component */}
-                <ProductListContext.Provider value={{ brands, subcategories, products }}>
+                <ProductListContext.Provider value={{ brands, subcategories, paginatedProduct }}>
                     <ProductList />
                 </ProductListContext.Provider>
             </MainLayout>
@@ -56,14 +56,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const topProducts: ProductVariationType[] = response1.data;
     const categories: CategoryType[] = response2.data;
     const brands: BrandsTypes[] = response3.data;
-    const products: PaginatedProductVariationType = response4.data;
+    const paginatedProduct: PaginatedProductVariationType = response4.data;
     return {
         props: {
             subcategories,
             topProducts,
             categories,
             brands,
-            products,
+            paginatedProduct,
         },
         revalidate: 43200, // 12 Hours
     };

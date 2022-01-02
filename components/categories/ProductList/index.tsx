@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Filter from "./Filter";
 import FilterHead from "./FilterHead";
 import { useState } from "react";
+import Products from "./Products";
 
 const ProductList: NextPage = () => {
     const [filterSliderActive, setFilterSliderActive] = useState<boolean>(false);
@@ -21,6 +22,7 @@ const ProductList: NextPage = () => {
         <div className="container bg-main">
             <FilterHead openFilterSilder={openFilterSlider} />
             <Filter closeFilterSlider={closeFilterSlider} filterSliderActive={filterSliderActive} />
+            <Products />
         </div>
     );
 };
