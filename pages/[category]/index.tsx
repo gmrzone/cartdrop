@@ -3,22 +3,22 @@ import MainLayout from "../../components/common/MainLayout";
 import MetaHead from "../../components/common/Head";
 import axios from "axios";
 import { BACKEND_URL } from "../../utils";
-import { CategoryType, SubcategoryType, ProductVariationType, BrandsTypes } from "../../shared/types";
+import { CategoryType, SubcategoryType, ProductVariationType, BrandsTypes, PaginatedProductVariationType } from "../../shared/types";
 import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
 import CategoryPanel from "../../components/common/CategortPanelNew";
 import ProductList from "../../components/categories/ProductList";
-import FilterContext from "../../context/FilterContext";
+import ProductListContext from "../../context/ProductListContext";
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
     topProducts: ProductVariationType[];
     categories: CategoryType[];
     brands: BrandsTypes[];
+    products: PaginatedProductVariationType;
 }
 
-const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories, brands }) => {
-    console.log(subcategories);
+const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories, brands, products }) => {
     const router = useRouter();
     const activeCategory = String(router.query["category"]);
     const description: string =
@@ -36,9 +36,9 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
                 <CategoryPanel categories={categories} activeCategory={activeCategory} />
                 <TopProducts category={activeCategory} topProducts={topProducts} />
                 {/* Adding Context to pass brand to nested component */}
-                <FilterContext.Provider value={{ brands, subcategories }}>
+                <ProductListContext.Provider value={{ brands, subcategories, products }}>
                     <ProductList />
-                </FilterContext.Provider>
+                </ProductListContext.Provider>
             </MainLayout>
         </>
     );
@@ -50,18 +50,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const response1 = await axios.get(BACKEND_URL + `/products/${currentCategory}/top/`);
     const response2 = await axios.get(BACKEND_URL + "/core/categories/");
     const response3 = await axios.get(BACKEND_URL + `/core/brand/${currentCategory}/`);
+    const response4 = await axios.get(BACKEND_URL + `/products/${currentCategory}/?page=1`);
 
     const subcategories: SubcategoryType[] = response.data;
     const topProducts: ProductVariationType[] = response1.data;
     const categories: CategoryType[] = response2.data;
     const brands: BrandsTypes[] = response3.data;
-
+    const products: PaginatedProductVariationType = response4.data;
     return {
         props: {
             subcategories,
             topProducts,
             categories,
             brands,
+            products,
         },
         revalidate: 43200, // 12 Hours
     };

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import FilterContext from "../../../../../context/FilterContext";
+import ProductListContext from "../../../../../context/ProductListContext";
 import CategoryFilterItem from "./CategoryFilterItem";
 const CategoryFilter = () => {
-    const { subcategories } = useContext(FilterContext);
+    const { subcategories } = useContext(ProductListContext);
     const filterList = subcategories?.map((x) => {
         return <CategoryFilterItem subcategory={x} key={x.uuid} />;
     });

@@ -89,6 +89,15 @@ export type ProductVariationType = {
     images: ProductVariationImageType[];
 };
 
+export type PaginatedProductVariationType = {
+    links: {
+        next: string | null;
+        previous: string | null;
+    };
+    product_count: number;
+    page_count: number;
+    products: ProductVariationType[];
+};
 type SubcategoryImage = {
     image: string;
 };
@@ -113,4 +122,5 @@ export type BrandsTypes = {
 export type FilterContextType = {
     brands: BrandsTypes[];
     subcategories: SubcategoryType[];
+    products: PaginatedProductVariationType;
 };

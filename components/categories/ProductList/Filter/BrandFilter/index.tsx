@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import FilterContext from "../../../../../context/FilterContext";
+import ProductListContext from "../../../../../context/ProductListContext";
 import BrandFilterItem from "./BrandFilterItem";
 const BrandFilter = () => {
-    const { brands } = useContext(FilterContext);
+    const { brands } = useContext(ProductListContext);
     const filterList = brands?.map((x, i) => {
         return <BrandFilterItem brand={x} key={i} />;
     });
