@@ -4,14 +4,18 @@ import FilterHead from "./FilterHead";
 import { useState } from "react";
 
 const ProductList: NextPage = () => {
-    const [filterSliderActive, setFilterSilderActive] = useState<boolean>(false);
+    const [filterSliderActive, setFilterSliderActive] = useState<boolean>(false);
 
     const closeFilterSlider = () => {
-        setFilterSilderActive(false);
+        setFilterSliderActive(false);
+        document.body.classList.remove("overflow-hidden");
+        document.body.classList.add("overflow-auto");
     };
 
     const openFilterSlider = () => {
-        setFilterSilderActive(true);
+        setFilterSliderActive(true);
+        document.body.classList.remove("overflow-auto");
+        document.body.classList.add("overflow-hidden");
     };
     return (
         <div className="container bg-main">

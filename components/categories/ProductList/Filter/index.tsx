@@ -3,6 +3,7 @@ import { MouseEventHandler, useEffect, useRef } from "react";
 import PriceRangeSLider from "./PriceRangeSlider";
 import BrandFilter from "./BrandFilter";
 import CategoryFilter from "./CategoryFilter";
+import RatingFilter from "./RatingFilter";
 
 type FilterProps = {
     closeFilterSlider: () => void;
@@ -57,6 +58,7 @@ const Filter: NextPage<FilterProps> = ({ closeFilterSlider, filterSliderActive }
                 <PriceRangeSLider maxPrice={50000} />
                 <BrandFilter />
                 <CategoryFilter />
+                <RatingFilter />
             </div>
         </div>
     );
