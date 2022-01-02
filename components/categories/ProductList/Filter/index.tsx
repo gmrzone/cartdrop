@@ -54,7 +54,7 @@ const Filter: NextPage<FilterProps> = ({ closeFilterSlider, filterSliderActive }
                 </div>
             </div>
             {/* Filters */}
-            <div className="py-8 px-6 space-y-8">
+            <div className="py-8 px-6 space-y-8 h-[calc(100%-60px)] overflow-y-auto">
                 <PriceRangeSLider maxPrice={50000} />
                 <BrandFilter />
                 <CategoryFilter />
