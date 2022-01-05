@@ -11,7 +11,7 @@ const FilterHead: NextPage<FilterHeadProps> = ({ openFilterSilder }) => {
         openFilterSilder();
     };
     return (
-        <div className="drop-shadow px-4 py-2 flex justify-between items-center">
+        <div className="drop-shadow px-4 py-2 flex justify-between items-center bg-main">
             <div
                 className="flex space-x-2 mobile-bg:space-x-3 ipad:space-x-4 items-center cursor-pointer"
                 onClick={openFilterSliderHandler}>

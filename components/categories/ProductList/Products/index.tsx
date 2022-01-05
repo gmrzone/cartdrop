@@ -8,7 +8,7 @@ const Products: NextPage = () => {
     const productList = paginatedProduct?.products.map((i) => {
         return <ProductItem key={i.uuid} productDetail={i} />;
     });
-    return <div className="mb-8 bg-white p-4">{productList}</div>;
+    return <div className="mb-8 bg-white p-4 ipad:grid ipad:grid-cols-3">{productList}</div>;
 };
 
 export default Products;

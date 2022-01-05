@@ -19,7 +19,7 @@ const ProductList: NextPage = () => {
         document.body.classList.add("overflow-hidden");
     };
     return (
-        <div className="container bg-main">
+        <div className="container">
             <FilterHead openFilterSilder={openFilterSlider} />
             <Filter closeFilterSlider={closeFilterSlider} filterSliderActive={filterSliderActive} />
             <Products />

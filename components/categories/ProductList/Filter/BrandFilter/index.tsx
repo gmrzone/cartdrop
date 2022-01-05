@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import ProductListContext from "../../../../../context/ProductListContext";
 import BrandFilterItem from "./BrandFilterItem";
-import { BrandsTypes } from '../../../../../shared/types'
+import { BrandsTypes } from "../../../../../shared/types";
 const BrandFilter = () => {
     const { brands } = useContext(ProductListContext);
     const filterList = brands?.map((x: BrandsTypes, i: number) => {
