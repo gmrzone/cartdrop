@@ -1,0 +1,30 @@
+.star-rating {
+    float: left;
+
+    .input:not(:checked) ~ .star-main:hover, 
+    .input:not(:checked) ~ .star-main:hover ~ .star-main {
+        
+        color: rgb(28, 117, 244);
+    }
+
+    .input:checked ~ .star-main {
+        color: rgb(28, 117, 244);
+    }
+
+    .input {
+        display: none;
+
+    }
+
+    .star-main {
+        
+        cursor: pointer;
+        width: 25px;
+        color: rgb(146, 146, 146);
+        transition: all 0.2s ease;
+        float: right;
+
+        
+    }
+
+}
