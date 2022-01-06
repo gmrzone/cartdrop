@@ -2,8 +2,7 @@ import { ProductVariationType } from "../../../../shared/types";
 import { NextPage } from "next";
 import Image from "next/image";
 import SecondaryButtonLink from "../../../common/buttons/SmallButtonLink";
-import StarRating from '../../../common/StarRating'
-
+import StarRatingStatic from "../../../common/StarRating/Static";
 type ProductItemProps = {
     productDetail: ProductVariationType;
 };
@@ -20,10 +19,10 @@ const ProductItem: NextPage<ProductItemProps> = ({ productDetail }) => {
                 </div>
                 <div className="text-secondary">{productDetail.product.subcategory.name}</div>
                 <div className="font-roboto text-2xl text-slate-600 mt-2 mb-2">&#8377;{productDetail.price}</div>
+                <StarRatingStatic rating={3.2} />
                 <div className="float-right">
                     <SecondaryButtonLink text="View" to="" />
                 </div>
-                <StarRating />
             </div>
         </div>
     );
