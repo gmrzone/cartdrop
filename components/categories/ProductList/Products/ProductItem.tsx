@@ -20,7 +20,7 @@ const ProductItem: NextPage<ProductItemProps> = ({ productDetail }) => {
                 <div className="text-secondary">{productDetail.product.subcategory.name}</div>
                 <div className="font-roboto text-2xl text-slate-600 mt-2 mb-2">&#8377;{productDetail.price}</div>
                 <StarRatingStatic rating={3.2} />
-                <div className="float-right">
+                <div className="absolute right-0 bottom-1">
                     <SecondaryButtonLink text="View" to="" />
                 </div>
             </div>
