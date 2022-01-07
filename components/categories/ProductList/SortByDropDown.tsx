@@ -64,7 +64,7 @@ const SortByDropDown: NextPage = () => {
             </div>
             {/* Options */}
             {dropDownActive && (
-                <div className="absolute w-full max-w-[200px] mt-2 text-[12px] rounded-sm shadow-drop-down">{renderOptions}</div>
+                <div className="absolute w-full max-w-[200px] mt-3 text-[12px] rounded-sm shadow-drop-down">{renderOptions}</div>
             )}
         </div>
     );
