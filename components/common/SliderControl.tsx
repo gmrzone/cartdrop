@@ -111,7 +111,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     setCurrentSliderPositionTo(nextPos);
                 }
 
-                if (currentSliderPosition >= sliderItemRef.current.clientWidth + 18) {
+                if (currentSliderPosition >= sliderItemRef.current.clientWidth + extraSpace) {
                     leftControlRef.current.classList.remove("bg-secondary");
                     leftControlRef.current.classList.remove("hover:bg-main");
                     leftControlRef.current.classList.remove("text-white");
