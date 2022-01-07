@@ -106,7 +106,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     rightControlRef.current.classList.add("text-white");
                     rightControlRef.current.classList.add("cursor-pointer");
 
-                    const nextPos = currentSliderPosition + sliderItemRef.current.clientWidth + 18;
+                    const nextPos = currentSliderPosition + sliderItemRef.current.clientWidth + extraSpace;
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(nextPos);
                 }
