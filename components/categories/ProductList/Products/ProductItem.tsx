@@ -7,7 +7,6 @@ type ProductItemProps = {
     productDetail: ProductVariationType;
 };
 const ProductItem: NextPage<ProductItemProps> = ({ productDetail }) => {
-    console.log(productDetail);
     return (
         <div className="p-6 border-solid border-gray-200 border cursor-pointer rounded-md ipad:mx-3 my-4">
             <div className="relative w-64 h-56 ipad:w-60 ipad:h-48 desktop:w-72 desktop:h-64 mx-auto">
@@ -21,7 +20,7 @@ const ProductItem: NextPage<ProductItemProps> = ({ productDetail }) => {
                 <div className="font-roboto text-2xl text-slate-600 mt-2 mb-2">&#8377;{productDetail.price}</div>
                 <StarRatingStatic rating={3.2} />
                 <div className="absolute right-0 bottom-1">
-                    <SecondaryButtonLink text="View" to="" />
+                    <SecondaryButtonLink text="View" to="/" />
                 </div>
             </div>
         </div>

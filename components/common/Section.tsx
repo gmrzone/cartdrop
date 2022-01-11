@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 import { NextPage } from "next";
-import SmallButtonLink from "../common/buttons/SmallButtonLink";
-import SliderControl from "../common/SliderControl";
 
 interface SectionProps {
     title: string;
