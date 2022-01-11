@@ -78,7 +78,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     });
     return {
         paths,
-        fallback: false,  // fallback false means on path returned from getStaticPath will render else 404
+        fallback: false, // fallback false means on path returned from getStaticPath will render else 404
     };
 };
 
