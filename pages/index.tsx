@@ -9,7 +9,7 @@ import TodaysDeal from "../components/Home/TodeysDeal";
 import FeaturedProducts from "../components/Home/FeaturedProducts";
 import SubcategoryOffer from "../components/Home/SubcategoryOffer";
 import ProductHistory from "../components/Home/ProductHistory";
-import CategoryPanel from "../components/common/CategortPanelNew";
+import CategoryPanel from "../components/common/CategoryPanelNew";
 
 export const getStaticProps: GetStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
