@@ -1,6 +1,6 @@
 import MainLayout from "../components/common/MainLayout";
 import MetaHead from "../components/common/Head";
-import { NextPage } from "next";
+import { NextPage, GetStaticProps } from "next";
 import Hero from "../components/Home/HeroSection/Hero";
 import { BACKEND_URL } from "../utils";
 import axios from "axios";
@@ -11,7 +11,7 @@ import SubcategoryOffer from "../components/Home/SubcategoryOffer";
 import ProductHistory from "../components/Home/ProductHistory";
 import CategoryPanel from "../components/common/CategortPanelNew";
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + "/core/categories/");
     const featuredProducts = await axios.get(BACKEND_URL + "/products/featured/");
     const subcategoryOffers = await axios.get(BACKEND_URL + "/core/offers/");
