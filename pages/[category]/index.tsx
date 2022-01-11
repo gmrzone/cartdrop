@@ -6,7 +6,7 @@ import { BACKEND_URL } from "../../utils";
 import { CategoryType, SubcategoryType, ProductVariationType, BrandsTypes, PaginatedProductVariationType } from "../../shared/types";
 import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
-import CategoryPanel from "../../components/common/CategortPanelNew";
+import CategoryPanel from "../../components/common/CategoryPanelNew";
 import ProductList from "../../components/categories/ProductList";
 import ProductListContext from "../../context/ProductListContext";
 
@@ -78,7 +78,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     });
     return {
         paths,
-        fallback: false,  // fallback false means on path returned from getStaticPath will render else 404
+        fallback: false, // fallback false means on path returned from getStaticPath will render else 404
     };
 };
 
