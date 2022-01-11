@@ -7,7 +7,7 @@ import { useEffect } from "react";
 interface IProps {
     ProductList: ProductVariationType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
     setCurrentSliderPositionTo: (n: number) => void;
     category: string;
 }
