@@ -11,7 +11,7 @@ interface Props {
 }
 const SubcategoryOffer: NextPage<Props> = ({ subcategoryOffers }) => {
     const slideableContainerRef = useRef<HTMLDivElement | null>(null);
-    const sliderItemRef = useRef<HTMLDivElement | null>(null);
+    const sliderItemRef = useRef<HTMLAnchorElement | null>(null);
     const [currentSliderPosition, setCurrentSliderPosition] = useState<number>(0);
     const isMobile = useMobile();
 

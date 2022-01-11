@@ -4,7 +4,7 @@ import Image from "next/image";
 import { MutableRefObject } from "react";
 interface Props {
     subcategoryOfferItem: SubcategoryOfferType;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
 }
 const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) => {
     const maxDiscount: number = Math.max(...subcategoryOfferItem.coupons.map((x) => x.discount));
@@ -19,7 +19,7 @@ const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) =>
     });
 
     return (
-        <div className="slider-item flex flex-col bg-main rounded-lg p-3 cursor-pointer" ref={sliderItemRef}>
+        <a className="slider-item flex flex-col bg-main rounded-lg p-3 cursor-pointer" ref={sliderItemRef} href="">
             <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-items-center">{renderImages}</div>
             <div className="mt-auto ipad:pt-4">
                 <p className="text-center text-white font-semibold">
@@ -31,7 +31,7 @@ const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) =>
                     width: var(--subcategory-item-width);
                 }
             `}</style>
-        </div>
+        </a>
     );
 };
 

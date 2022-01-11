@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 
 interface SliderControlProps {
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
     currentSliderPosition: number;
     setCurrentSliderPositionTo: (n: number) => void;
     productsLength: number;

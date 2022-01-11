@@ -5,7 +5,7 @@ import { MutableRefObject } from "react";
 interface Props {
     subcategoryOffers: SubcategoryOfferType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
 }
 
 const Slider: NextPage<Props> = ({ subcategoryOffers, slideableContainerRef, sliderItemRef }) => {
