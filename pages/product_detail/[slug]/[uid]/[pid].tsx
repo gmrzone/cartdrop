@@ -25,7 +25,7 @@ const ProductDetail: NextPage<ProductDetailPropsType> = ({ productDetail, catego
             <MetaHead title="" currentUrl="" keywords="" description="" />
             <MainLayout>
                 <CategoryPanel categories={categories} activeCategory={null} />
-                <h1>{productDetail.product.name}</h1>
+                <h1>{productDetail.full_name}</h1>
             </MainLayout>
         </>
     );

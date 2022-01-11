@@ -72,6 +72,7 @@ export type ProductVariationType = {
     uuid: string;
     pid: string;
     product: ProductBaseType;
+    full_name: string;
     retail_price: string;
     discount: number;
     price: string;
