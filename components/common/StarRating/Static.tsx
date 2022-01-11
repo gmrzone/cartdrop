@@ -13,33 +13,33 @@ const StarRatingStatic: NextPage<StarRatingStaticProps> = ({ rating }) => {
         for (let i = 1; i <= 5; i++) {
             if (i <= int_part) {
                 stars.push(
-                    <>
+                    <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
                         <label htmlFor={`star-${i}`} className="fas fa-star text-secondary"></label>
-                    </>,
+                    </span>,
                 );
             } else if (i > int_part && float_part > 0.5) {
                 stars.push(
-                    <>
+                    <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
                         <label htmlFor={`star-${i}`} className="fas fa-star text-secondary"></label>
-                    </>,
+                    </span>,
                 );
                 float_part = 0;
             } else if (i > int_part && float_part >= 0.1 && float_part <= 0.5) {
                 stars.push(
-                    <>
+                    <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
                         <label htmlFor={`star-${i}`} className="fas fa-star-half-alt text-secondary"></label>
-                    </>,
+                    </span>,
                 );
                 float_part = 0;
             } else {
                 stars.push(
-                    <>
+                    <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
                         <label htmlFor={`star-${i}`} className="far fa-star text-secondary"></label>
-                    </>,
+                    </span>,
                 );
             }
         }
