@@ -8,7 +8,6 @@ const StarRatingStatic: NextPage<StarRatingStaticProps> = ({ rating }) => {
     const renderStars = () => {
         let float_part = rating % 1;
         const int_part = Math.floor(rating - float_part);
-        console.log(int_part, " ", float_part);
         const stars = [];
         for (let i = 1; i <= 5; i++) {
             if (i <= int_part) {

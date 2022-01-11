@@ -9,7 +9,7 @@ type ExtraProps = {
 
 const SmallButtonLink: NextPage<ExtraProps> = ({ text, icon, disable, to }) => {
     return (
-        <Link href={to}>
+        <Link href={to} passHref>
             <a
                 className={`w-auto py-1 px-2 ipad:py-2 ipad:px-3 font-semibold rounded transition-colors duration-300 ${
                     disable ? "bg-gray-600 cursor-not-allowed bg-opacity-75" : "bg-secondary hover:bg-main"
