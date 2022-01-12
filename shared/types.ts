@@ -65,6 +65,7 @@ export type ProductBaseType = {
 };
 
 export type ProductVariationImageType = {
+    id: number;
     image: string;
     primary: boolean;
 };
