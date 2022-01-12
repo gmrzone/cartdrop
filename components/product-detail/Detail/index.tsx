@@ -6,9 +6,11 @@ type DetailProps = {
 };
 const Detail: NextPage<DetailProps> = ({ productDetail }) => {
     return (
-        <div>
+        <div className="">
             <div>
-                <h1 className="text-4xl text-slate-800">{productDetail.full_name}</h1>
+                <h1 className="text-2xl ipad:text-[1.6rem] desktop-big:text-3xl desktop-large:text-4xl text-slate-700">
+                    {productDetail.full_name}
+                </h1>
             </div>
         </div>
     );
