@@ -6,6 +6,7 @@ import MetaHead from "../../../../components/common/Head";
 import MainLayout from "../../../../components/common/MainLayout";
 import CategoryPanel from "../../../../components/common/CategoryPanelNew";
 import { CategoryType } from "../../../../shared/types";
+import ProductDetailComponent from "../../../../components/product-detail";
 
 type ProductDetailPropsType = {
     productDetail: ProductVariationType;
@@ -25,7 +26,9 @@ const ProductDetail: NextPage<ProductDetailPropsType> = ({ productDetail, catego
             <MetaHead title="" currentUrl="" keywords="" description="" />
             <MainLayout>
                 <CategoryPanel categories={categories} activeCategory={null} />
-                <h1>{productDetail.full_name}</h1>
+                <div className="container mt-10">
+                    <ProductDetailComponent productDetail={productDetail} />
+                </div>
             </MainLayout>
         </>
     );
