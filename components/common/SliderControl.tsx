@@ -68,6 +68,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                 //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 4) + 18);
                 // }
                 if (currentSliderPosition > stopPosition) {
+                    console.log(currentSliderPosition);
                     leftControlRef.current.classList.remove("bg-gray-400");
                     leftControlRef.current.classList.remove("text-gray-200");
                     leftControlRef.current.classList.remove("cursor-not-allowed");
@@ -75,7 +76,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     leftControlRef.current.classList.add("hover:bg-main");
                     leftControlRef.current.classList.add("text-white");
                     leftControlRef.current.classList.add("cursor-pointer");
-
+                    // TODO : Something wrong with this calculation (slider not working properly)
                     const nextPos = currentSliderPosition - sliderItemRef.current.clientWidth - extraSpace;
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(nextPos);
@@ -97,7 +98,8 @@ const SliderControl: NextPage<SliderControlProps> = ({
         console.log("Right");
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             if (window.innerWidth >= 992) {
-                if (currentSliderPosition < 0) {
+                if (currentSliderPosition <= 0) {
+                    console.log(currentSliderPosition);
                     rightControlRef.current.classList.remove("bg-gray-400");
                     rightControlRef.current.classList.remove("text-gray-200");
                     rightControlRef.current.classList.remove("cursor-not-allowed");
@@ -106,9 +108,9 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     rightControlRef.current.classList.add("text-white");
                     rightControlRef.current.classList.add("cursor-pointer");
 
+                    // TODO : Something wrong with this calculation (slider not working properly)
                     const nextPos = currentSliderPosition + sliderItemRef.current.clientWidth + extraSpace;
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
-                    setCurrentSliderPositionTo(nextPos);
                 }
 
                 if (currentSliderPosition >= sliderItemRef.current.clientWidth + extraSpace) {

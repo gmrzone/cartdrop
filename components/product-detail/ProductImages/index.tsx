@@ -12,16 +12,29 @@ const ProductImage: NextPage<ProductImageProps> = ({ productDetail }) => {
     const imageItemRef = useRef<HTMLDivElement | null>(null);
     const imageContainerRef = useRef<HTMLDivElement | null>(null);
 
-    const slideImageRight = () => {};
+    // TODO : Make image slider work properly
+    const imageRightClick = () => {
+        if (imageContainerRef.current) {
+            imageContainerRef.current.classList.remove("translate-y-0");
+            imageContainerRef.current.classList.add("-translate-y-[80px]");
+        }
+    };
 
-    const slideImageLeft = () => {};
+    const imageLeftCLick = () => {
+        if (imageContainerRef.current) {
+            imageContainerRef.current.classList.remove("-translate-y-[80px]");
+            imageContainerRef.current.classList.add("translate-y-0");
+        }
+    };
 
     const renderImages = productDetail.images.map((x) => {
         return (
             <div
                 key={x.id}
                 className={`image-slider-item w-[75px] h-[75px] relative border-solid rounded-md  cursor-pointer ${
-                    activeImage.id === x.id ? "border-opacity-100 opacity-100 border-[3px] border-secondary" : "border-main border-2 border-opacity-20 opacity-70 hover:border-opacity-50"
+                    activeImage.id === x.id
+                        ? "border-opacity-100 opacity-100 border-[3px] border-secondary"
+                        : "border-main border-2 border-opacity-20 opacity-70 hover:border-opacity-50"
                 }`}
                 onClick={() => SetActiveImage(x)}
                 ref={imageItemRef}>
@@ -30,18 +43,21 @@ const ProductImage: NextPage<ProductImageProps> = ({ productDetail }) => {
         );
     });
     return (
-        <div className="flex flex-nowrap ipad:flex-row flex-col-reverse justify-center items-center space-x-8 border border-solid border-main border-opacity-10 p-4 rounded-md">
-            <div className="flex flex-nowrap flex-row ipad:flex-col h-auto ipad:h-[400px] ipad:w-auto w-[314px] mobile-lg:w-[400px] space-y-0 space-x-2 ipad:space-y-2 ipad:space-x-0">
+        <div className="flex flex-nowrap ipad:flex-row flex-col-reverse justify-center items-center space-x-8 border border-solid border-main border-opacity-10 mobile-lg:p-4 rounded-md">
+            <div
+                className={`flex flex-nowrap flex-row ipad:flex-col h-auto ipad:h-[400px] ipad:w-auto w-[${
+                    productDetail.images.length > 4 ? 314 : 324
+                }px] mobile-lg:w-[400px] space-y-0 space-x-2 ipad:space-y-2 ipad:space-x-0`}>
                 {productDetail.images.length > 4 && (
                     <div
                         className="bg-slate-500 rounded-md flex-grow-0 flex-shrink-0 flex flex-b justify-center items-center cursor-not-allowed shadow-drop-down w-[28px] h-auto ipad:h-[28px] ipad:w-auto"
-                        onClick={slideImageLeft}>
+                        onClick={imageLeftCLick}>
                         <i className={`fas fa-sort-up text-white text-xl -rotate-90 ipad:rotate-0`} />
                     </div>
                 )}
                 <div className="h-full w-full overflow-hidden">
                     <div
-                        className={`grid grid-flow-col ipad:grid-flow-row space-y-0 space-x-2 ipad:space-x-0 ipad:flex-col ipad:space-y-2 h-auto w-[${
+                        className={`transform-gpu duration-200 translate-x-0 translate-y-0 grid grid-flow-col ipad:grid-flow-row space-y-0 space-x-2 ipad:space-x-0 ipad:flex-col ipad:space-y-2 h-auto w-[${
                             75 * productDetail.images.length + (productDetail.images.length - 1) * 10
                         }px] ipad:w-auto ipad:h-[${
                             75 * productDetail.images.length + (productDetail.images.length - 1) * 10
@@ -53,7 +69,7 @@ const ProductImage: NextPage<ProductImageProps> = ({ productDetail }) => {
                 {productDetail.images.length > 4 && (
                     <div
                         className="bg-secondary rounded-md flex-grow-0 flex-shrink-0 flex justify-center items-center cursor-pointer hover:bg-main shadow-drop-down w-[28px] h-auto ipad:h-[28px] ipad:w-auto"
-                        onClick={slideImageRight}>
+                        onClick={imageRightClick}>
                         <i className="fas fa-sort-down text-white text-xl -rotate-90 ipad:rotate-0" />
                     </div>
                 )}
