@@ -8,7 +8,7 @@ const Detail: NextPage<DetailProps> = ({ productDetail }) => {
     return (
         <div>
             <div>
-                <h1 className="text-4xl">{productDetail.full_name}</h1>
+                <h1 className="text-4xl text-slate-800">{productDetail.full_name}</h1>
             </div>
         </div>
     );
