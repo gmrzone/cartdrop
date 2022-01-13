@@ -53,7 +53,7 @@ const TopProducts: NextPage<TopProductsProps> = ({ category, topProducts }) => {
                         setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                         productsLength={topProducts.length}
                         alignmentPattern={[3, 3, 3, 4]}
-                        extraSpace={18}
+                        extraSpace={16}
                     />
                 </div>
             )}
