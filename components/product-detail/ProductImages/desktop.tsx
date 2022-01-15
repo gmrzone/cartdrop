@@ -13,26 +13,63 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
     const imageItemRef = useRef<HTMLDivElement | null>(null);
     const imageContainerRef = useRef<HTMLDivElement | null>(null);
     const imageSliderCurrentPosition = useRef<number>(0);
+    const topSlideHandler = useRef<HTMLDivElement | null>(null);
+    const bottomSlideHandler = useRef<HTMLDivElement | null>(null);
 
     // TODO : Make image slider work properly
-    const imageRightClick = () => {
+    const imageBottomClick = () => {
         if (imageContainerRef.current && imageItemRef.current) {
-            console.log("Right");
-            const slideAmount = imageItemRef.current.clientHeight + 9;
-            const nextPos = imageSliderCurrentPosition.current + slideAmount;
-            console.log(imageSliderCurrentPosition.current);
-            imageContainerRef.current.style.transform = `translate3d(0px, -${nextPos}px, 0px)`;
-            imageSliderCurrentPosition.current = nextPos;
+            const stopPosition =
+                imageContainerRef.current.scrollHeight - (imageContainerRef.current.parentNode as HTMLDivElement).clientHeight - 9;
+            if (imageSliderCurrentPosition.current <= stopPosition) {
+                const slideAmount = imageItemRef.current.clientHeight + 9;
+                const nextPos = imageSliderCurrentPosition.current + slideAmount;
+                console.log(imageSliderCurrentPosition.current);
+                imageContainerRef.current.style.transform = `translate3d(0px, -${nextPos}px, 0px)`;
+                imageSliderCurrentPosition.current = nextPos;
+
+                // Change/Activate topSLiderHandler color
+                if (topSlideHandler.current) {
+                    topSlideHandler.current.classList.remove("bg-slate-500");
+                    topSlideHandler.current.classList.remove("cursor-not-allowed");
+                    topSlideHandler.current.classList.add("bg-secondary");
+                    topSlideHandler.current.classList.add("cursor-pointer");
+                }
+
+                // Change/Deactivate bottomSlideHandler once slider not slideable
+                if (nextPos > stopPosition && bottomSlideHandler.current) {
+                    bottomSlideHandler.current.classList.remove("bg-secondary");
+                    bottomSlideHandler.current.classList.remove("cursor-pointer");
+                    bottomSlideHandler.current.classList.add("bg-slate-500");
+                    bottomSlideHandler.current.classList.add("cursor-not-allowed");
+                }
+            }
         }
     };
 
-    const imageLeftCLick = () => {
+    const imageTopCLick = () => {
         if (imageContainerRef.current && imageItemRef.current) {
             if (imageSliderCurrentPosition.current > 0) {
                 const slideAmount = imageItemRef.current.clientHeight + 9;
                 const nextPos = imageSliderCurrentPosition.current - slideAmount;
                 imageContainerRef.current.style.transform = `translate3d(0px, -${nextPos}px, 0px)`;
                 imageSliderCurrentPosition.current = nextPos;
+
+                // Change/Activate bottomSlideHandler color
+                if (bottomSlideHandler.current) {
+                    bottomSlideHandler.current.classList.remove("bg-slate-500");
+                    bottomSlideHandler.current.classList.remove("cursor-not-allowed");
+                    bottomSlideHandler.current.classList.add("bg-secondary");
+                    bottomSlideHandler.current.classList.add("cursor-pointer");
+                }
+
+                // Change/Deactivate topSlideHandler once slider not slideable
+                if (nextPos <= 0 && topSlideHandler.current) {
+                    topSlideHandler.current.classList.remove("bg-secondary");
+                    topSlideHandler.current.classList.remove("cursor-pointer");
+                    topSlideHandler.current.classList.add("bg-slate-500");
+                    topSlideHandler.current.classList.add("cursor-not-allowed");
+                }
             }
         }
     };
@@ -57,7 +94,8 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
             {images.length > 4 && (
                 <div
                     className="bg-slate-500 rounded-md flex-grow-0 flex-shrink-0 flex flex-b justify-center items-center cursor-not-allowed shadow-drop-down h-[28px] w-auto"
-                    onClick={imageLeftCLick}>
+                    onClick={imageTopCLick}
+                    ref={topSlideHandler}>
                     <i className={`fas fa-sort-up text-white text-xl -rotate-90 ipad:rotate-0`} />
                 </div>
             )}
@@ -73,7 +111,8 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
             {images.length > 4 && (
                 <div
                     className="bg-secondary rounded-md flex-grow-0 flex-shrink-0 flex justify-center items-center cursor-pointer hover:bg-main shadow-drop-down h-[28px] w-auto"
-                    onClick={imageRightClick}>
+                    onClick={imageBottomClick}
+                    ref={bottomSlideHandler}>
                     <i className="fas fa-sort-down text-white text-xl rotate-0" />
                 </div>
             )}

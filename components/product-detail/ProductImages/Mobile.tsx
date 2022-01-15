@@ -13,13 +13,14 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
     const imageItemRef = useRef<HTMLDivElement | null>(null);
     const imageContainerRef = useRef<HTMLDivElement | null>(null);
     const imageSliderCurrentPosition = useRef<number>(0);
+    const leftSlideHandler = useRef<HTMLDivElement | null>(null);
+    const rightSlideHandler = useRef<HTMLDivElement | null>(null);
 
     // TODO : Make image slider work properly
     const imageRightClick = () => {
         if (imageContainerRef.current && imageItemRef.current) {
             const stopPosition =
                 imageContainerRef.current.scrollWidth - (imageContainerRef.current.parentNode as HTMLDivElement).clientWidth - 9;
-            console.log(imageSliderCurrentPosition.current, stopPosition);
             if (imageSliderCurrentPosition.current <= stopPosition) {
                 const slideAmount = imageItemRef.current.clientWidth + 9;
                 const nextPos = imageSliderCurrentPosition.current + slideAmount;
@@ -27,6 +28,22 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
                 // imageContainerRef.current.classList.add("-translate-x-[80px]");
                 imageContainerRef.current.style.transform = `translate3d(-${nextPos}px, 0px, 0px)`;
                 imageSliderCurrentPosition.current = nextPos;
+
+                // Change/Activate leftSlideHandler color
+                if (leftSlideHandler.current) {
+                    leftSlideHandler.current.classList.remove("bg-slate-500");
+                    leftSlideHandler.current.classList.remove("cursor-not-allowed");
+                    leftSlideHandler.current.classList.add("bg-secondary");
+                    leftSlideHandler.current.classList.add("cursor-pointer");
+                }
+
+                // Change/Deactivate rightSlideHandler once slider not slideable
+                if (nextPos > stopPosition && rightSlideHandler.current) {
+                    rightSlideHandler.current.classList.remove("bg-secondary");
+                    rightSlideHandler.current.classList.remove("cursor-pointer");
+                    rightSlideHandler.current.classList.add("bg-slate-500");
+                    rightSlideHandler.current.classList.add("cursor-not-allowed");
+                }
             }
         }
     };
@@ -38,6 +55,22 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
                 const nextPos = imageSliderCurrentPosition.current - slideAmount;
                 imageContainerRef.current.style.transform = `translate3d(-${nextPos}px, 0px, 0px)`;
                 imageSliderCurrentPosition.current = nextPos;
+
+                // Change/Activate rightSlideHandler color
+                if (rightSlideHandler.current) {
+                    rightSlideHandler.current.classList.remove("bg-slate-500");
+                    rightSlideHandler.current.classList.remove("cursor-not-allowed");
+                    rightSlideHandler.current.classList.add("bg-secondary");
+                    rightSlideHandler.current.classList.add("cursor-pointer");
+                }
+
+                // Change/Deactivate leftSlideHandler once slider not slideable
+                if (nextPos <= 0 && leftSlideHandler.current) {
+                    leftSlideHandler.current.classList.remove("bg-secondary");
+                    leftSlideHandler.current.classList.remove("cursor-pointer");
+                    leftSlideHandler.current.classList.add("bg-slate-500");
+                    leftSlideHandler.current.classList.add("cursor-not-allowed");
+                }
             }
         }
     };
@@ -62,7 +95,8 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
             {images.length > 4 && (
                 <div
                     className="bg-slate-500 rounded-md flex-grow-0 flex-shrink-0 flex flex-b justify-center items-center cursor-not-allowed shadow-drop-down w-[28px] h-auto"
-                    onClick={imageLeftCLick}>
+                    onClick={imageLeftCLick}
+                    ref={leftSlideHandler}>
                     <i className={`fas fa-sort-up text-white text-xl -rotate-90 ipad:rotate-0`} />
                 </div>
             )}
@@ -78,7 +112,8 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
             {images.length > 4 && (
                 <div
                     className="bg-secondary rounded-md flex-grow-0 flex-shrink-0 flex justify-center items-center cursor-pointer hover:bg-main shadow-drop-down w-[28px] h-auto"
-                    onClick={imageRightClick}>
+                    onClick={imageRightClick}
+                    ref={rightSlideHandler}>
                     <i className="fas fa-sort-down text-white text-xl -rotate-90" />
                 </div>
             )}
