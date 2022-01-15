@@ -17,10 +17,10 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
     // TODO : Make image slider work properly
     const imageRightClick = () => {
         if (imageContainerRef.current && imageItemRef.current) {
+            console.log("Right");
             const slideAmount = imageItemRef.current.clientHeight + 9;
             const nextPos = imageSliderCurrentPosition.current + slideAmount;
-            // imageContainerRef.current.classList.remove(`ipad:-translate-y-[${imageSliderCurrentPosition.current}px]`);
-            // imageContainerRef.current.classList.add(`ipad:-translate-y-[${nextPos}px]`);
+            console.log(imageSliderCurrentPosition.current);
             imageContainerRef.current.style.transform = `translate3d(0px, -${nextPos}px, 0px)`;
             imageSliderCurrentPosition.current = nextPos;
         }
@@ -28,10 +28,12 @@ const ProductImage: NextPage<ProductImageProps> = ({ images, activeImage, SetAct
 
     const imageLeftCLick = () => {
         if (imageContainerRef.current && imageItemRef.current) {
-            const slideAmount = imageItemRef.current.clientHeight + 9;
-            const nextPos = imageSliderCurrentPosition.current - slideAmount;
-            imageContainerRef.current.style.transform = `translate3d(0px, -${nextPos}px, 0px)`;
-            imageSliderCurrentPosition.current = nextPos;
+            if (imageSliderCurrentPosition.current > 0) {
+                const slideAmount = imageItemRef.current.clientHeight + 9;
+                const nextPos = imageSliderCurrentPosition.current - slideAmount;
+                imageContainerRef.current.style.transform = `translate3d(0px, -${nextPos}px, 0px)`;
+                imageSliderCurrentPosition.current = nextPos;
+            }
         }
     };
 
