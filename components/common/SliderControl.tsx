@@ -84,7 +84,6 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     leftControlRef.current.classList.add("hover:bg-main");
                     leftControlRef.current.classList.add("text-white");
                     leftControlRef.current.classList.add("cursor-pointer");
-                    // TODO : Something wrong with this calculation (slider not working properly)
                     const nextPos = currentSliderPosition - (sliderItemRef.current.clientWidth + extraSpace);
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(nextPos);
@@ -115,7 +114,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     rightControlRef.current.classList.add("text-white");
                     rightControlRef.current.classList.add("cursor-pointer");
                     console.log(currentSliderPosition);
-                    // TODO : Something wrong with this calculation (slider not working properly)
+                    // TODO : Somehow remove the extraSpace When the slider in at the stop position (Improvement)
                     const nextPos = currentSliderPosition + sliderItemRef.current.clientWidth + extraSpace;
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(nextPos);
