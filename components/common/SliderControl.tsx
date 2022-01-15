@@ -54,19 +54,27 @@ const SliderControl: NextPage<SliderControlProps> = ({
             let stopPosition;
             if (window.innerWidth >= 992) {
                 if (window.innerWidth <= 1199) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) + extraSpace);
+                    stopPosition = -(
+                        sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[0]) +
+                        (productsLength - alignmentPattern[0 + 1]) * extraSpace
+                    );
                 } else if (window.innerWidth <= 1399) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) + extraSpace);
+                    stopPosition = -(
+                        sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[1]) +
+                        (productsLength - (alignmentPattern[1] + 1)) * extraSpace
+                    );
                 } else if (window.innerWidth <= 1599) {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) + extraSpace);
+                    stopPosition = -(
+                        sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[2]) +
+                        (productsLength - (alignmentPattern[2] + 1)) * extraSpace
+                    );
                 } else {
-                    stopPosition = -(sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) + extraSpace);
+                    stopPosition = -(
+                        sliderItemRef.current?.clientWidth * (productsLength - alignmentPattern[3]) +
+                        (productsLength - (alignmentPattern[3] + 1)) * extraSpace
+                    );
                 }
-                // if (window.innerWidth <= 1600) {
-                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 3) + 18);
-                // } else {
-                //     stopPosition = -(currentSliderPosition.current, sliderItemRef.current?.clientWidth * (productsLength - 4) + 18);
-                // }
+
                 if (currentSliderPosition > stopPosition) {
                     console.log(currentSliderPosition);
                     leftControlRef.current.classList.remove("bg-gray-400");
@@ -76,8 +84,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     leftControlRef.current.classList.add("hover:bg-main");
                     leftControlRef.current.classList.add("text-white");
                     leftControlRef.current.classList.add("cursor-pointer");
-                    // TODO : Something wrong with this calculation (slider not working properly)
-                    const nextPos = currentSliderPosition - sliderItemRef.current.clientWidth - extraSpace;
+                    const nextPos = currentSliderPosition - (sliderItemRef.current.clientWidth + extraSpace);
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(nextPos);
 
@@ -98,8 +105,7 @@ const SliderControl: NextPage<SliderControlProps> = ({
         console.log("Right");
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             if (window.innerWidth >= 992) {
-                if (currentSliderPosition <= 0) {
-                    console.log(currentSliderPosition);
+                if (currentSliderPosition < -sliderItemRef.current.clientWidth) {
                     rightControlRef.current.classList.remove("bg-gray-400");
                     rightControlRef.current.classList.remove("text-gray-200");
                     rightControlRef.current.classList.remove("cursor-not-allowed");
@@ -107,20 +113,21 @@ const SliderControl: NextPage<SliderControlProps> = ({
                     rightControlRef.current.classList.add("hover:bg-main");
                     rightControlRef.current.classList.add("text-white");
                     rightControlRef.current.classList.add("cursor-pointer");
-
-                    // TODO : Something wrong with this calculation (slider not working properly)
+                    console.log(currentSliderPosition);
+                    // TODO : Somehow remove the extraSpace When the slider in at the stop position (Improvement)
                     const nextPos = currentSliderPosition + sliderItemRef.current.clientWidth + extraSpace;
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
-                }
+                    setCurrentSliderPositionTo(nextPos);
 
-                if (currentSliderPosition >= sliderItemRef.current.clientWidth + extraSpace) {
-                    leftControlRef.current.classList.remove("bg-secondary");
-                    leftControlRef.current.classList.remove("hover:bg-main");
-                    leftControlRef.current.classList.remove("text-white");
-                    leftControlRef.current.classList.remove("cursor-pointer");
-                    leftControlRef.current.classList.add("bg-gray-400");
-                    leftControlRef.current.classList.add("text-gray-200");
-                    leftControlRef.current.classList.add("cursor-not-allowed");
+                    if (nextPos >= -(sliderItemRef.current.clientWidth + extraSpace)) {
+                        leftControlRef.current.classList.remove("bg-secondary");
+                        leftControlRef.current.classList.remove("hover:bg-main");
+                        leftControlRef.current.classList.remove("text-white");
+                        leftControlRef.current.classList.remove("cursor-pointer");
+                        leftControlRef.current.classList.add("bg-gray-400");
+                        leftControlRef.current.classList.add("text-gray-200");
+                        leftControlRef.current.classList.add("cursor-not-allowed");
+                    }
                 }
             }
         }

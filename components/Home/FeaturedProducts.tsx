@@ -49,7 +49,7 @@ const FeaturedProducts: NextPage<IProps> = ({ featuredProducts }) => {
                         setCurrentSliderPositionTo={setCurrentSliderPositionTo}
                         productsLength={featuredProducts.length}
                         alignmentPattern={[3, 3, 3, 4]}
-                        extraSpace={18}
+                        extraSpace={16}
                     />
                 </div>
             )}
