@@ -16,18 +16,17 @@ describe("Test Custom Input Functionality", () => {
     })
     
 
-    expect(label.classList).toContain("scale-100")
-    expect(label.classList).toContain("translate-x-0")
-    expect(label.classList).toContain("translate-y-0")
-    expect(label.classList).toContain("text-gray-500")
-
-    fireEvent.click(label);
-
-    expect(label.classList).toContain("scale-80")
-    expect(label.classList).toContain("-translate-x-1")
-    expect(label.classList).toContain("-translate-y-6")
-    expect(label.classList).toContain("text-main")
-
+    describe("InputFunctionality", () => {
+        expect(label.classList).toContain("scale-100")
+        expect(label.classList).toContain("translate-x-0")
+        expect(label.classList).toContain("translate-y-0")
+        expect(label.classList).toContain("text-gray-500")
     
-
+        fireEvent.click(label);
+    
+        expect(label.classList).toContain("scale-80")
+        expect(label.classList).toContain("-translate-x-1")
+        expect(label.classList).toContain("-translate-y-6")
+        expect(label.classList).toContain("text-main")
+    })
 })
