@@ -48,10 +48,11 @@ const Input: NextPage<InputProps> = ({ type, label }) => {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 ref={inputRef}
+                title="main-input"
             />
             <span
                 className="absolute bg-white text-gray-500 origin-left text-xl transition-all translate-x-0 duration-300 scale-100 translate-y-0 px-1 top-3"
-                onClick={() => inputRef.current?.focus()}>
+                onClick={() => inputRef.current?.focus()} title="main-label">
                 {label}
             </span>
         </div>
