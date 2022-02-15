@@ -1,4 +1,5 @@
 const sum = (a: number, b: number) => {
-    return a + b
+    let c = 5
+    return a + b + c
 }
 export default sum

@@ -1,10 +1,8 @@
 import HeroPlain from "./HeroPlain";
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 
 it("RenderCheck", () => {
-    const { getByText } = render(<HeroPlain />)
-    expect(getByText("ABOUT US")).not.toBeNull()
-
-    
+    render(<HeroPlain />)
+    expect(screen.getByText("ABOUT US")).toBeInTheDocument()    
 })
