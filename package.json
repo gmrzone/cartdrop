@@ -9,6 +9,7 @@
         "lint": "next lint",
         "format": "npx prettier --write .",
         "test": "jest --watch",
+        "test:ci": "jest --coverage --silent --ci",
         "prepare": "husky install",
         "lint-stages": "lint-staged"
     },
