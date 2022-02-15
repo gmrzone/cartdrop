@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import AboutContent from "./AboutContent";
 
 const HeroPlain: NextPage = () => {
     return (
