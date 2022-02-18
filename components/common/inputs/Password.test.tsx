@@ -1,20 +1,22 @@
-import Input from "./Input";
 import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
+import Password from "./Password";
 
-describe("Input Tests", () => {
+describe("Password Component Test", () => {
     beforeEach(() => {
-        render(<Input type="text" label="Test Input" />);
+        render(<Password type="password" label="Password test" />);
     });
 
     it("RenderCheck", () => {
-        expect(screen.getByText("Test Input")).toBeInTheDocument();
-        expect(screen.getByRole("textbox")).toBeInTheDocument();
+        expect(screen.getByText("Password test")).toBeInTheDocument();
+        expect(screen.getByTitle("input")).toBeInTheDocument();
+        expect(screen.getByTitle("password-toggler")).toBeInTheDocument();
     });
 
     it("StyleTest", () => {
-        const input = screen.getByRole("textbox");
-        const label = screen.getByText("Test Input");
+        const input = screen.getByTitle("input");
+        const label = screen.getByText("Password test");
+
         // Before Click
         expect(input).not.toHaveFocus();
         expect(label.classList).toContain("text-gray-500");
@@ -35,5 +37,18 @@ describe("Input Tests", () => {
         expect(label.classList).toContain("-translate-y-6");
         expect(label.classList).toContain("text-main");
         expect(label.classList).toContain("scale-80");
+    });
+
+    it("PasswordToggletTest", () => {
+        const toggler = screen.getByTitle("password-toggler");
+        const input = screen.getByTitle("input");
+
+        user.type(input, "TestText");
+
+        expect(input).toHaveAttribute("type", "password");
+
+        user.click(toggler);
+
+        expect(input).toHaveAttribute("type", "text");
     });
 });
