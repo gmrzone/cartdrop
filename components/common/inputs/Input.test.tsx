@@ -12,7 +12,7 @@ describe("Input Tests", () => {
         expect(screen.getByRole("textbox")).toBeInTheDocument();
     });
 
-    it("StyleTest", () => {
+    it("TransitionStyleTest", () => {
         const input = screen.getByRole("textbox");
         const label = screen.getByText("Test Input");
         // Before Click

@@ -13,7 +13,7 @@ describe("Password Component Test", () => {
         expect(screen.getByTitle("password-toggler")).toBeInTheDocument();
     });
 
-    it("StyleTest", () => {
+    it("TransitionStyleTest", () => {
         const input = screen.getByTitle("input");
         const label = screen.getByText("Password test");
 
