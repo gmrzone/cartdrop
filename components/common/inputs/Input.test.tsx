@@ -1,5 +1,5 @@
 import Input from "./Input";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import user from "@testing-library/user-event";
 
 describe("Input Tests", () => {
@@ -26,14 +26,18 @@ describe("Input Tests", () => {
 
         // After Click
         expect(input).toHaveFocus();
-        expect(label.classList).not.toContain("text-gray-500");
-        expect(label.classList).not.toContain("translate-x-0");
-        expect(label.classList).not.toContain("scale-100");
-        expect(label.classList).not.toContain("translate-y-0");
-
         expect(label.classList).toContain("-translate-x-1");
         expect(label.classList).toContain("-translate-y-6");
         expect(label.classList).toContain("text-main");
         expect(label.classList).toContain("scale-80");
+
+        // After input blur Transition should go back to normal
+
+        fireEvent.blur(input);
+
+        expect(label.classList).toContain("text-gray-500");
+        expect(label.classList).toContain("translate-x-0");
+        expect(label.classList).toContain("scale-100");
+        expect(label.classList).toContain("translate-y-0");
     });
 });
