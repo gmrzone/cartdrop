@@ -3,16 +3,14 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import user from "@testing-library/user-event";
 
 describe("Input Tests", () => {
-    beforeEach(() => {
-        render(<Input type="text" label="Test Input" />);
-    });
-
     it("RenderCheck", () => {
+        render(<Input type="text" label="Test Input" />);
         expect(screen.getByText("Test Input")).toBeInTheDocument();
         expect(screen.getByRole("textbox")).toBeInTheDocument();
     });
 
     it("TransitionStyleTest", () => {
+        render(<Input type="text" label="Test Input" />);
         const input = screen.getByRole("textbox");
         const label = screen.getByText("Test Input");
         // Before Click

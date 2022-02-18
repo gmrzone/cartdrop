@@ -3,17 +3,15 @@ import user from "@testing-library/user-event";
 import Password from "./Password";
 
 describe("Password Component Test", () => {
-    beforeEach(() => {
-        render(<Password type="password" label="Password test" />);
-    });
-
     it("RenderCheck", () => {
+        render(<Password type="password" label="Password test" />);
         expect(screen.getByText("Password test")).toBeInTheDocument();
         expect(screen.getByTitle("input")).toBeInTheDocument();
         expect(screen.getByTitle("password-toggler")).toBeInTheDocument();
     });
 
     it("TransitionStyleTest", () => {
+        render(<Password type="password" label="Password test" />);
         const input = screen.getByTitle("input");
         const label = screen.getByText("Password test");
 
@@ -43,6 +41,7 @@ describe("Password Component Test", () => {
     });
 
     it("PasswordToggletTest", () => {
+        render(<Password type="password" label="Password test" />);
         const toggler = screen.getByTitle("password-toggler");
         const input = screen.getByTitle("input");
 

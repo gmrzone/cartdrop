@@ -3,16 +3,14 @@ import user from "@testing-library/user-event";
 import TextArea from "./TextArea";
 
 describe("TEstingTextArea", () => {
-    beforeEach(() => {
-        render(<TextArea label="Test Text Area" />);
-    });
-
     it("RenderCheck", () => {
+        render(<TextArea label="Test Text Area" />);
         expect(screen.getByText("Test Text Area")).toBeInTheDocument();
         expect(screen.getByTitle("text-area")).toBeInTheDocument();
     });
 
     it("TransitionStyleTest", () => {
+        render(<TextArea label="Test Text Area" />);
         const input = screen.getByTitle("text-area");
         const label = screen.getByText("Test Text Area");
 

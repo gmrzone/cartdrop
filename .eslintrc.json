@@ -1,6 +1,3 @@
 {
-    "extends": ["next", "next/core-web-vitals", "plugin:jest/recommended", "plugin:jest/style", "plugin:testing-library/react"],
-    "rules": {
-        "testing-library/no-render-in-setup": "off"
-    }
+    "extends": ["next", "next/core-web-vitals", "plugin:jest/recommended", "plugin:jest/style", "plugin:testing-library/react"]
 }
