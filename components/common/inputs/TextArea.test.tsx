@@ -1,18 +1,19 @@
-import Input from "./Input";
 import { render, screen, fireEvent } from "@testing-library/react";
 import user from "@testing-library/user-event";
+import TextArea from "./TextArea";
 
-describe("Input Tests", () => {
+describe("TEstingTextArea", () => {
     it("RenderCheck", () => {
-        render(<Input type="text" label="Test Input" />);
-        expect(screen.getByText("Test Input")).toBeInTheDocument();
-        expect(screen.getByRole("textbox")).toBeInTheDocument();
+        render(<TextArea label="Test Text Area" />);
+        expect(screen.getByText("Test Text Area")).toBeInTheDocument();
+        expect(screen.getByTitle("text-area")).toBeInTheDocument();
     });
 
     it("TransitionStyleTest", () => {
-        render(<Input type="text" label="Test Input" />);
-        const input = screen.getByRole("textbox");
-        const label = screen.getByText("Test Input");
+        render(<TextArea label="Test Text Area" />);
+        const input = screen.getByTitle("text-area");
+        const label = screen.getByText("Test Text Area");
+
         // Before Click
         expect(input).not.toHaveFocus();
         expect(label.classList).toContain("text-gray-500");

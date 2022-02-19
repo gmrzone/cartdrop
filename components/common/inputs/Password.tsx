@@ -60,13 +60,14 @@ const Password: NextPage<InputProps> = ({ type, label }) => {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 ref={inputElement}
+                title="input"
             />
             <span
                 className="absolute bg-white text-gray-500 origin-left text-xl transition-all translate-x-0 duration-300 scale-100 translate-y-0 px-1 top-3"
                 onClick={() => inputElement.current?.focus()}>
                 {label}
             </span>
-            <span className="absolute right-4 top-2 text-3xl cursor-pointer" onClick={togglePassword}>
+            <span className="absolute right-4 top-2 text-3xl cursor-pointer" onClick={togglePassword} title="password-toggler">
                 <i className="fa fa-eye text-xl text-main" aria-hidden="true" />
             </span>
         </div>

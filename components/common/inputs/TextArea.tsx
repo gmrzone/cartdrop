@@ -46,6 +46,7 @@ const TextArea: NextPage<InputProps> = ({ label }) => {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 ref={inputRef}
+                title="text-area"
             />
             <span
                 className="absolute bg-white origin-left text-gray-500 text-xl transition-all translate-x-0 duration-300 scale-100 translate-y-0 px-1 top-3"

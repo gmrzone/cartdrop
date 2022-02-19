@@ -1,17 +1,17 @@
 import { NextPage } from "next";
 import { useState, MouseEventHandler, useEffect, useRef } from "react";
-type options = {
+type option = {
     label: string;
     value: string;
 };
 
 interface SelectProps {
-    options: options[];
-    initialLabel: options;
+    options: option[];
+    initialLabel: option;
 }
 
 const Select: NextPage<SelectProps> = ({ options, initialLabel }) => {
-    const [selected, setSelected] = useState<options | null>(null);
+    const [selected, setSelected] = useState<option | null>(null);
     const [dropDownOpen, setDropDownOpen] = useState<boolean>(false);
     const labelRef = useRef<HTMLSpanElement | null>(null);
     const mainContainer = useRef<HTMLDivElement | null>(null);
@@ -58,7 +58,12 @@ const Select: NextPage<SelectProps> = ({ options, initialLabel }) => {
 
     const renderOptions = options.map((x) => {
         return (
-            <div key={x.value} data-value={x.value} className="p-4 text-main bg-white hover:bg-gray-200" onClick={() => setSelected(x)}>
+            <div
+                key={x.value}
+                data-value={x.value}
+                className="p-4 text-main bg-white hover:bg-gray-200"
+                onClick={() => setSelected(x)}
+                title={`select-${x.value}`}>
                 {x.label}
             </div>
         );
@@ -73,13 +78,14 @@ const Select: NextPage<SelectProps> = ({ options, initialLabel }) => {
                 !dropDownOpen && !selected ? "border" : "border-2"
             }`}
             onClick={toggleDropDown}
-            ref={mainContainer}>
+            ref={mainContainer}
+            title="custom-select">
             {/* <select className="hidden">
                 {options.map((x) => {
                     return <option key={x.value}>{x.label}</option>;
                 })}
             </select> */}
-            <i className="fas fa-sort-down absolute right-4 top-4 text-main" />
+            <i className="fas fa-sort-down absolute right-4 top-4 text-main" title="drop-down-icon" />
             <div className="font-medium text-xl text-main">
                 <span
                     className="text-gray-500 translate-x-0 translate-y-0 scale-100 duration-300 transition-all absolute bg-white"
@@ -87,12 +93,14 @@ const Select: NextPage<SelectProps> = ({ options, initialLabel }) => {
                     {initialLabel.label}
                 </span>
                 {selected && (
-                    <span data-selected={selected.value} className="text-xl text-main">
+                    <span data-selected={selected.value} className="text-xl text-main" title="selected-option">
                         {selected.label}
                     </span>
                 )}
             </div>
-            <div className={`absolute bg-white w-full left-0 z-20 top-16 shadow-drop-down rounded-lg ${dropDownOpen ? "block" : "hidden"}`}>
+            <div
+                className={`absolute bg-white w-full left-0 z-20 top-16 shadow-drop-down rounded-lg ${dropDownOpen ? "block" : "hidden"}`}
+                title="select-options">
                 {renderOptions}
             </div>
         </div>
