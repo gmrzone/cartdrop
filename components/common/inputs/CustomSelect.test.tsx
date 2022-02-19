@@ -54,4 +54,32 @@ describe("CustomSelectTesting", () => {
             expect(screen.getByTitle("selected-option").textContent).toBe(x.label);
         });
     });
+
+    it("Transition Style test async", () => {
+        render(<CustomSelect options={selectOptions} initialLabel={{ value: "custom-select", label: "Custom Select" }} />);
+
+        const customSelect = screen.getByTitle("custom-select");
+        const label = screen.getByText("Custom Select");
+        const s_options = screen.getByTitle("select-options");
+        // Default Style
+        expect(label.classList).toContain("translate-x-0");
+        expect(label.classList).toContain("translate-y-0");
+        expect(label.classList).toContain("scale-100");
+        expect(label.classList).toContain("text-gray-500");
+        expect(customSelect.classList).toContain("border");
+
+        // click the custom select to open dropdown options
+        user.click(customSelect);
+
+        // Click on option two from the dropdown
+        user.click(screen.getByTitle(`select-option-two`));
+
+        // After clicking any option from thedropdown the style of the label
+        // Should change (it should translate to x and y direction and scale down to 80)
+        expect(label.classList).toContain("-translate-x-5");
+        expect(label.classList).toContain("-translate-y-7");
+        expect(label.classList).toContain("scale-80");
+        expect(label.classList).toContain("text-main");
+        expect(customSelect.classList).toContain("border-2");
+    });
 });
