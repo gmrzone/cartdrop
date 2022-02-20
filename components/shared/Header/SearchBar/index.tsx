@@ -43,8 +43,9 @@ const SearchBar: NextPage = () => {
         <div
             className="flex flex-nowrap rounded-md mt-3 w-full items-center overflow-hidden border-2 relative border-solid border-main md:rounded-full md:w-12 h-11 cursor-pointer self-center md:mt-0 md:mr-8 transition-all duration-500"
             onClick={expandSearch}
-            ref={mainSearch}>
-            <div className="ml-3">
+            ref={mainSearch}
+            title="search">
+            <div className="ml-3" title="search-icon">
                 <i className="fa fa-search text-main text-xl" aria-hidden="true" />
             </div>
             <div className="w-full md:w-auto mr-1">
