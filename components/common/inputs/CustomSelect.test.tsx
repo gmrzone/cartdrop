@@ -25,33 +25,32 @@ describe("CustomSelectTesting", () => {
     it("RenderCheck", () => {
         render(<CustomSelect options={selectOptions} initialLabel={{ value: "custom-select", label: "Custom Select" }} />);
         expect(screen.getByText("Custom Select")).toBeInTheDocument();
-        expect(screen.getByTitle("select-options")).toBeInTheDocument();
+        // Select Options should be hidden until the customSelect is clicked
+        expect(screen.queryByTitle("select-options")).not.toBeInTheDocument();
         expect(screen.getByTitle("drop-down-icon")).toBeInTheDocument();
+        // IF noting is selected then select option should be hidden
         expect(screen.queryByTitle("selected-option")).not.toBeInTheDocument();
-    });
-
-    it("Dropdown Options Visibility Test", () => {
-        render(<CustomSelect options={selectOptions} initialLabel={{ value: "custom-select", label: "Custom Select" }} />);
-        const dropDownOptions = screen.getByTitle("select-options");
-        const customSelect = screen.getByTitle("custom-select");
-        // before click it should have class hidden
-        expect(dropDownOptions.classList).toContain("hidden");
-        user.click(customSelect);
-        // After click it should have class block
-        expect(dropDownOptions.classList).toContain("block");
     });
 
     it("DropDown Click Test", () => {
         render(<CustomSelect options={selectOptions} initialLabel={{ value: "custom-select", label: "Custom Select" }} />);
         // Get CustomSelect and click on it to open dropdown
         const customSelect = screen.getByTitle("custom-select");
-        user.click(customSelect);
+
         // Iterate over all option and click on that option
         // After clicking that option should me selected in the select box
         selectOptions.forEach((x) => {
+            // Click on Custom Select to open options
+            user.click(customSelect);
+            // Option should now be visible
+            expect(screen.getByTitle("select-options")).toBeInTheDocument();
+            // Click on each options
             user.click(screen.getByTitle(`select-${x.value}`));
             expect(screen.getByTitle("selected-option")).toBeInTheDocument();
             expect(screen.getByTitle("selected-option").textContent).toBe(x.label);
+            // After Clicking on one of the options the option dropdown will become hidden again
+            expect(screen.queryByTitle("select-options")).not.toBeInTheDocument();
+            // Open the dropdown again
         });
     });
 
@@ -60,7 +59,6 @@ describe("CustomSelectTesting", () => {
 
         const customSelect = screen.getByTitle("custom-select");
         const label = screen.getByText("Custom Select");
-        const s_options = screen.getByTitle("select-options");
         // Default Style
         expect(label.classList).toContain("translate-x-0");
         expect(label.classList).toContain("translate-y-0");
