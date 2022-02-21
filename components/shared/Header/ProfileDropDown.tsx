@@ -10,7 +10,7 @@ const ProfileDropDown: NextPage<ProfileDropdown> = ({ profileDropdownActive }) =
     const renderOptions = ProfileLogoutOptions.map((x) => {
         return (
             <Link key={x.value} href={x.to} passHref>
-                <a title="profile-item">
+                <a title={`profile-item-${x.value}`}>
                     <li className="flex items-center px-4 py-2 hover:bg-gray-200 space-x-3">
                         <i className={`${x.icon} text-main text-lg`} />
                         <span className="text-main text-lg">{x.name}</span>
