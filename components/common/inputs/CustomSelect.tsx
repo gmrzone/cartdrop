@@ -98,11 +98,11 @@ const Select: NextPage<SelectProps> = ({ options, initialLabel }) => {
                     </span>
                 )}
             </div>
-            <div
-                className={`absolute bg-white w-full left-0 z-20 top-16 shadow-drop-down rounded-lg ${dropDownOpen ? "block" : "hidden"}`}
-                title="select-options">
-                {renderOptions}
-            </div>
+            {dropDownOpen && (
+                <div className={`absolute bg-white w-full left-0 z-20 top-16 shadow-drop-down rounded-lg block}`} title="select-options">
+                    {renderOptions}
+                </div>
+            )}
         </div>
     );
 };

@@ -8,7 +8,7 @@ interface CartProps {
 
 const Cart: NextPage<CartProps> = ({ classes, toggleCartSidebar }) => {
     return (
-        <div className="cursor-pointer" onClick={toggleCartSidebar}>
+        <div className="cursor-pointer" onClick={toggleCartSidebar} title="cart-icon">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={classes}
