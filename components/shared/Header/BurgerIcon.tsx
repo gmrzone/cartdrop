@@ -5,7 +5,7 @@ type BurgerIconP = {
 };
 const BurgerIcon: NextPage<BurgerIconP> = ({ toggleLeftNav }) => {
     return (
-        <div className="w-8 space-y-1 desktop:hidden self-center cursor-pointer mr-3" onClick={toggleLeftNav}>
+        <div className="w-8 space-y-1 desktop:hidden self-center cursor-pointer mr-3" onClick={toggleLeftNav} title="left-nav-opener">
             <span className="h-1 bg-main w-full block rounded"></span>
             <span className="h-1 bg-main w-full block rounded"></span>
             <span className="h-1 bg-main w-full block rounded"></span>

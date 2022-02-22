@@ -14,7 +14,7 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
         return (
             <li key={x.value} className="px-6 py-3 desktop:px-0 desktop:py-0">
                 <Link href={x.to} passHref>
-                    <a className="font-semibold text-text desktop:text-main desktop:font-bold desktop:text-base text-lg">
+                    <a className="font-semibold text-text desktop:text-main desktop:font-bold desktop:text-base text-lg" title={x.value}>
                         <i className={`${x.icon} desktop:hidden mr-4`} />
                         {x.name}
                     </a>
@@ -25,22 +25,23 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
 
     const renderData2 = NavLeftData2.map((x) => {
         return (
-            <Link href={x.to} passHref key={x.value}>
-                <li className="px-6 py-3 desktop:bg-white desktop:hover:bg-gray-200 cursor-pointer">
-                    <a className="text-text font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base">
+            <li className="px-6 py-3 desktop:bg-white desktop:hover:bg-gray-200 cursor-pointer" key={x.value}>
+                <Link href={x.to} passHref key={x.value}>
+                    <a className="text-text font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base" title={x.value}>
                         <i className={`${x.icon} desktop:hidden mr-4`} />
                         {x.name}
                     </a>
-                </li>
-            </Link>
+                </Link>
+            </li>
         );
     });
     return (
         <>
             <nav
                 className={`left-0 w-full max-w-xs ml-auto md:ml-0 z-[1000] shadow-drop-down transition-transform duration-300 ${
-                    leftNavActive ? "translate-x-0" : "-translate-x-full"
-                } bg-white h-screen top-0 fixed desktop:self-center desktop:items-center desktop:z-0 desktop:translate-x-0 desktop:ml-20 desktop:relative desktop:max-w-max desktop:h-auto desktop:w-auto desktop:shadow-none`}>
+                    leftNavActive ? "translate-x-0 desktop:-translate-x-full" : "-translate-x-full"
+                } bg-white h-screen top-0 fixed desktop:self-center desktop:items-center desktop:z-0 desktop:translate-x-0 desktop:ml-20 desktop:relative desktop:max-w-max desktop:h-auto desktop:w-auto desktop:shadow-none`}
+                title="nav-left">
                 <div className="bg-secondary p-4 relative flex items-center space-x-4 desktop:hidden">
                     <Image src={DefaultProfile} width={40} height={40} alt="default-profile" className="rounded-full px-4" />
                     <p className="text-white font-bold text-lg">Login & Signup</p>
