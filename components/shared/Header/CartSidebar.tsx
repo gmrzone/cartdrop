@@ -47,7 +47,7 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
                 </div>
                 <div className="text-xl text-main font-bold">MY CART</div>
                 <div className="pr-2">
-                    <i className="fal fa-times text-3xl text-main cursor-pointer" onClick={CloseSlider} />
+                    <i className="fal fa-times text-3xl text-main cursor-pointer" onClick={CloseSlider} title="cart-close" />
                 </div>
             </div>
             <div className="p-4 mt-10 ipad:mt-14">
