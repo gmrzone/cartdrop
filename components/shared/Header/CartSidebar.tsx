@@ -39,7 +39,8 @@ const CartSidebar: NextPage<CartSidebarProps> = ({ toggleCartSidebar, cartSideba
     return (
         <div
             className="fixed top-0 right-0 h-screen bg-white w-full max-w-sm z-[1000] hidden shadow-drop-down translate-x-full transition-transform duration-300"
-            ref={sidebarRef}>
+            ref={sidebarRef}
+            title="cart-sidebar">
             <div className="p-3 flex items-center justify-between shadow-g-in">
                 <div className="pl-2 ">
                     <CartIcon classes="w-8 h-8" />

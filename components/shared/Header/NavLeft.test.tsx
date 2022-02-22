@@ -28,7 +28,7 @@ describe("Testing Left Navbar", () => {
 
     it("Nav Item test", () => {
         render(<LeftNav leftNavActive={false} toggleLeftNav={toggleLeftNav} />);
-        navLeftData.concat(NavLeftData2).forEach((x, i) => {
+        navLeftData.concat(NavLeftData2).forEach((x) => {
             expect(screen.getByTitle(x.value)).toBeInTheDocument();
             expect(screen.getByTitle(x.value)).toHaveAttribute("href", x.to);
         });

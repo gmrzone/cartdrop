@@ -62,10 +62,10 @@ const Header: NextPage = () => {
         <div className="container flex">
             <BurgerIcon toggleLeftNav={toggleLeftNav} />
             <Link href="/" passHref>
-                <a>{isMobile ? <LogoSmall /> : <Logo />}</a>
+                <a title="logo">{isMobile ? <LogoSmall /> : <Logo />}</a>
             </Link>
             <NavLeft toggleLeftNav={toggleLeftNav} leftNavActive={leftNavActive} />
-            <div className="ml-auto hidden md:block">
+            <div className="ml-auto hidden md:block" title="desktop-search">
                 <SearchBar />
             </div>
             <NavRight toggleCartSidebar={toggleCartSidebar} />
