@@ -7,52 +7,52 @@ const Footer: NextPage = () => {
         {
             id: 1,
             name: "Login",
-            link: "/login/",
+            link: "/login",
         },
         {
             id: 2,
             name: "Signup",
-            link: "/signup/",
+            link: "/signup",
         },
         {
             id: 3,
             name: "Become a seller",
-            link: "/become-a-seller/",
+            link: "/become-a-seller",
         },
         {
             id: 4,
             name: "Blog",
-            link: "/blog/",
+            link: "/blog",
         },
         {
             id: 5,
             name: "Featured Products",
-            link: "/featured/",
+            link: "/featured",
         },
         {
             id: 6,
             name: "Careers",
-            link: "/careers/",
+            link: "/careers",
         },
         {
             id: 7,
             name: "About",
-            link: "/about/",
+            link: "/about",
         },
         {
             id: 8,
             name: "Contact",
-            link: "/contact/",
+            link: "/contact",
         },
         {
             id: 9,
             name: "Privacy",
-            link: "/privacy/",
+            link: "/privacy",
         },
         {
             id: 10,
             name: "Terms",
-            link: "/terms/",
+            link: "/terms",
         },
     ];
 
@@ -69,13 +69,13 @@ const Footer: NextPage = () => {
     return (
         <footer className="bg-main py-1 mt-auto">
             <div className="container">
-                <div className="py-8">
+                <div className="py-8" title="footer-logo">
                     <h1 className="text-center">
                         <span className="text-black">CART</span>
                         <span className="text-white">DROP</span>
                     </h1>
                 </div>
-                <div>
+                <div title="footer-links">
                     <ul className="text-center flex flex-wrap justify-center space-x-6 sm:space-x-10 md:space-x-12">{renderFooterData}</ul>
                 </div>
                 <Social />

@@ -44,7 +44,11 @@ const Social: NextPage = () => {
             </li>
         );
     });
-    return <ul className="flex space-x-4 md:space-x-8 justify-center my-3 md:my-4">{renderIcon}</ul>;
+    return (
+        <ul className="flex space-x-4 md:space-x-8 justify-center my-3 md:my-4" title="footer-social">
+            {renderIcon}
+        </ul>
+    );
 };
 
 export default Social;
