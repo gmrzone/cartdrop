@@ -6,7 +6,7 @@ import { BACKEND_URL } from "../../utils";
 import { CategoryType, SubcategoryType, ProductVariationType, BrandsTypes, PaginatedProductVariationType } from "../../shared/types";
 import TopProducts from "../../components/categories/topProducts";
 import { useRouter } from "next/router";
-import CategoryPanel from "../../components/common/CategoryPanelNew";
+import CategoryPanel from "../../components/common/CategoryPanel";
 import ProductList from "../../components/categories/ProductList";
 import ProductListContext from "../../context/ProductListContext";
 

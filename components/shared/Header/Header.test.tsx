@@ -14,7 +14,6 @@ jest.mock("../../../public/default_profilepic.png", () => ({
 jest.mock("next/image", () => ({
     __esModule: true,
     default: (props: any) => {
-        console.log(props);
         return <img {...props} alt={props.alt} />;
     },
 }));
@@ -22,7 +21,7 @@ jest.mock("next/image", () => ({
 // Mock useMobile
 jest.mock("../../hooks/useIsMobile", () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: jest.fn().mockReturnValue(false),
 }));
 
 describe("HeaderComponentTest With Cart Sidebar and Left nav Functionality", () => {

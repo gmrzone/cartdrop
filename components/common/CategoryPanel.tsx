@@ -10,11 +10,12 @@ type CategoryPanelProps = {
 };
 const CategoryPanel: NextPage<CategoryPanelProps> = ({ activeCategory, categories }) => {
     const renderCategory = categories.map((x) => {
-        console.log(x);
         return (
             <li key={x.uuid}>
                 <Link href={`/${x.slug}`} passHref>
-                    <a className={`${style["category-item"]} ${activeCategory === x.slug ? style["category-active"] : ""}`}>
+                    <a
+                        className={`${style["category-item"]} ${activeCategory === x.slug ? style["category-active"] : ""}`}
+                        title={`category-${x.slug}`}>
                         <div className={style["image-container"]}>
                             <Image src={x.category_images[0]?.image} alt={x.slug} layout="fill" objectFit="cover" />
                             {/* <img src={x.category_images[0]?.image} alt="testing"/> */}
@@ -31,7 +32,7 @@ const CategoryPanel: NextPage<CategoryPanelProps> = ({ activeCategory, categorie
                 <ul className={style["main-container"]}>
                     <li>
                         <Link href="/offers" passHref>
-                            <a className={style["category-item"]}>
+                            <a className={style["category-item"]} title="category-offers">
                                 <div className={style["image-container"]}>
                                     <Image src="/offers.png" layout="fill" alt="category_image" />
                                 </div>

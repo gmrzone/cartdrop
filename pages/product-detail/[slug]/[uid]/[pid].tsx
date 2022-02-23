@@ -4,7 +4,7 @@ import { ProductVariationType } from "../../../../shared/types";
 import { BACKEND_URL } from "../../../../utils";
 import MetaHead from "../../../../components/common/Head";
 import MainLayout from "../../../../components/common/MainLayout";
-import CategoryPanel from "../../../../components/common/CategoryPanelNew";
+import CategoryPanel from "../../../../components/common/CategoryPanel";
 import { CategoryType } from "../../../../shared/types";
 import ProductDetailComponent from "../../../../components/product-detail";
 

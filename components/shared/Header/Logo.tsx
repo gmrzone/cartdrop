@@ -10,11 +10,6 @@ const Logo = () => {
                 y="0px"
                 viewBox="0 0 1079 200"
                 xmlSpace="preserve">
-                {/* <style type="text/css">
-                    .st0{fill:#2D3D8A;}
-                    .st1{fill:#191919;}
-                    .st2{fill:#393A43;}
-                </style> */}
                 <path
                     id="XMLID_8_"
                     className="st0"
@@ -80,7 +75,8 @@ const Logo = () => {
                     M1011.2,94.5h19.5c17.9,0,27.7-7.2,27.7-20.6c0-13.9-10.2-20.3-27.7-20.3h-19.5V94.5z"
                     />
                 </g>
-                <style jsx>{`
+                {/* Setting jsx attribute to undefined temporarily to avoid errors in jest */}
+                <style jsx={undefined}>{`
                     .st0 {
                         fill: #2d3d8a;
                     }
