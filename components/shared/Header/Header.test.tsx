@@ -2,6 +2,8 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import Header from "./index";
+import useMobile from "../../hooks/useIsMobile";
+import Image from "next/image";
 
 // Mock image
 jest.mock("../../../public/default_profilepic.png", () => ({
@@ -20,7 +22,7 @@ jest.mock("next/image", () => ({
 // Mock useMobile
 jest.mock("../../hooks/useIsMobile", () => ({
     __esModule: true,
-    default: () => false,
+    default: jest.fn(),
 }));
 
 describe("HeaderComponentTest With Cart Sidebar and Left nav Functionality", () => {
@@ -33,6 +35,7 @@ describe("HeaderComponentTest With Cart Sidebar and Left nav Functionality", () 
         expect(screen.getByTitle("desktop-search")).toBeInTheDocument();
         expect(screen.getByTitle("cart-sidebar")).toBeInTheDocument();
         expect(screen.getByTitle("backdrop")).toBeInTheDocument();
+        expect(useMobile).toHaveBeenCalledTimes(1);
     });
 
     it("Header Logo Test", () => {
