@@ -14,14 +14,14 @@ const StarRatingStatic: NextPage<StarRatingStaticProps> = ({ rating }) => {
                 stars.push(
                     <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
-                        <label htmlFor={`star-${i}`} className="fas fa-star text-secondary"></label>
+                        <label htmlFor={`star-${i}`} className="fas fa-star text-secondary" title={`star-icon-${i}`}></label>
                     </span>,
                 );
             } else if (i > int_part && float_part > 0.5) {
                 stars.push(
                     <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
-                        <label htmlFor={`star-${i}`} className="fas fa-star text-secondary"></label>
+                        <label htmlFor={`star-${i}`} className="fas fa-star text-secondary" title={`star-icon-${i}`}></label>
                     </span>,
                 );
                 float_part = 0;
@@ -29,7 +29,7 @@ const StarRatingStatic: NextPage<StarRatingStaticProps> = ({ rating }) => {
                 stars.push(
                     <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
-                        <label htmlFor={`star-${i}`} className="fas fa-star-half-alt text-secondary"></label>
+                        <label htmlFor={`star-${i}`} className="fas fa-star-half-alt text-secondary" title={`star-icon-${i}`}></label>
                     </span>,
                 );
                 float_part = 0;
@@ -37,14 +37,18 @@ const StarRatingStatic: NextPage<StarRatingStaticProps> = ({ rating }) => {
                 stars.push(
                     <span key={i}>
                         <input type="radio" name="rate" id={`star-${i}`} className="hidden" />
-                        <label htmlFor={`star-${i}`} className="far fa-star text-secondary"></label>
+                        <label htmlFor={`star-${i}`} className="far fa-star text-secondary" title={`star-icon-${i}`}></label>
                     </span>,
                 );
             }
         }
         return stars;
     };
-    return <div className="">{renderStars()}</div>;
+    return (
+        <div className="" title="star-main">
+            {renderStars()}
+        </div>
+    );
 };
 
 export default StarRatingStatic;
