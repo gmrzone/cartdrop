@@ -121,4 +121,42 @@ describe("Static Star Rating Test", () => {
         expect(screen.getByTitle("star-icon-5").classList).toContain("fa-star");
         expect(screen.getByTitle("star-icon-5").classList).toContain("far");
     });
+
+    it("Star Icons Test if the Rating is 2.7, fa-star = Full Star and fa-star-half-alt = Half Star", () => {
+        render(<StaticStarRating rating={2.7} />);
+        // Rating is 2.7 there should be 2 full star and 1 half star and rest disables
+        expect(screen.getByTitle("star-icon-1").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-1").classList).toContain("fas");
+
+        expect(screen.getByTitle("star-icon-2").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-2").classList).toContain("fas");
+
+        expect(screen.getByTitle("star-icon-3").classList).toContain("fa-star-half-alt");
+        expect(screen.getByTitle("star-icon-3").classList).toContain("fas");
+
+        expect(screen.getByTitle("star-icon-4").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-4").classList).toContain("far");
+
+        expect(screen.getByTitle("star-icon-5").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-5").classList).toContain("far");
+    });
+
+    it("Star Icons Test if the Rating is 4.2, fa-star = Full Star and fa-star-half-alt = Half Star", () => {
+        render(<StaticStarRating rating={4.2} />);
+        // Rating is 4.2 there should be 4 full star 1 disabled star
+        expect(screen.getByTitle("star-icon-1").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-1").classList).toContain("fas");
+
+        expect(screen.getByTitle("star-icon-2").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-2").classList).toContain("fas");
+
+        expect(screen.getByTitle("star-icon-3").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-3").classList).toContain("fas");
+
+        expect(screen.getByTitle("star-icon-4").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-4").classList).toContain("fas");
+
+        expect(screen.getByTitle("star-icon-5").classList).toContain("fa-star");
+        expect(screen.getByTitle("star-icon-5").classList).toContain("far");
+    });
 });
