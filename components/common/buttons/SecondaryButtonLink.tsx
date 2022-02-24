@@ -17,8 +17,9 @@ const SecondaryButtonLink: NextPage<SecondaryProps> = ({ text, icon, disable, to
                     fullWidth ? "w-full" : "w-auto"
                 } py-3 px-6 font-semibold rounded-full border-2 transition-colors duration-300 text-center ${
                     disable ? "bg-gray-400 border-none cursor-not-allowed bg-opacity-75" : "border-main"
-                }`}>
-                {icon && <i className={`${icon} mr-2 text-main`} />}
+                }`}
+                title="link-main">
+                {icon && <i className={`${icon} mr-2 text-main`} title="button-icon" />}
                 <span className={`${disable ? "text-gray-700" : "text-main"} whitespace-nowrap`}>{text}</span>
             </a>
         </Link>
