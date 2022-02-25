@@ -33,7 +33,9 @@
 
 ## Getting Started
 
-First, run the development server:
+### First start the Django backend server locally (https://github.com/gmrzone/cartdrop-api)
+
+### Then Run the development server for Frontend:
 
 ```bash
 npm run dev

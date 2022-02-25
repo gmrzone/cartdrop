@@ -15,7 +15,9 @@ const LoginForm: NextPage = () => {
                 <Password type="password" label="Password" />
             </div>
             <div className="text-lg ml-1 font-semibold">
-                <Link href="/reset-password">Forgot password?</Link>
+                <Link href="/reset-password" passHref>
+                    <a title="forgot-password">Forgot password?</a>
+                </Link>
             </div>
             <div className="flex space-x-6">
                 <Button text="Login" fullWidth={true} type="submit" />
