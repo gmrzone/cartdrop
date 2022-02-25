@@ -50,8 +50,8 @@ const SocialLoginDesktop: NextPage<SocialLoginP> = ({ type }) => {
                 </li>
             </ul>
             {isMobile && (
-                <p className="text-center">
-                    {type === "login" ? "Don;t have a account? " : "Already have a account? "}
+                <p className="text-center" title="mobile-login-signup">
+                    {type === "login" ? "Don't have a account? " : "Already have a account? "}
                     {type === "login" ? <Link href="/signup">Signup</Link> : <Link href="/login">Login</Link>}
                 </p>
             )}

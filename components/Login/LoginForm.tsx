@@ -9,7 +9,7 @@ import useIsMobile from "../hooks/useIsMobile";
 const LoginForm: NextPage = () => {
     const isMobile = useIsMobile();
     return (
-        <form className="space-y-4 px-3">
+        <form className="space-y-4 px-3" title="login-form">
             <div className="space-y-8">
                 <Input type="text" label="Username or Email" />
                 <Password type="password" label="Password" />

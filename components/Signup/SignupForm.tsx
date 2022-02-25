@@ -8,7 +8,7 @@ import useIsMobile from "../hooks/useIsMobile";
 const SignupForm: NextPage = () => {
     const isMobile = useIsMobile();
     return (
-        <form className="space-y-4 px-3">
+        <form className="space-y-4 px-3" title="signup-form">
             <div className="space-y-8">
                 <Input type="text" label="Username" />
                 <Input type="text" label="Email" />
