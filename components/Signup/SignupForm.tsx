@@ -11,7 +11,7 @@ const SignupForm: NextPage = () => {
         <form className="space-y-4 px-3" title="signup-form">
             <div className="space-y-8">
                 <Input type="text" label="Username" />
-                <Input type="text" label="Email" />
+                <Input type="email" label="Email" />
                 <Password type="password" label="Password" />
                 <Password type="password" label="Confirm Password" />
             </div>
