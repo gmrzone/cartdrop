@@ -19,8 +19,8 @@ const MainButton: NextPage<MainProps> = ({ text, icon, loading, disable, type, f
                 disable ? "bg-gray-600 cursor-not-allowed bg-opacity-75" : "bg-main hover:bg-blue-800"
             }`}
             type={type}>
-            {icon && <i className={`${icon} mr-2 text-white`} />}
-            {loading && !disable && <i className="fad fa-spinner-third mr-2 text-white animate-spin-button" />}
+            {icon && <i className={`${icon} mr-2 text-white`} title="button-icon" />}
+            {loading && !disable && <i className="fad fa-spinner-third mr-2 text-white animate-spin-button" title="loading-icon" />}
             <span className="text-white">{text}</span>
         </button>
     );

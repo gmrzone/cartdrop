@@ -8,7 +8,7 @@ interface SocialLoginP {
 const SocialLoginDesktop: NextPage<SocialLoginP> = ({ type }) => {
     const isMobile = useIsMobile();
     return (
-        <div className="space-y-6">
+        <div className="space-y-6" title="social-login">
             {!isMobile && <h6 className="text-center text-white font-semibold">{type === "login" ? "Login with" : "Signup with"}</h6>}
             <ul className="flex space-x-12 justify-center">
                 <li className="cursor-pointer w-10">
@@ -50,8 +50,8 @@ const SocialLoginDesktop: NextPage<SocialLoginP> = ({ type }) => {
                 </li>
             </ul>
             {isMobile && (
-                <p className="text-center">
-                    {type === "login" ? "Don;t have a account? " : "Already have a account? "}
+                <p className="text-center" title="mobile-login-signup">
+                    {type === "login" ? "Don't have a account? " : "Already have a account? "}
                     {type === "login" ? <Link href="/signup">Signup</Link> : <Link href="/login">Login</Link>}
                 </p>
             )}

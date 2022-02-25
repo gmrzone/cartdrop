@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useRef, LegacyRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import offerCountdown from "./OfferCountDown";
 
 type OfferCounterProps = {
