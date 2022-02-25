@@ -14,13 +14,13 @@ const LeftSection: NextPage<LeftProps> = ({ type }) => {
     return (
         <div className="left-main w-full ipad:w-1/2 h-full relative bg-transparent">
             {!isMobile && (
-                <div className="w-full h-full absolute overflow-hidden ipad:block">
+                <div className="w-full h-full absolute overflow-hidden ipad:block" title="desktop-left-blob">
                     <div className="afzal absolute bg-main top-0 h-full w-full ipad:w-6/12"></div>
                 </div>
             )}
             <div className="relative flex flex-col items-center justify-center w-full h-full space-y-16">
                 <Link href="/" passHref>
-                    <a>
+                    <a title="logo-vertical">
                         <LogoVertical />
                     </a>
                 </Link>
