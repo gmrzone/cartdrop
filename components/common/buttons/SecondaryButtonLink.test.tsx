@@ -16,8 +16,10 @@ describe("ButtonTest", () => {
         const linkMain = screen.getByTitle("link-main");
         expect(screen.queryByTitle("button-icon")).not.toBeInTheDocument();
         expect(linkMain).toHaveAttribute("href", "/test2");
-        expect(linkMain.classList).toContain("bg-gray-400");
-        expect(linkMain.classList).toContain("cursor-not-allowed");
-        expect(linkMain.classList).not.toContain("border-main");
+        // expect(linkMain.classList).toContain("bg-gray-400");
+        // expect(linkMain.classList).toContain("cursor-not-allowed");
+        // expect(linkMain.classList).not.toContain("border-main");
+        expect(linkMain).toHaveClass("bg-gray-400 cursor-not-allowed");
+        expect(linkMain).not.toHaveClass("border-main");
     });
 });

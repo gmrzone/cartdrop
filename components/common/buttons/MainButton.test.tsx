@@ -15,8 +15,10 @@ describe("ButtonTest", () => {
         const button = screen.getByRole("button");
         expect(screen.queryByTitle("button-icon")).not.toBeInTheDocument();
         expect(screen.queryByTitle("loading-icon")).not.toBeInTheDocument();
-        expect(button.classList).toContain("bg-gray-600");
-        expect(button.classList).toContain("cursor-not-allowed");
-        expect(button.classList).not.toContain("bg-main");
+        // expect(button.classList).toContain("bg-gray-600");
+        // expect(button.classList).toContain("cursor-not-allowed");
+        // expect(button.classList).not.toContain("bg-main");
+        expect(button).toHaveClass("bg-gray-600 cursor-not-allowed");
+        expect(button).not.toHaveClass("bg-main");
     });
 });
