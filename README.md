@@ -31,9 +31,17 @@
 
 ![iPhone SE - login (2)](https://user-images.githubusercontent.com/65633542/128407158-c443ed69-d470-46da-9139-b6070dc32867.png)
 
-## Getting Started
+# Getting Started
 
 ### First start the Django backend server locally (https://github.com/gmrzone/cartdrop-api)
+
+### Install Dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
 
 ### Then Run the development server for Frontend:
 
