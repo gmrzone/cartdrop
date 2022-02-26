@@ -35,6 +35,14 @@
 
 ### First start the Django backend server locally (https://github.com/gmrzone/cartdrop-api)
 
+### Install Dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
 ### Then Run the development server for Frontend:
 
 ```bash
