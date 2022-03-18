@@ -1,7 +1,5 @@
 import { NextPage } from "next";
 import { ProductVariationType } from "../../shared/types";
-import ProductImageDesktop from "./ProductImages/desktop";
-import ProductImageMobile from "./ProductImages/Mobile";
 import Detail from "./Detail";
 import useMobile from "../hooks/useIsMobile";
 import ActiveImage from "./ProductImages/ActiveImage";

@@ -19,25 +19,35 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
     const isMobile = useIsMobile();
     // Using useEffect to reset the slider when orientation is changed from mobile to desktop or vice versa
     useEffect(() => {
+        // TODO: Remove Commented code when everything looks good
+        // if (imageContainerRef.current) {
+        //     imageContainerRef.current.classList.remove("transform-gpu");
+        //     imageContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
+        //     imageContainerRef.current.classList.add("transform-gpu");
+        //     imageSliderCurrentPosition.current = 0;
+        // }
+        // // Reset Style for left or top slider controller
+        // if (leftorTopSlideHandler.current) {
+        //     leftorTopSlideHandler.current.classList.remove("bg-secondary");
+        //     leftorTopSlideHandler.current.classList.remove("cursor-pointer");
+        //     leftorTopSlideHandler.current.classList.add("bg-slate-500");
+        //     leftorTopSlideHandler.current.classList.add("cursor-not-allowed");
+        // }
+
+        // if (rightOrBottomSlideHandler.current) {
+        //     rightOrBottomSlideHandler.current.classList.remove("bg-slate-500");
+        //     rightOrBottomSlideHandler.current.classList.remove("cursor-not-allowed");
+        //     rightOrBottomSlideHandler.current.classList.add("bg-secondary");
+        //     rightOrBottomSlideHandler.current.classList.add("cursor-pointer");
+        // }
         if (imageContainerRef.current) {
             imageContainerRef.current.classList.remove("transform-gpu");
-            imageContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
+            if (isMobile) {
+                imageContainerRef.current.style.transform = `translate3d(-${imageSliderCurrentPosition.current}px, 0px, 0px)`;
+            } else {
+                imageContainerRef.current.style.transform = `translate3d(0px, -${imageSliderCurrentPosition.current}px, 0px)`;
+            }
             imageContainerRef.current.classList.add("transform-gpu");
-            imageSliderCurrentPosition.current = 0;
-        }
-        // Reset Style for left or top slider controller
-        if (leftorTopSlideHandler.current) {
-            leftorTopSlideHandler.current.classList.remove("bg-secondary");
-            leftorTopSlideHandler.current.classList.remove("cursor-pointer");
-            leftorTopSlideHandler.current.classList.add("bg-slate-500");
-            leftorTopSlideHandler.current.classList.add("cursor-not-allowed");
-        }
-
-        if (rightOrBottomSlideHandler.current) {
-            rightOrBottomSlideHandler.current.classList.remove("bg-slate-500");
-            rightOrBottomSlideHandler.current.classList.remove("cursor-not-allowed");
-            rightOrBottomSlideHandler.current.classList.add("bg-secondary");
-            rightOrBottomSlideHandler.current.classList.add("cursor-pointer");
         }
     }, [isMobile]);
     // TODO : Make image slider work properly
