@@ -1,6 +1,6 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
-const AboutContent = () => {
+const AboutContent: NextPage = () => {
     return (
         <div
             className="w-full max-w-4xl mx-auto px-3 py-6 mobile-bg:px-4 mobile-lg:px-8 mobile-lg:py-8 ipad:px-10 ipad:py-10 desktop:px-14 desktop:py-14 bg-white space-y-8 rounded-lg shadow-drop-down z-10 relative"

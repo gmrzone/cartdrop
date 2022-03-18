@@ -1,16 +1,14 @@
-import { NextPage } from "next";
-import { ProductVariationType } from "../../shared/types";
-import Detail from "./Detail";
-import useMobile from "../hooks/useIsMobile";
-import ActiveImage from "./ProductImages/ActiveImage";
-import { ProductVariationImageType } from "../../shared/types";
-import { useState } from "react";
-import ProductImageSlider from "./ProductImages/productImageSlider";
+import { NextPage } from 'next';
+import { ProductVariationType } from '../../shared/types';
+import Detail from './Detail';
+import ActiveImage from './ProductImages/ActiveImage';
+import { ProductVariationImageType } from '../../shared/types';
+import { useState } from 'react';
+import ProductImageSlider from './ProductImages/productImageSlider';
 type ProductDetailProps = {
     productDetail: ProductVariationType;
 };
 const ProductDetail: NextPage<ProductDetailProps> = ({ productDetail }) => {
-    const isMobile = useMobile();
     const [activeImage, SetActiveImage] = useState<ProductVariationImageType>(productDetail.images.filter((x) => x.primary)[0]);
     return (
         <div className="flex flex-nowrap flex-col-reverse ipad:flex-row ipad:space-x-10 ipad:space-y-0">

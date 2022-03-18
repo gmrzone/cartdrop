@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import MetaHead from "../components/common/Head";
-import ContactMain from "../components/contact";
-import MainLayout from "../components/common/MainLayout";
+import { NextPage } from 'next';
+import MetaHead from '../components/common/Head';
+import ContactMain from '../components/contact';
+import MainLayout from '../components/common/MainLayout';
 
 const Contact: NextPage = () => {
-    const description: string =
-        "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
+    const description =
+        'CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.';
     return (
         <>
             <MetaHead

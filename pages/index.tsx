@@ -1,20 +1,20 @@
-import MainLayout from "../components/common/MainLayout";
-import MetaHead from "../components/common/Head";
-import { NextPage, GetStaticProps } from "next";
-import Hero from "../components/Home/HeroSection/Hero";
-import { BACKEND_URL } from "../utils";
-import axios from "axios";
-import { CategoryType, ProductVariationType, SubcategoryOfferType } from "../shared/types";
-import TodaysDeal from "../components/Home/TodeysDeal";
-import FeaturedProducts from "../components/Home/FeaturedProducts";
-import SubcategoryOffer from "../components/Home/SubcategoryOffer";
-import ProductHistory from "../components/Home/ProductHistory";
-import CategoryPanel from "../components/common/CategoryPanel";
+import MainLayout from '../components/common/MainLayout';
+import MetaHead from '../components/common/Head';
+import { NextPage, GetStaticProps } from 'next';
+import Hero from '../components/Home/HeroSection/Hero';
+import { BACKEND_URL } from '../utils';
+import axios from 'axios';
+import { CategoryType, ProductVariationType, SubcategoryOfferType } from '../shared/types';
+import TodaysDeal from '../components/Home/TodeysDeal';
+import FeaturedProducts from '../components/Home/FeaturedProducts';
+import SubcategoryOffer from '../components/Home/SubcategoryOffer';
+import ProductHistory from '../components/Home/ProductHistory';
+import CategoryPanel from '../components/common/CategoryPanel';
 
 export const getStaticProps: GetStaticProps = async () => {
-    const categories = await axios.get(BACKEND_URL + "/core/categories/");
-    const featuredProducts = await axios.get(BACKEND_URL + "/products/featured/");
-    const subcategoryOffers = await axios.get(BACKEND_URL + "/core/offers/");
+    const categories = await axios.get(BACKEND_URL + '/core/categories/');
+    const featuredProducts = await axios.get(BACKEND_URL + '/products/featured/');
+    const subcategoryOffers = await axios.get(BACKEND_URL + '/core/offers/');
 
     return {
         props: {
@@ -32,8 +32,8 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = ({ categories, featuredProducts, subcategoryOffers }) => {
-    const description: string =
-        "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
+    const description =
+        'CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.';
     return (
         <>
             <MetaHead

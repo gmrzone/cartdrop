@@ -1,14 +1,14 @@
-import { NextPage, GetStaticProps, GetStaticPaths } from "next";
-import MainLayout from "../../components/common/MainLayout";
-import MetaHead from "../../components/common/Head";
-import axios from "axios";
-import { BACKEND_URL } from "../../utils";
-import { CategoryType, SubcategoryType, ProductVariationType, BrandsTypes, PaginatedProductVariationType } from "../../shared/types";
-import TopProducts from "../../components/categories/topProducts";
-import { useRouter } from "next/router";
-import CategoryPanel from "../../components/common/CategoryPanel";
-import ProductList from "../../components/categories/ProductList";
-import ProductListContext from "../../context/ProductListContext";
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import MainLayout from '../../components/common/MainLayout';
+import MetaHead from '../../components/common/Head';
+import axios from 'axios';
+import { BACKEND_URL } from '../../utils';
+import { CategoryType, SubcategoryType, ProductVariationType, BrandsTypes, PaginatedProductVariationType } from '../../shared/types';
+import TopProducts from '../../components/categories/topProducts';
+import { useRouter } from 'next/router';
+import CategoryPanel from '../../components/common/CategoryPanel';
+import ProductList from '../../components/categories/ProductList';
+import ProductListContext from '../../context/ProductListContext';
 
 interface CategoryListProps {
     subcategories: SubcategoryType[];
@@ -20,9 +20,9 @@ interface CategoryListProps {
 
 const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts, categories, brands, paginatedProduct }) => {
     const router = useRouter();
-    const activeCategory = String(router.query["category"]);
-    const description: string =
-        "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
+    const activeCategory = String(router.query['category']);
+    const description =
+        'CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.';
 
     return (
         <>
@@ -45,10 +45,10 @@ const CategoryList: NextPage<CategoryListProps> = ({ subcategories, topProducts,
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const currentCategory = params!.category;
+    const currentCategory = params?.category;
     const response = await axios.get(BACKEND_URL + `/core/subcategory/${currentCategory}/`);
     const response1 = await axios.get(BACKEND_URL + `/products/${currentCategory}/top/`);
-    const response2 = await axios.get(BACKEND_URL + "/core/categories/");
+    const response2 = await axios.get(BACKEND_URL + '/core/categories/');
     const response3 = await axios.get(BACKEND_URL + `/core/brand/${currentCategory}/`);
     const response4 = await axios.get(BACKEND_URL + `/products/${currentCategory}/?page=1`);
 
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const response = await axios.get(BACKEND_URL + "/core/categories/");
+    const response = await axios.get(BACKEND_URL + '/core/categories/');
     const categorys: CategoryType[] = response.data;
 
     const paths = categorys.map((x) => {
