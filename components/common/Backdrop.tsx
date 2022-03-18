@@ -1,6 +1,5 @@
-import { NextPage } from "next";
-import ReactDom from "react-dom";
-import { LegacyRef, ReactNode } from "react";
+import { NextPage } from 'next';
+import { LegacyRef } from 'react';
 
 type BackDropProps = {
     backdropRef: LegacyRef<HTMLDivElement>;

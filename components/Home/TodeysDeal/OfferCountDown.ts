@@ -1,4 +1,4 @@
-import { MutableRefObject, LegacyRef } from "react";
+import { MutableRefObject } from 'react';
 
 class OfferCountDown {
     private offerEndDate;

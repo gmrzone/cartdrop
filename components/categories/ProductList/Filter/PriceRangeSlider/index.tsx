@@ -1,7 +1,7 @@
-import { NextPage } from "next";
-import Slider from "./Slider";
-import NumberInput from "./NumberInput";
-import { FormEventHandler, useRef, ChangeEvent, useState, useEffect } from "react";
+import { NextPage } from 'next';
+import Slider from './Slider';
+import NumberInput from './NumberInput';
+import { FormEventHandler, useRef, ChangeEvent, useState } from 'react';
 
 type PriceRangeSliderType = {
     maxPrice: number;
@@ -24,7 +24,7 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
             const rangeType = e.target.dataset.type;
             if (maxValue - minValue < priceGap) {
                 // if both range is too close (ie px between them is < priceGap)
-                if (rangeType === "left") {
+                if (rangeType === 'left') {
                     // change the value of first range to priceGap from second range to right
                     const newValue = secondRangeValue - priceGap;
                     setFirstRangeValue(newValue);
@@ -37,15 +37,15 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
                 }
             } else {
                 // if both range is not too close just change its value
-                if (rangeType === "left") {
+                if (rangeType === 'left') {
                     setFirstRangeValue(+e.target.value);
                 } else {
                     setSecondRangeValue(+e.target.value);
                 }
             }
             // update inner progress bar according to both range position
-            innerRange.current.style.left = leftPercent + "%";
-            innerRange.current.style.right = rightPercent + "%";
+            innerRange.current.style.left = leftPercent + '%';
+            innerRange.current.style.right = rightPercent + '%';
         }
     };
 

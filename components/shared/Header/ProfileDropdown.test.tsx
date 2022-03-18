@@ -1,11 +1,10 @@
-import { render, screen } from "@testing-library/react";
-import user from "@testing-library/user-event";
-import ProfileDropdown from "./ProfileDropDown";
+import { render, screen } from '@testing-library/react';
+import ProfileDropdown from './ProfileDropDown';
 
-it("ContentTest", () => {
+it('ContentTest', () => {
     render(<ProfileDropdown profileDropdownActive={true} />);
     expect(screen.getByText(/login/i)).toBeInTheDocument();
     expect(screen.getByText(/sign-up/i)).toBeInTheDocument();
-    expect(screen.getByTitle("profile-item-login")).toHaveAttribute("href", "/login");
-    expect(screen.getByTitle("profile-item-signup")).toHaveAttribute("href", "/signup");
+    expect(screen.getByTitle('profile-item-login')).toHaveAttribute('href', '/login');
+    expect(screen.getByTitle('profile-item-signup')).toHaveAttribute('href', '/signup');
 });

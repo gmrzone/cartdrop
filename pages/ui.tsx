@@ -1,35 +1,35 @@
-import MainLayout from "../components/common/MainLayout";
-import MetaHead from "../components/common/Head";
-import { NextPage } from "next";
-import Input from "../components/common/inputs/Input";
-import TextArea from "../components/common/inputs/TextArea";
-import Password from "../components/common/inputs/Password";
-import MainButton from "../components/common/buttons/MainButton";
-import SecondaryButton from "../components/common/buttons/SecondaryButton";
-import ExtraButton from "../components/common/buttons/ExtraButton";
-import CustomSelect from "../components/common/inputs/CustomSelect";
+import MainLayout from '../components/common/MainLayout';
+import MetaHead from '../components/common/Head';
+import { NextPage } from 'next';
+import Input from '../components/common/inputs/Input';
+import TextArea from '../components/common/inputs/TextArea';
+import Password from '../components/common/inputs/Password';
+import MainButton from '../components/common/buttons/MainButton';
+import SecondaryButton from '../components/common/buttons/SecondaryButton';
+import ExtraButton from '../components/common/buttons/ExtraButton';
+import CustomSelect from '../components/common/inputs/CustomSelect';
 
 const UI: NextPage = () => {
     const selectOptions = [
         {
-            label: "Option one",
-            value: "option-one",
+            label: 'Option one',
+            value: 'option-one',
         },
         {
-            label: "Option two",
-            value: "option-two",
+            label: 'Option two',
+            value: 'option-two',
         },
         {
-            label: "Option Three",
-            value: "option-three",
+            label: 'Option Three',
+            value: 'option-three',
         },
         {
-            label: "Option Four",
-            value: "option-four",
+            label: 'Option Four',
+            value: 'option-four',
         },
     ];
-    const description: string =
-        "CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.";
+    const description =
+        'CARTDROP is the leading ecommerce platform in India. CARTDROP is the best open-source eCommerce shopping cart solution. Cartdrop is free, and it is the most popular Django eCommerce platform.';
     return (
         <>
             <MetaHead
@@ -62,7 +62,7 @@ const UI: NextPage = () => {
                             <Input type="email" label="EMAIL" />
                             <Password type="password" label="PASSWORD" />
                             <TextArea label="COMMENTS" />
-                            <CustomSelect options={selectOptions} initialLabel={{ value: "select-options", label: "SELECT OPTIONS" }} />
+                            <CustomSelect options={selectOptions} initialLabel={{ value: 'select-options', label: 'SELECT OPTIONS' }} />
                         </div>
                     </div>
                     <div className="pt-6 w-96 mb-11 pl-5">
