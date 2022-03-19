@@ -139,7 +139,7 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
         );
     });
     return (
-        <div className="flex flex-nowrap flex-row ipad:flex-col h-auto ipad:h-[400px] w-full ipad:w-auto mobile-bg:w-[400px] space-y-0 ipad:space-y-2 space-x-2 ipad:space-x-0">
+        <div className="flex flex-nowrap flex-row ipad:flex-col h-auto ipad:h-[400px] w-[230px] mobile-sm:w-[312px] ipad:w-auto mobile-bg:w-[400px] space-y-0 ipad:space-y-2 space-x-2 ipad:space-x-0">
             {images.length > 4 && (
                 <div
                     className="bg-slate-500 rounded-md flex-grow-0 flex-shrink-0 flex flex-b justify-center items-center cursor-not-allowed shadow-drop-down w-[28px] ipad:w-auto h-auto ipad:h-[28px]"
@@ -150,7 +150,7 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
             )}
             <div className="h-full w-full overflow-hidden">
                 <div
-                    className={`afzal-saiyed transform-gpu duration-[0.25s] grid grid-flow-col ipad:grid-flow-row space-x-2 ipad:space-x-0 space-y-0 ipad:space-y-2 h-auto ipad:h-[${
+                    className={`transform-gpu duration-[0.25s] grid grid-flow-col ipad:grid-flow-row space-x-2 ipad:space-x-0 space-y-0 ipad:space-y-2 h-auto ipad:h-[${
                         71 * images.length + (images.length - 1) * 10
                     }px] w-[${71 * images.length + (images.length - 1) * 10}px] ipad:w-auto self-center ${images.length <= 4 && 'mt-4'}`}
                     ref={imageContainerRef}>
