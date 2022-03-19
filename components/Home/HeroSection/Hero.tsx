@@ -1,9 +1,9 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
 const Hero: NextPage = () => {
     return (
         <div
-            className="bg-hero-image relative w-full h-hero-mobile-sm mobile-bg:h-hero-mobile-bg ipad:h-hero-ipad desktop:h-hero-desktop desktop-big:h-hero-desktop-lg bg-no-repeat bg-cover bg-clip-content bg-center flex justify-center items-center z-0"
+            className="bg-hero-image relative w-full h-hero-mobile-sm mobile-sm:h-hero-mobile-sm ipad:h-hero-ipad desktop:h-hero-desktop desktop-big:h-hero-desktop-lg bg-no-repeat bg-cover bg-clip-content bg-center flex justify-center items-center z-0"
             title="hero-main">
             <div className="bg-white py-2 px-4 sm:py-3 sm:px-6 md:py-8 md:px-10 skew-x-hero-outer-sm ipad:skew-x-hero-outer bg-opacity-50 w-9/12 md:w-10/12 max-w-7xl">
                 <h1 className="skew-x-hero-inner-sm ipad:skew-x-hero-inner text-text text-center" title="hero-text">
