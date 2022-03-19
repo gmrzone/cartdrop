@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
 type StarRatingStaticProps = {
     rating: number;
@@ -8,10 +8,9 @@ const StarRatingStatic: NextPage<StarRatingStaticProps> = ({ rating }) => {
     const renderStars = () => {
         // let float_part = rating % 1;
         // const int_part = Math.floor(rating - float_part);
-        const rating_split = String(rating).split(".");
+        const rating_split = String(rating).split('.');
         const int_part = parseInt(rating_split[0]);
-        let float_part = parseFloat("0." + rating_split[1]);
-        console.log(int_part, float_part);
+        let float_part = parseFloat('0.' + rating_split[1]);
         const stars = [];
         for (let i = 1; i <= 5; i++) {
             if (i <= int_part) {

@@ -1,11 +1,11 @@
-import Section from "../common/Section";
-import { NextPage } from "next";
-import { ProductVariationType } from "../../shared/types";
-import useMobile from "../hooks/useIsMobile";
-import SmallButtonLink from "../common/buttons/SmallButtonLink";
-import ProductList from "../common/ProductSlider";
-import SliderControl from "../common/SliderControl";
-import { useRef, useEffect, useState } from "react";
+import Section from '../common/Section';
+import { NextPage } from 'next';
+import { ProductVariationType } from '../../shared/types';
+import useMobile from '../hooks/useIsMobile';
+import SmallButtonLink from '../common/buttons/SmallButtonLink';
+import ProductList from '../common/ProductSlider';
+import SliderControl from '../common/SliderControl';
+import { useRef, useEffect, useState, useCallback } from 'react';
 
 interface TopProductsProps {
     category: string;
@@ -23,21 +23,21 @@ const TopProducts: NextPage<TopProductsProps> = ({ category, topProducts }) => {
             if (window.innerWidth >= 992) {
                 if (slideableContainerRef.current) {
                     setCurrentSliderPosition(0);
-                    slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
+                    slideableContainerRef.current.style.transform = 'translate3d(0px, 0px, 0px)';
                 }
             }
         };
 
-        window.addEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener("resize", handleResize);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    const setCurrentSliderPositionTo = (n: number) => {
+    const setCurrentSliderPositionTo = useCallback((n: number) => {
         setCurrentSliderPosition(n);
-    };
+    }, []);
     return (
         <Section title={`BEST SELLING ${category?.toUpperCase()}`}>
             {isMobile ? (

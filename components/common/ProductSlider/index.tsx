@@ -1,8 +1,8 @@
-import { NextPage } from "next";
-import { ProductVariationType } from "../../../shared/types";
-import SliderItem from "./SliderItem";
-import { MutableRefObject } from "react";
-import { useEffect } from "react";
+import { NextPage } from 'next';
+import { ProductVariationType } from '../../../shared/types';
+import SliderItem from './SliderItem';
+import { MutableRefObject } from 'react';
+import { useEffect } from 'react';
 
 interface IProps {
     ProductList: ProductVariationType[];
@@ -21,7 +21,7 @@ const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sli
             if (window.innerWidth >= 992) {
                 if (slideableContainerRef.current) {
                     setCurrentSliderPositionTo(0);
-                    slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
+                    slideableContainerRef.current.style.transform = 'translate3d(0px, 0px, 0px)';
                 }
             }
         };
@@ -30,7 +30,7 @@ const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sli
         return () => {
             resetSlider();
         };
-    }, [category, slideableContainerRef]);
+    }, [category, slideableContainerRef, setCurrentSliderPositionTo]);
     return (
         <div className="overflow-x-hidden">
             <div
