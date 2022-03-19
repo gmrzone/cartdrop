@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import Section from "../common/Section";
-import ProductList from "../common/ProductSlider";
-import { ProductVariationType } from "../../shared/types";
-import SmallButtonLink from "../common/buttons/SmallButtonLink";
-import SliderControl from "../common/SliderControl";
-import { useRef, useEffect, useState } from "react";
-import useMobile from "../hooks/useIsMobile";
+import { NextPage } from 'next';
+import Section from '../common/Section';
+import ProductList from '../common/ProductSlider';
+import { ProductVariationType } from '../../shared/types';
+import SmallButtonLink from '../common/buttons/SmallButtonLink';
+import SliderControl from '../common/SliderControl';
+import { useRef, useEffect, useState, useCallback } from 'react';
+import useMobile from '../hooks/useIsMobile';
 
 interface IProps {
     historyProducts: ProductVariationType[];
@@ -22,19 +22,19 @@ const ProductHistory: NextPage<IProps> = ({ historyProducts }) => {
             if (window.innerWidth >= 992) {
                 if (slideableContainerRef.current) {
                     setCurrentSliderPosition(0);
-                    slideableContainerRef.current.style.transform = "translate3d(0px, 0px, 0px)";
+                    slideableContainerRef.current.style.transform = 'translate3d(0px, 0px, 0px)';
                 }
             }
         };
-        window.addEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
         return () => {
-            window.removeEventListener("resize", handleResize);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    const setCurrentSliderPositionTo = (n: number) => {
+    const setCurrentSliderPositionTo = useCallback((n: number) => {
         setCurrentSliderPosition(n);
-    };
+    }, []);
 
     return (
         <Section title="BASED ON YOUR HISTORY">

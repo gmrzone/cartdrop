@@ -1,12 +1,12 @@
-import axios from "axios";
-import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { ProductVariationType } from "../../../../shared/types";
-import { BACKEND_URL } from "../../../../utils";
-import MetaHead from "../../../../components/common/Head";
-import MainLayout from "../../../../components/common/MainLayout";
-import CategoryPanel from "../../../../components/common/CategoryPanel";
-import { CategoryType } from "../../../../shared/types";
-import ProductDetailComponent from "../../../../components/product-detail";
+import axios from 'axios';
+import { NextPage, GetStaticPaths, GetStaticProps } from 'next';
+import { ProductVariationType } from '../../../../shared/types';
+import { BACKEND_URL } from '../../../../utils';
+import MetaHead from '../../../../components/common/Head';
+import MainLayout from '../../../../components/common/MainLayout';
+import CategoryPanel from '../../../../components/common/CategoryPanel';
+import { CategoryType } from '../../../../shared/types';
+import ProductDetailComponent from '../../../../components/product-detail';
 
 type ProductDetailPropsType = {
     productDetail: ProductVariationType;
@@ -20,7 +20,6 @@ type StaticPathParams = {
 };
 
 const ProductDetail: NextPage<ProductDetailPropsType> = ({ productDetail, categories }) => {
-    console.log(productDetail);
     return (
         <>
             <MetaHead title="" currentUrl="" keywords="" description="" />
@@ -38,7 +37,6 @@ export default ProductDetail;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { uid, pid, slug } = params as StaticPathParams;
-    console.log(uid, pid, slug);
     const response = await axios.get(`${BACKEND_URL}/products/${slug}/${uid}/${pid}/`);
     const response1 = await axios.get(`${BACKEND_URL}/core/categories/`);
     const productDetail: ProductVariationType = response.data;
@@ -62,6 +60,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     });
     return {
         paths,
-        fallback: "blocking", // Blocking means the all new path will be erver side rendered
+        fallback: 'blocking', // Blocking means the all new path will be erver side rendered
     };
 };

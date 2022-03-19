@@ -1,6 +1,6 @@
-import { NextPage } from "next";
-import { MutableRefObject } from "react";
-import { useRef, useEffect } from "react";
+import { NextPage } from 'next';
+import { MutableRefObject } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface SliderControlProps {
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
@@ -26,21 +26,21 @@ const SliderControl: NextPage<SliderControlProps> = ({
     useEffect(() => {
         const resetControls = () => {
             if (rightControlRef.current && leftControlRef.current) {
-                rightControlRef.current.classList.remove("bg-gray-400");
-                rightControlRef.current.classList.remove("text-gray-200");
-                rightControlRef.current.classList.remove("cursor-not-allowed");
-                rightControlRef.current.classList.add("bg-secondary");
-                rightControlRef.current.classList.add("hover:bg-main");
-                rightControlRef.current.classList.add("text-white");
-                rightControlRef.current.classList.add("cursor-pointer");
+                rightControlRef.current.classList.remove('bg-gray-400');
+                rightControlRef.current.classList.remove('text-gray-200');
+                rightControlRef.current.classList.remove('cursor-not-allowed');
+                rightControlRef.current.classList.add('bg-secondary');
+                rightControlRef.current.classList.add('hover:bg-main');
+                rightControlRef.current.classList.add('text-white');
+                rightControlRef.current.classList.add('cursor-pointer');
 
-                leftControlRef.current.classList.remove("bg-secondary");
-                leftControlRef.current.classList.remove("hover:bg-main");
-                leftControlRef.current.classList.remove("text-white");
-                leftControlRef.current.classList.remove("cursor-pointer");
-                leftControlRef.current.classList.add("bg-gray-400");
-                leftControlRef.current.classList.add("text-gray-200");
-                leftControlRef.current.classList.add("cursor-not-allowed");
+                leftControlRef.current.classList.remove('bg-secondary');
+                leftControlRef.current.classList.remove('hover:bg-main');
+                leftControlRef.current.classList.remove('text-white');
+                leftControlRef.current.classList.remove('cursor-pointer');
+                leftControlRef.current.classList.add('bg-gray-400');
+                leftControlRef.current.classList.add('text-gray-200');
+                leftControlRef.current.classList.add('cursor-not-allowed');
             }
         };
 
@@ -49,7 +49,6 @@ const SliderControl: NextPage<SliderControlProps> = ({
         }
     }, [currentSliderPosition]);
     const goLeft = () => {
-        console.log("Left");
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             let stopPosition;
             if (window.innerWidth >= 992) {
@@ -76,57 +75,54 @@ const SliderControl: NextPage<SliderControlProps> = ({
                 }
 
                 if (currentSliderPosition > stopPosition) {
-                    console.log(currentSliderPosition);
-                    leftControlRef.current.classList.remove("bg-gray-400");
-                    leftControlRef.current.classList.remove("text-gray-200");
-                    leftControlRef.current.classList.remove("cursor-not-allowed");
-                    leftControlRef.current.classList.add("bg-secondary");
-                    leftControlRef.current.classList.add("hover:bg-main");
-                    leftControlRef.current.classList.add("text-white");
-                    leftControlRef.current.classList.add("cursor-pointer");
+                    leftControlRef.current.classList.remove('bg-gray-400');
+                    leftControlRef.current.classList.remove('text-gray-200');
+                    leftControlRef.current.classList.remove('cursor-not-allowed');
+                    leftControlRef.current.classList.add('bg-secondary');
+                    leftControlRef.current.classList.add('hover:bg-main');
+                    leftControlRef.current.classList.add('text-white');
+                    leftControlRef.current.classList.add('cursor-pointer');
                     const nextPos = currentSliderPosition - (sliderItemRef.current.clientWidth + extraSpace);
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(nextPos);
 
                     if (nextPos <= stopPosition) {
-                        rightControlRef.current.classList.remove("bg-secondary");
-                        rightControlRef.current.classList.remove("hover:bg-main");
-                        rightControlRef.current.classList.remove("text-white");
-                        rightControlRef.current.classList.remove("cursor-pointer");
-                        rightControlRef.current.classList.add("bg-gray-400");
-                        rightControlRef.current.classList.add("text-gray-200");
-                        rightControlRef.current.classList.add("cursor-not-allowed");
+                        rightControlRef.current.classList.remove('bg-secondary');
+                        rightControlRef.current.classList.remove('hover:bg-main');
+                        rightControlRef.current.classList.remove('text-white');
+                        rightControlRef.current.classList.remove('cursor-pointer');
+                        rightControlRef.current.classList.add('bg-gray-400');
+                        rightControlRef.current.classList.add('text-gray-200');
+                        rightControlRef.current.classList.add('cursor-not-allowed');
                     }
                 }
             }
         }
     };
     const goRight = () => {
-        console.log("Right");
         if (slideableContainerRef.current && sliderItemRef.current && rightControlRef.current && leftControlRef.current) {
             if (window.innerWidth >= 992) {
                 if (currentSliderPosition < -sliderItemRef.current.clientWidth) {
-                    rightControlRef.current.classList.remove("bg-gray-400");
-                    rightControlRef.current.classList.remove("text-gray-200");
-                    rightControlRef.current.classList.remove("cursor-not-allowed");
-                    rightControlRef.current.classList.add("bg-secondary");
-                    rightControlRef.current.classList.add("hover:bg-main");
-                    rightControlRef.current.classList.add("text-white");
-                    rightControlRef.current.classList.add("cursor-pointer");
-                    console.log(currentSliderPosition);
+                    rightControlRef.current.classList.remove('bg-gray-400');
+                    rightControlRef.current.classList.remove('text-gray-200');
+                    rightControlRef.current.classList.remove('cursor-not-allowed');
+                    rightControlRef.current.classList.add('bg-secondary');
+                    rightControlRef.current.classList.add('hover:bg-main');
+                    rightControlRef.current.classList.add('text-white');
+                    rightControlRef.current.classList.add('cursor-pointer');
                     // TODO : Somehow remove the extraSpace When the slider in at the stop position (Improvement)
                     const nextPos = currentSliderPosition + sliderItemRef.current.clientWidth + extraSpace;
                     slideableContainerRef.current.style.transform = `translate3d(${nextPos}px, 0px, 0px)`;
                     setCurrentSliderPositionTo(nextPos);
 
                     if (nextPos >= -(sliderItemRef.current.clientWidth + extraSpace)) {
-                        leftControlRef.current.classList.remove("bg-secondary");
-                        leftControlRef.current.classList.remove("hover:bg-main");
-                        leftControlRef.current.classList.remove("text-white");
-                        leftControlRef.current.classList.remove("cursor-pointer");
-                        leftControlRef.current.classList.add("bg-gray-400");
-                        leftControlRef.current.classList.add("text-gray-200");
-                        leftControlRef.current.classList.add("cursor-not-allowed");
+                        leftControlRef.current.classList.remove('bg-secondary');
+                        leftControlRef.current.classList.remove('hover:bg-main');
+                        leftControlRef.current.classList.remove('text-white');
+                        leftControlRef.current.classList.remove('cursor-pointer');
+                        leftControlRef.current.classList.add('bg-gray-400');
+                        leftControlRef.current.classList.add('text-gray-200');
+                        leftControlRef.current.classList.add('cursor-not-allowed');
                     }
                 }
             }
