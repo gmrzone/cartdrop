@@ -1,8 +1,8 @@
-import ProfileIcon from "./Icons/Profile";
-import CartIcon from "./Icons/Cart";
-import { MouseEventHandler, useEffect, useState } from "react";
-import { NextPage } from "next";
-import ProfileDropdown from "./ProfileDropDown";
+import ProfileIcon from './Icons/Profile';
+import CartIcon from './Icons/Cart';
+import { MouseEventHandler, useEffect, useState } from 'react';
+import { NextPage } from 'next';
+import ProfileDropdown from './ProfileDropDown';
 type NavBarProps = {
     toggleCartSidebar: MouseEventHandler<HTMLDivElement>;
 };
@@ -14,21 +14,21 @@ const NavBar: NextPage<NavBarProps> = ({ toggleCartSidebar }) => {
                 setProfileDropdown(false);
             }
         };
-        document.body.addEventListener("click", clickOutside);
+        document.body.addEventListener('click', clickOutside);
         return () => {
-            document.body.removeEventListener("click", clickOutside);
+            document.body.removeEventListener('click', clickOutside);
         };
     }, [profileDropDown]);
 
     return (
         <nav className="flex items-center ml-auto md:ml-0" title="nav-right">
-            <ul className="flex space-x-4 mobile-bg:space-x-8">
+            <ul className="flex space-x-4 mobile-sm:space-x-8">
                 <li className="relative">
                     <ProfileIcon setProfileDropdown={setProfileDropdown} />
                     <ProfileDropdown profileDropdownActive={profileDropDown} />
                 </li>
                 <li>
-                    <CartIcon classes="w-7 h-7 mobile-bg:w-8 mobile-bg:h-8" toggleCartSidebar={toggleCartSidebar} title="cart-icon" />
+                    <CartIcon classes="w-7 h-7 mobile-sm:w-8 mobile-sm:h-8" toggleCartSidebar={toggleCartSidebar} title="cart-icon" />
                 </li>
             </ul>
         </nav>

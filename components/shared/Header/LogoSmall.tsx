@@ -1,8 +1,8 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
 const LogoSmall: NextPage = () => {
     return (
-        <div className="w-36 mobile-bg:w-40 block">
+        <div className="w-36 mobile-sm:w-40 block">
             <svg
                 version="1.1"
                 id="Layer_1"

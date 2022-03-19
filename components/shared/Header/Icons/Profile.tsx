@@ -1,5 +1,5 @@
-import { NextPage } from "next";
-import { Dispatch, SetStateAction } from "react";
+import { NextPage } from 'next';
+import { Dispatch, SetStateAction } from 'react';
 
 interface ProfileProps {
     setProfileDropdown: Dispatch<SetStateAction<boolean>>;
@@ -10,7 +10,7 @@ const Profile: NextPage<ProfileProps> = ({ setProfileDropdown }) => {
         <div className="cursor-pointer" onClick={() => setProfileDropdown((s) => !s)} title="profile-icon">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-7 h-7 mobile-bg:w-8 mobile-bg:h-8"
+                className="w-7 h-7 mobile-sm:w-8 mobile-sm:h-8"
                 viewBox="0 0 22 24"
                 fill="none"
                 data-src="/_next/static/images/user.svg"
