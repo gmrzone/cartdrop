@@ -25,16 +25,34 @@ const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sli
                 }
             }
         };
+        // Enable transition will enable transition effect on the slider (We will use setTimeout to enable it after some seconds)
+        const enableTransition = () => {
+            if (slideableContainerRef.current) {
+                slideableContainerRef.current.classList.add('transform-gpu');
+                slideableContainerRef.current.classList.add('duration-500');
+            }
+        };
+        // Remove Transition will remove transition effect from the slider. We will invoke this as soon as the component is unmounted
+        const removeTransition = () => {
+            if (slideableContainerRef.current) {
+                slideableContainerRef.current.classList.remove('transform-gpu');
+                slideableContainerRef.current.classList.remove('duration-500');
+            }
+        };
+
+        // Enabling transition after 50 ms
+        setTimeout(enableTransition, 10);
         resetSlider();
 
         return () => {
             resetSlider();
+            removeTransition();
         };
     }, [category, slideableContainerRef, setCurrentSliderPositionTo]);
     return (
         <div className="overflow-x-hidden">
             <div
-                className="flex justify-center flex-wrap gap-1 sm:gap-2 md:gap-3 ipad:flex-nowrap ipad:gap-0 ipad:space-x-4 inner-container transform-gpu duration-500"
+                className="flex justify-center flex-wrap gap-1 sm:gap-2 md:gap-3 ipad:flex-nowrap ipad:gap-0 ipad:space-x-4 inner-container"
                 ref={slideableContainerRef}>
                 {renderProductList}
                 <style>{`
