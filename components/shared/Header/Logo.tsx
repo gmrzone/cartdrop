@@ -9,7 +9,8 @@ const Logo = () => {
                 x="0px"
                 y="0px"
                 viewBox="0 0 1079 200"
-                xmlSpace="preserve">
+                xmlSpace="preserve"
+            >
                 <path
                     id="XMLID_8_"
                     className="st0"
@@ -76,6 +77,7 @@ const Logo = () => {
                     />
                 </g>
                 {/* Setting jsx attribute to undefined temporarily to avoid errors in jest */}
+                {/* eslint-disable-next-line react/no-unknown-property */}
                 <style jsx={undefined}>{`
                     .st0 {
                         fill: #2d3d8a;

@@ -78,6 +78,7 @@ const PriceRangeSlider: NextPage<PriceRangeSliderType> = ({ maxPrice }) => {
                 -
                 <NumberInput currentValue={secondRangeValue} onChange={rangeInputHandler} type="right" />
             </div>
+            {/* eslint-disable-next-line react/no-unknown-property */}
             <style jsx>{`
                 .range-input input {
                     position: absolute;

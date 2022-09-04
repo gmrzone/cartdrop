@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import CartIcon from './Icons/Cart';
 import ProfileIcon from './Icons/Profile';
 import SearchBar from './SearchBar';
@@ -8,10 +7,6 @@ type NavLeft = {
     value: string;
     icon: string;
     to: string;
-};
-type NavRight = {
-    Icon: ReactNode;
-    value: string;
 };
 
 type ProfileOptions = {
@@ -62,7 +57,7 @@ export const NavLeftData2: NavLeft[] = [
     },
 ];
 
-export const navRightData: NavRight[] = [
+export const navRightData = [
     {
         Icon: CartIcon,
         value: 'cart',
