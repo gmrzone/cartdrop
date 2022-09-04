@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import CartIcon from './Cart';
-import user from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 
 describe('CartIconTest', () => {
     const toggleCartSidebar = jest.fn();
@@ -11,9 +11,10 @@ describe('CartIconTest', () => {
         expect(screen.getByTitle('cart-icon')).toBeInTheDocument();
     });
 
-    it('ClickTest', () => {
+    it('ClickTest', async () => {
+        const user = userEvent.setup();
         render(<CartIcon toggleCartSidebar={toggleCartSidebar} classes={classes} title="cart-icon" />);
-        user.click(screen.getByTitle('cart-icon'));
+        await user.click(screen.getByTitle('cart-icon'));
         expect(toggleCartSidebar).toHaveBeenCalledTimes(1);
     });
 });

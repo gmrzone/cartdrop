@@ -2,7 +2,7 @@
 /* eslint  @typescript-eslint/no-explicit-any: 0 */ // Disable eslint rule to use explicit any
 
 import { render, screen, waitFor } from '@testing-library/react';
-import user from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 import Header from './index';
 import useMobile from '../../hooks/useIsMobile';
 
@@ -44,6 +44,7 @@ describe('HeaderComponentTest With Cart Sidebar and Left nav Functionality', () 
     });
 
     it('Cart Functionality Test', async () => {
+        const user = userEvent.setup();
         render(<Header />);
         const cartSidebar = screen.getByTitle('cart-sidebar');
         const backdrop = screen.getByTitle('backdrop');
@@ -57,7 +58,7 @@ describe('HeaderComponentTest With Cart Sidebar and Left nav Functionality', () 
         expect(cartSidebar.classList).toContain('translate-x-full');
         expect(cartSidebar.classList).not.toContain('translate-x-0');
 
-        user.click(screen.getByTitle('cart-icon'));
+        await user.click(screen.getByTitle('cart-icon'));
 
         // After user click the cart icon both cartSidebar and backdrop should remove the hidden class immidiately
         expect(backdrop.classList).not.toContain('hidden');
@@ -69,7 +70,7 @@ describe('HeaderComponentTest With Cart Sidebar and Left nav Functionality', () 
         await waitFor(() => expect(cartSidebar.classList).toContain('translate-x-0'));
         await waitFor(() => expect(cartSidebar.classList).not.toContain('translate-x-full'));
 
-        user.click(screen.getByTitle('cart-close'));
+        await user.click(screen.getByTitle('cart-close'));
         // After clicking the cart close backdrop opacity should change from 100 to zero immidiately
         expect(backdrop.classList).toContain('opacity-0');
         expect(backdrop.classList).not.toContain('opacity-100');
@@ -84,6 +85,7 @@ describe('HeaderComponentTest With Cart Sidebar and Left nav Functionality', () 
     });
 
     it('Left Nav Functionality test', async () => {
+        const user = userEvent.setup();
         render(<Header />);
         const leftNav = screen.getByTitle('nav-left');
         const backdrop = screen.getByTitle('backdrop');
@@ -95,7 +97,7 @@ describe('HeaderComponentTest With Cart Sidebar and Left nav Functionality', () 
         expect(backdrop.classList).not.toContain('opacity-100');
         expect(leftNav.classList).toContain('-translate-x-full');
 
-        user.click(burgerIcon);
+        await user.click(burgerIcon);
 
         // After user click the burger icon backdrop should remove the hidden class immidiately
         // And leftNav shoud replace translate-x-full with translate-x-0
@@ -107,7 +109,7 @@ describe('HeaderComponentTest With Cart Sidebar and Left nav Functionality', () 
         await waitFor(() => expect(backdrop.classList).not.toContain('opacity-0'));
 
         // WNen user click backdrop leftnav should close
-        user.click(backdrop);
+        await user.click(backdrop);
 
         // When user click backdrop then immidiately change backdrop opacity to 0 from 100
         // And transition leftNav to -translate-x-full from translate-x-0
