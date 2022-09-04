@@ -11,7 +11,8 @@ const LogoSmall: NextPage = () => {
                 x="0px"
                 y="0px"
                 viewBox="0 0 878 200"
-                xmlSpace="preserve">
+                xmlSpace="preserve"
+            >
                 <g id="XMLID_1_">
                     <path
                         id="XMLID_2_"
@@ -59,6 +60,7 @@ const LogoSmall: NextPage = () => {
                         M810.2,94.5h19.5c17.9,0,27.7-7.2,27.7-20.6c0-13.9-10.2-20.3-27.7-20.3h-19.5V94.5z"
                     />
                 </g>
+                {/* eslint-disable-next-line react/no-unknown-property */}
                 <style jsx>{`
                     .st0 {
                         fill: #2d3d8a;

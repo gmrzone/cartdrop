@@ -1,5 +1,5 @@
-import { NextPage } from "next";
-import { FormEventHandler } from "react";
+import { NextPage } from 'next';
+import { FormEventHandler } from 'react';
 
 type NumberInputProps = {
     currentValue: number;
@@ -11,7 +11,7 @@ type NumberInputProps = {
 const NumberInput: NextPage<NumberInputProps> = ({ currentValue, onChange, type }) => {
     return (
         <div className="font-roboto whitespace-nowrap text-main number-input">
-            &#8377;{" "}
+            &#8377;{' '}
             <input
                 type="number"
                 value={currentValue}
@@ -20,17 +20,18 @@ const NumberInput: NextPage<NumberInputProps> = ({ currentValue, onChange, type 
                 data-type={type}
                 disabled
             />
+            {/* eslint-disable-next-line react/no-unknown-property */}
             <style jsx>{`
-                .number-input input[type="number"] {
+                .number-input input[type='number'] {
                     -moz-appearance: none;
                 }
 
-                .number-input input[type="number"]:focus {
+                .number-input input[type='number']:focus {
                     border-color: rgb(45, 61, 138);
                     outline: none;
                 }
-                .number-input input[type="number"]::-webkit-outer-spin-button,
-                .number-input input[type="number"]::-webkit-inner-spin-button {
+                .number-input input[type='number']::-webkit-outer-spin-button,
+                .number-input input[type='number']::-webkit-inner-spin-button {
                     -webkit-appearance: none;
                 }
             `}</style>

@@ -1,6 +1,10 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
+import { ReactNode } from 'react';
 
-const SecondaryLayout: NextPage = ({ children }) => {
+type SecondaryLayoutProps = {
+    children: ReactNode;
+};
+const SecondaryLayout: NextPage<SecondaryLayoutProps> = ({ children }) => {
     return <main className="h-full">{children}</main>;
 };
 
