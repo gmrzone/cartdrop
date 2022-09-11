@@ -20,11 +20,16 @@ const NavBar: NextPage<NavBarProps> = ({ toggleCartSidebar }) => {
         };
     }, [profileDropDown]);
 
+    const profileDropDownHandler: MouseEventHandler<HTMLDivElement> = (e) => {
+        e.stopPropagation();
+        setProfileDropdown((s) => !s);
+    };
+
     return (
         <nav className="flex items-center ml-auto md:ml-0" title="nav-right">
             <ul className="flex space-x-4 mobile-sm:space-x-8">
                 <li className="relative">
-                    <ProfileIcon setProfileDropdown={setProfileDropdown} />
+                    <ProfileIcon profileDropdownHandler={profileDropDownHandler} />
                     <ProfileDropdown profileDropdownActive={profileDropDown} />
                 </li>
                 <li>
