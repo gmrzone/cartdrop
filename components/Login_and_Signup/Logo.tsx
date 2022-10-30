@@ -1,6 +1,7 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
+import { forwardRef } from 'react';
 
-const LogoVertical: NextPage = () => {
+const LogoVertical: NextPage = forwardRef(() => {
     return (
         <div className="w-52 sm:w-60 md:w-72 desktop-big:w-80">
             <svg
@@ -11,7 +12,8 @@ const LogoVertical: NextPage = () => {
                 x="0px"
                 y="0px"
                 viewBox="0 0 865.1 361.5"
-                xmlSpace="preserve">
+                xmlSpace="preserve"
+            >
                 <g id="XMLID_71_">
                     <path
                         id="XMLID_72_"
@@ -91,6 +93,8 @@ const LogoVertical: NextPage = () => {
             `}</style>
         </div>
     );
-};
+});
+
+LogoVertical.displayName = 'LogoVertical';
 
 export default LogoVertical;
