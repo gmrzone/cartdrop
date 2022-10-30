@@ -15,7 +15,7 @@ interface TopProductsProps {
 const TopProducts: NextPage<TopProductsProps> = ({ category, topProducts }) => {
     const isMobile = useMobile();
     const slideableContainerRef = useRef<HTMLDivElement | null>(null);
-    const sliderItemRef = useRef<HTMLDivElement | null>(null);
+    const sliderItemRef = useRef<HTMLAnchorElement | null>(null);
     const [currentSliderPosition, setCurrentSliderPosition] = useState<number>(0);
 
     useEffect(() => {

@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import { SubcategoryOfferType } from "../../../shared/types";
-import SliderItem from "./SliderItem";
-import { MutableRefObject } from "react";
+import { NextPage } from 'next';
+import { SubcategoryOfferType } from '../../../shared/types';
+import SliderItem from './SliderItem';
+import { MutableRefObject } from 'react';
 interface Props {
     subcategoryOffers: SubcategoryOfferType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
 }
 
 const Slider: NextPage<Props> = ({ subcategoryOffers, slideableContainerRef, sliderItemRef }) => {
