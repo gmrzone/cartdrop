@@ -16,7 +16,6 @@ export const getStaticProps: GetStaticProps = async () => {
     // const categories = await axios.get('http://localhost:5000/api/categories');
     const featuredProducts = await axios.get(BACKEND_URL + '/products/featured/');
     const subcategoryOffers = await axios.get(BACKEND_URL + '/core/offers/');
-    console.log({ subcategoryOffers });
     // const subcategoryOffers = await axios.get('http://localhost:5000/api/subcategories/offers');
 
     return {

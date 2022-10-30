@@ -25,7 +25,7 @@ const ProductItem: NextPage<IProps> = ({ item, index, sliderItemRef }) => {
         ')';
     // const generateName = item.product.name + `(${item.color ? item.color.name : "" + item.ac_capacity_variant ? ", " + item.ac_capacity_variant?.capacity : "" + item.ac_star_variant ?  ", " + item.ac_star_variant?.star : "" + item.book_variation ? ", " +item.book_variation?.name : "" +  item.juices_quantity ? ", " + item.juices_quantity : "" + item.laptop_variant ? ", " + item.laptop_variant?.name : "" + item.mobile_variant ? ", " + item.mobile_variant?.name : "" + item.refrigerator_capacity ? ", " + item.refrigerator_capacity : "" + item.size && ", " + item.size?.name + item.tv_variant && ", " + item.tv_variant?.display_size})`
     return (
-        <Link href={`/product-detail/${item.product.slug}/${item.uuid}/${item.pid}/`} passHref>
+        <Link href={`/product-detail/${item.product.slug}/${item.uuid}/${item.pid}/`} passHref legacyBehavior>
             <div
                 className={`item-main block border border-solid border-gray-200 rounded-md cursor-pointer relative overflow-hidden ${
                     index > 3 && 'hidden ipad:block'

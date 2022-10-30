@@ -10,7 +10,7 @@ type ProductItemProps = {
 };
 const ProductItem: NextPage<ProductItemProps> = ({ productDetail }) => {
     return (
-        <Link href={`/product-detail/${productDetail.product.slug}/${productDetail.uuid}/${productDetail.pid}`} passHref>
+        <Link href={`/product-detail/${productDetail.product.slug}/${productDetail.uuid}/${productDetail.pid}`} passHref legacyBehavior>
             <div className="p-6 border-solid border-gray-200 border cursor-pointer rounded-md ipad:mx-3 my-4">
                 <div className="relative w-64 h-56 ipad:w-60 ipad:h-48 desktop:w-72 desktop:h-64 mx-auto">
                     <Image
