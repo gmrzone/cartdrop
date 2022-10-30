@@ -13,11 +13,11 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
     const renderData = navLeftData.map((x) => {
         return (
             <li key={x.value} className="px-6 py-3 desktop:px-0 desktop:py-0">
-                <Link href={x.to} passHref legacyBehavior>
-                    <a className="font-semibold text-text desktop:text-main desktop:font-bold desktop:text-base text-lg" title={x.value}>
+                <Link href={x.to}>
+                    <div className="font-semibold text-text desktop:text-main desktop:font-bold desktop:text-base text-lg">
                         <i className={`${x.icon} desktop:hidden mr-4`} />
                         {x.name}
-                    </a>
+                    </div>
                 </Link>
             </li>
         );
@@ -26,11 +26,11 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
     const renderData2 = NavLeftData2.map((x) => {
         return (
             <li className="px-6 py-3 desktop:bg-white desktop:hover:bg-gray-200 cursor-pointer" key={x.value}>
-                <Link href={x.to} passHref key={x.value} legacyBehavior>
-                    <a className="text-text font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base" title={x.value}>
+                <Link href={x.to} key={x.value}>
+                    <div className="text-text font-semibold text-lg desktop:font-bold desktop:text-main desktop:text-base">
                         <i className={`${x.icon} desktop:hidden mr-4`} />
                         {x.name}
-                    </a>
+                    </div>
                 </Link>
             </li>
         );

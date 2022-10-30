@@ -6,11 +6,11 @@ import { navLeftData, NavLeftData2 } from './data';
 
 // Mock image
 jest.mock('../../../public/default_profilepic.png', () => ({
-    DefaultProfile: 'test-image',
+    DefaultProfile: '/test-image',
 }));
 
 // Mock next/image
-jest.mock('next/image', () => ({
+jest.mock('next/legacy/image', () => ({
     __esModule: true,
     default: (props: any) => {
         return <img {...props} alt={props.alt} />;
@@ -27,8 +27,7 @@ describe('Testing Left Navbar', () => {
     it('Nav Item test', () => {
         render(<LeftNav leftNavActive={false} toggleLeftNav={toggleLeftNav} />);
         navLeftData.concat(NavLeftData2).forEach((x) => {
-            expect(screen.getByTitle(x.value)).toBeInTheDocument();
-            expect(screen.getByTitle(x.value)).toHaveAttribute('href', x.to);
+            expect(screen.getByText(x.name)).toBeInTheDocument();
         });
     });
 });

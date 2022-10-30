@@ -59,8 +59,8 @@ const Footer: NextPage = () => {
     const renderFooterData = footerData.map((x) => {
         return (
             <li key={x.id} className="">
-                <Link href={x.link} legacyBehavior>
-                    <a className="text-white hover:text-blue-200 font-semibold whitespace-nowrap">{x.name}</a>
+                <Link href={x.link} className="text-white hover:text-blue-200 font-semibold whitespace-nowrap">
+                    {x.name}
                 </Link>
             </li>
         );

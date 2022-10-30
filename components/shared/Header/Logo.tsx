@@ -1,4 +1,5 @@
-const Logo = () => {
+import { forwardRef } from 'react';
+const Logo = forwardRef(() => {
     return (
         <div className="w-60 block">
             <svg
@@ -92,6 +93,6 @@ const Logo = () => {
             </svg>
         </div>
     );
-};
-
+});
+Logo.displayName = 'Logo';
 export default Logo;

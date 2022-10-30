@@ -2,9 +2,10 @@ import { NextPage } from 'next';
 import { SubcategoryOfferType } from '../../../shared/types';
 import Image from 'next/legacy/image';
 import { MutableRefObject } from 'react';
+import Link from 'next/link';
 interface Props {
     subcategoryOfferItem: SubcategoryOfferType;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
 }
 const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) => {
     const maxDiscount: number = Math.max(...subcategoryOfferItem.coupons.map((x) => x.discount));
@@ -18,9 +19,9 @@ const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) =>
             </div>
         );
     });
-
+    // TODO : This link should push to a page which has offers for the selected subcategory
     return (
-        <div className="slider-item flex flex-col bg-main rounded-lg p-3 cursor-pointer" ref={sliderItemRef}>
+        <Link className="slider-item flex flex-col bg-main rounded-lg p-3 cursor-pointer" ref={sliderItemRef} href="/">
             <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-items-center">{renderImages}</div>
             <div className="mt-auto ipad:pt-4">
                 <p className="text-center text-white font-semibold">
@@ -32,7 +33,7 @@ const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) =>
                     width: var(--subcategory-item-width);
                 }
             `}</style>
-        </div>
+        </Link>
     );
 };
 

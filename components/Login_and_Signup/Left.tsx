@@ -19,10 +19,8 @@ const LeftSection: NextPage<LeftProps> = ({ type }) => {
                 </div>
             )}
             <div className="relative flex flex-col items-center justify-center w-full h-full space-y-16">
-                <Link href="/" passHref legacyBehavior>
-                    <a title="logo-vertical">
-                        <LogoVertical />
-                    </a>
+                <Link href="/" title="logo-vertical">
+                    <LogoVertical />
                 </Link>
                 {!isMobile && <SocialLogin type={type} />}
             </div>

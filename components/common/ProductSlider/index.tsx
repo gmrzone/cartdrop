@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 interface IProps {
     ProductList: ProductVariationType[];
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
     setCurrentSliderPositionTo: (n: number) => void;
     category: string;
 }
@@ -53,7 +53,8 @@ const ProductList: NextPage<IProps> = ({ ProductList, slideableContainerRef, sli
         <div className="overflow-x-hidden">
             <div
                 className="flex justify-center flex-wrap gap-1 sm:gap-2 md:gap-3 ipad:flex-nowrap ipad:gap-0 ipad:space-x-4 inner-container"
-                ref={slideableContainerRef}>
+                ref={slideableContainerRef}
+            >
                 {renderProductList}
                 <style>{`
                 

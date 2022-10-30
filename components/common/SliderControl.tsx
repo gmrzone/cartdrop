@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 
 interface SliderControlProps {
     slideableContainerRef: MutableRefObject<HTMLDivElement | null>;
-    sliderItemRef: MutableRefObject<HTMLDivElement | null>;
+    sliderItemRef: MutableRefObject<HTMLAnchorElement | null>;
     currentSliderPosition: number;
     setCurrentSliderPositionTo: (n: number) => void;
     productsLength: number;
@@ -133,13 +133,15 @@ const SliderControl: NextPage<SliderControlProps> = ({
             <div
                 className="bg-gray-400 px-3 py-1 text-gray-200 rounded-md text-lg cursor-not-allowed transition-colors duration-100"
                 onClick={goRight}
-                ref={leftControlRef}>
+                ref={leftControlRef}
+            >
                 <i className="fas fa-chevron-left" />
             </div>
             <div
                 className="bg-secondary px-3 py-1 text-white rounded-md text-lg cursor-pointer hover:bg-main transition-colors duration-100"
                 onClick={goLeft}
-                ref={rightControlRef}>
+                ref={rightControlRef}
+            >
                 <i className="fas fa-chevron-right" />
             </div>
         </div>

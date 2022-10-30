@@ -8,7 +8,7 @@ jest.mock('../../../public/TV.jpg', () => {
 });
 
 // Mock next/image
-jest.mock('next/image', () => ({
+jest.mock('next/legacy/image', () => ({
     __esModule: true,
     default: (props: any) => {
         return <img {...props} alt={props.alt} />;
