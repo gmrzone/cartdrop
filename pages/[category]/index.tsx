@@ -52,10 +52,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const response3 = await axios.get(BACKEND_URL + `/core/brand/${currentCategory}/`);
     const response4 = await axios.get(BACKEND_URL + `/products/${currentCategory}/?page=1`);
 
-    const subcategories: SubcategoryType[] = response.data;
+    const subcategories: SubcategoryType[] = response.data.results;
     const topProducts: ProductVariationType[] = response1.data;
     const categories: CategoryType[] = response2.data;
-    const brands: BrandsTypes[] = response3.data;
+    const brands: BrandsTypes[] = response3.data.results;
     const paginatedProduct: PaginatedProductVariationType = response4.data;
     return {
         props: {
