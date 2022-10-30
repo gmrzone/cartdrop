@@ -15,8 +15,8 @@ const LoginForm: NextPage = () => {
                 <Password type="password" label="Password" />
             </div>
             <div className="text-lg ml-1 font-semibold">
-                <Link href="/reset-password" passHref legacyBehavior>
-                    <a title="forgot-password">Forgot password?</a>
+                <Link href="/reset-password" title="forgot-password">
+                    Forgot password?
                 </Link>
             </div>
             <div className="flex space-x-6">

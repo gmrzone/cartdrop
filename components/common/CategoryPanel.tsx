@@ -32,13 +32,11 @@ const CategoryPanel: NextPage<CategoryPanelProps> = ({ activeCategory, categorie
             <div className={style['inner-container']}>
                 <ul className={style['main-container']}>
                     <li>
-                        <Link href="/offers" passHref legacyBehavior>
-                            <a className={style['category-item']} title="category-offers">
-                                <div className={style['image-container']}>
-                                    <Image src="/offers.png" layout="fill" alt="category_image" />
-                                </div>
-                                <div className={style['category-text']}>Offers</div>
-                            </a>
+                        <Link href="/offers" className={style['category-item']} title="category-offers">
+                            <div className={style['image-container']}>
+                                <Image src="/offers.png" layout="fill" alt="category_image" />
+                            </div>
+                            <div className={style['category-text']}>Offers</div>
                         </Link>
                     </li>
                     {renderCategory}
