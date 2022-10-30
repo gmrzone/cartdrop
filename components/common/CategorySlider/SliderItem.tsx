@@ -1,7 +1,7 @@
-import { NextPage } from "next";
-import { SubcategoryOfferType } from "../../../shared/types";
-import Image from "next/image";
-import { MutableRefObject } from "react";
+import { NextPage } from 'next';
+import { SubcategoryOfferType } from '../../../shared/types';
+import Image from 'next/legacy/image';
+import { MutableRefObject } from 'react';
 interface Props {
     subcategoryOfferItem: SubcategoryOfferType;
     sliderItemRef: MutableRefObject<HTMLDivElement | null>;
@@ -12,7 +12,8 @@ const SliderItem: NextPage<Props> = ({ subcategoryOfferItem, sliderItemRef }) =>
         return (
             <div
                 key={i}
-                className="relative w-28 h-28 sm:w-32 sm:h-32 desktop:w-40 desktop:h-40 desktop-big:w-32 desktop-big:h-32 desktop-large:w-36 desktop-large:h-36 bg-white rounded-lg p-4">
+                className="relative w-28 h-28 sm:w-32 sm:h-32 desktop:w-40 desktop:h-40 desktop-big:w-32 desktop-big:h-32 desktop-large:w-36 desktop-large:h-36 bg-white rounded-lg p-4"
+            >
                 <Image src={x.image} alt="subcategory-image" layout="fill" objectFit="contain" />
             </div>
         );

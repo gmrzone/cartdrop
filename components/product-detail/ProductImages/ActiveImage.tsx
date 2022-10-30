@@ -1,5 +1,5 @@
-import { NextPage } from "next";
-import Image from "next/image";
+import { NextPage } from 'next';
+import Image from 'next/legacy/image';
 
 type ActiveImageProps = {
     image: string;

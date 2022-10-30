@@ -13,14 +13,17 @@ import CategoryPanel from '../components/common/CategoryPanel';
 
 export const getStaticProps: GetStaticProps = async () => {
     const categories = await axios.get(BACKEND_URL + '/core/categories/');
+    // const categories = await axios.get('http://localhost:5000/api/categories');
     const featuredProducts = await axios.get(BACKEND_URL + '/products/featured/');
     const subcategoryOffers = await axios.get(BACKEND_URL + '/core/offers/');
+    console.log({ subcategoryOffers });
+    // const subcategoryOffers = await axios.get('http://localhost:5000/api/subcategories/offers');
 
     return {
         props: {
             categories: categories.data,
             featuredProducts: featuredProducts.data,
-            subcategoryOffers: subcategoryOffers.data,
+            subcategoryOffers: subcategoryOffers.data.results,
         },
     };
 };

@@ -1,9 +1,9 @@
-import { NextPage } from "next";
-import { todaysDeal } from "./data";
-import Image from "next/image";
-import Section from "../../common/Section";
-import OfferCounter from "./OfferCounter";
-import ExtraButton from "../../common/buttons/ExtraButton";
+import { NextPage } from 'next';
+import { todaysDeal } from './data';
+import Image from 'next/legacy/image';
+import Section from '../../common/Section';
+import OfferCounter from './OfferCounter';
+import ExtraButton from '../../common/buttons/ExtraButton';
 
 const TodaysDeal: NextPage = () => {
     return (

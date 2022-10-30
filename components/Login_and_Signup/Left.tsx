@@ -1,8 +1,8 @@
-import { NextPage } from "next";
-import LogoVertical from "./Logo";
-import SocialLogin from "./SocialLogin";
-import useIsMobile from "../hooks/useIsMobile";
-import Link from "next/link";
+import { NextPage } from 'next';
+import LogoVertical from './Logo';
+import SocialLogin from './SocialLogin';
+import useIsMobile from '../hooks/useIsMobile';
+import Link from 'next/link';
 
 interface LeftProps {
     type: string;
@@ -19,7 +19,7 @@ const LeftSection: NextPage<LeftProps> = ({ type }) => {
                 </div>
             )}
             <div className="relative flex flex-col items-center justify-center w-full h-full space-y-16">
-                <Link href="/" passHref>
+                <Link href="/" passHref legacyBehavior>
                     <a title="logo-vertical">
                         <LogoVertical />
                     </a>

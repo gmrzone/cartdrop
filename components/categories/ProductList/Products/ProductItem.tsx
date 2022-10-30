@@ -1,9 +1,9 @@
-import { ProductVariationType } from "../../../../shared/types";
-import { NextPage } from "next";
-import Image from "next/image";
-import SecondaryButtonLink from "../../../common/buttons/SmallButtonLink";
-import StarRatingStatic from "../../../common/StarRating/Static";
-import Link from "next/link";
+import { ProductVariationType } from '../../../../shared/types';
+import { NextPage } from 'next';
+import Image from 'next/legacy/image';
+import SecondaryButtonLink from '../../../common/buttons/SmallButtonLink';
+import StarRatingStatic from '../../../common/StarRating/Static';
+import Link from 'next/link';
 
 type ProductItemProps = {
     productDetail: ProductVariationType;
@@ -24,7 +24,7 @@ const ProductItem: NextPage<ProductItemProps> = ({ productDetail }) => {
                     <div className="text-xl h-14">
                         {productDetail.product.name.length <= 32
                             ? productDetail.product.name
-                            : productDetail.product.name.slice(0, 32) + "..."}
+                            : productDetail.product.name.slice(0, 32) + '...'}
                     </div>
                     <div className="text-secondary">{productDetail.product.subcategory.name}</div>
                     <div className="font-roboto text-2xl text-slate-600 mt-2 mb-2">&#8377;{productDetail.price}</div>

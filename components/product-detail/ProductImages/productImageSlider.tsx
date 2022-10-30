@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { ProductVariationImageType } from '../../../shared/types';
 import { useRef, Dispatch, SetStateAction, useEffect } from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import useIsMobile from '../../hooks/useIsMobile';
 
 type ProductImageProps = {
@@ -133,7 +133,8 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
                         : 'border-main border-2 border-opacity-20 opacity-70 hover:border-opacity-50'
                 }`}
                 onClick={() => SetActiveImage(x)}
-                ref={imageItemRef}>
+                ref={imageItemRef}
+            >
                 <Image src={x.image} alt="product-image-small" layout="fill" objectFit="contain" />
             </div>
         );
@@ -144,7 +145,8 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
                 <div
                     className="bg-slate-500 rounded-md flex-grow-0 flex-shrink-0 flex flex-b justify-center items-center cursor-not-allowed shadow-drop-down w-[28px] ipad:w-auto h-auto ipad:h-[28px]"
                     onClick={imageLeftOrTopCLick}
-                    ref={leftorTopSlideHandler}>
+                    ref={leftorTopSlideHandler}
+                >
                     <i className={`fas fa-sort-up text-white text-xl -rotate-90 ipad:rotate-0`} />
                 </div>
             )}
@@ -153,7 +155,8 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
                     className={`transform-gpu duration-[0.25s] grid grid-flow-col ipad:grid-flow-row space-x-2 ipad:space-x-0 space-y-0 ipad:space-y-2 h-auto ipad:h-[${
                         71 * images.length + (images.length - 1) * 10
                     }px] w-[${71 * images.length + (images.length - 1) * 10}px] ipad:w-auto self-center ${images.length <= 4 && 'mt-4'}`}
-                    ref={imageContainerRef}>
+                    ref={imageContainerRef}
+                >
                     {renderImages}
                 </div>
             </div>
@@ -161,7 +164,8 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
                 <div
                     className="bg-secondary rounded-md flex-grow-0 flex-shrink-0 flex justify-center items-center cursor-pointer hover:bg-main shadow-drop-down w-[28px] ipad:w-auto h-auto ipad:h-[28px]"
                     onClick={imageRightOrBottomClick}
-                    ref={rightOrBottomSlideHandler}>
+                    ref={rightOrBottomSlideHandler}
+                >
                     <i className="fas fa-sort-down text-white text-xl -rotate-90 ipad:rotate-0" />
                 </div>
             )}

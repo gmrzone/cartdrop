@@ -61,7 +61,7 @@ const Header: NextPage = () => {
     return (
         <div className="container flex">
             <BurgerIcon toggleLeftNav={toggleLeftNav} />
-            <Link href="/" passHref>
+            <Link href="/" passHref legacyBehavior>
                 <a title="logo">{isMobile ? <LogoSmall /> : <Logo />}</a>
             </Link>
             <NavLeft toggleLeftNav={toggleLeftNav} leftNavActive={leftNavActive} />
