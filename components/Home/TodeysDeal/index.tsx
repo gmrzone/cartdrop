@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { todaysDeal } from './data';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Section from '../../common/Section';
 import OfferCounter from './OfferCounter';
 import ExtraButton from '../../common/buttons/ExtraButton';
@@ -16,7 +16,6 @@ const TodaysDeal: NextPage = () => {
                         placeholder="blur"
                         width={750}
                         height={474}
-                        layout="responsive"
                         sizes="(min-width: 1199px) 40vw, (min-width: 992px) 50vw, 90vw"
                     />
                 </div>

@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { ProductVariationImageType } from '../../../shared/types';
 import { useRef, Dispatch, SetStateAction, useEffect } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import useIsMobile from '../../hooks/useIsMobile';
 
 type ProductImageProps = {
@@ -135,7 +135,7 @@ const ProductImageSlider: NextPage<ProductImageProps> = ({ images, activeImage, 
                 onClick={() => SetActiveImage(x)}
                 ref={imageItemRef}
             >
-                <Image src={x.image} alt="product-image-small" layout="fill" objectFit="contain" />
+                <Image className="object-contain" src={x.image} alt="product-image-small" fill />
             </div>
         );
     });

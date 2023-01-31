@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { CategoryType } from '../../shared/types';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import style from '../../styles/category.module.scss';
 import Link from 'next/link';
 
@@ -18,7 +18,7 @@ const CategoryPanel: NextPage<CategoryPanelProps> = ({ activeCategory, categorie
                         title={`category-${x.slug}`}
                     >
                         <div className={style['image-container']}>
-                            <Image src={x.category_images[0]?.image} alt={x.slug} layout="fill" objectFit="cover" />
+                            <Image className="object-contain" src={x.category_images[0]?.image} alt={x.slug} fill />
                             {/* <img src={x.category_images[0]?.image} alt="testing"/> */}
                         </div>
                         <div className={style['category-text']}>{x.name}</div>
@@ -35,7 +35,17 @@ const CategoryPanel: NextPage<CategoryPanelProps> = ({ activeCategory, categorie
                         <Link href="/offers" title="category-offers">
                             <div className={style['category-item']}>
                                 <div className={style['image-container']}>
-                                    <Image src="/offers.png" layout="fill" alt="category_image" />
+                                    <Image className="object-contain" src="/offers.png" alt="category_image" fill />
+                                </div>
+                                <div className={style['category-text']}>Offers</div>
+                            </div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/offers" title="category-offers">
+                            <div className={style['category-item']}>
+                                <div className={style['image-container']}>
+                                    <Image className="object-contain" src="/offers.png" alt="category_image" fill />
                                 </div>
                                 <div className={style['category-text']}>Offers</div>
                             </div>

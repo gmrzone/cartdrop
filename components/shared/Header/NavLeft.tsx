@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { navLeftData, NavLeftData2 } from './data';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import DefaultProfile from '../../../public/default_profilepic.png';
 import { MouseEventHandler } from 'react';
 import Link from 'next/link';
@@ -44,7 +44,7 @@ const NavLeft: NextPage<LeftNavProps> = ({ toggleLeftNav, leftNavActive }) => {
                 title="nav-left"
             >
                 <div className="bg-secondary p-4 relative flex items-center space-x-4 desktop:hidden">
-                    <Image src={DefaultProfile} width={40} height={40} alt="default-profile" className="rounded-full px-4" />
+                    <Image src={DefaultProfile} width={40} height={40} alt="default-profile" className="rounded-full" />
                     <p className="text-white font-bold text-lg">Login & Signup</p>
                     <i className="fas fa-times absolute right-5 text-lg text-white cursor-pointer" onClick={toggleLeftNav} />
                 </div>

@@ -1,6 +1,6 @@
 import { ProductVariationType } from '../../../../shared/types';
 import { NextPage } from 'next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import SecondaryButtonLink from '../../../common/buttons/SmallButtonLink';
 import StarRatingStatic from '../../../common/StarRating/Static';
 
@@ -11,7 +11,7 @@ const ProductItem: NextPage<ProductItemProps> = ({ productDetail }) => {
     return (
         <div className="p-6 border-solid border-gray-200 border cursor-pointer rounded-md ipad:mx-3 my-4">
             <div className="relative w-64 h-56 ipad:w-60 ipad:h-48 desktop:w-72 desktop:h-64 mx-auto">
-                <Image src={productDetail.images.filter((x) => x.primary)[0].image} alt="product_image" layout="fill" objectFit="contain" />
+                <Image className="object-contain" src={productDetail.images.filter((x) => x.primary)[0].image} alt="product_image" fill />
             </div>
             <div className="mt-4 relative">
                 <div className="text-xl h-14">

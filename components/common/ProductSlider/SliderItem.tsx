@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { ProductVariationType } from '../../../shared/types';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { MutableRefObject } from 'react';
 import Link from 'next/link';
 interface IProps {
@@ -40,10 +40,10 @@ const ProductItem: NextPage<IProps> = ({ item, index, sliderItemRef }) => {
                     <div className="ipad:w-full p-2">
                         <div className="relative w-24 h-24 ipad:w-64 ipad:h-48 mx-auto">
                             <Image
+                                className="object-contain"
                                 src={item.images.filter((x) => x.primary === true)[0]?.image}
                                 alt={item.pid}
-                                layout="fill"
-                                objectFit="contain"
+                                fill
                             />
                         </div>
                     </div>
